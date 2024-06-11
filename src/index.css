@@ -4,48 +4,49 @@
 
 @layer base {
   :root {
-    --background: 218 100% 95%;
-    --foreground: 218 5% 10%;
-    --card: 218 50% 90%;
-    --card-foreground: 218 5% 11%;
-    --popover: 218 100% 95%;
-    --popover-foreground: 218 100% 10%;
-    --primary: 218 54.4% 22.4%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 218 30% 70%;
-    --secondary-foreground: 0 0% 0%;
-    --muted: 180 30% 85%;
-    --muted-foreground: 218 5% 35%;
-    --accent: 180 30% 80%;
-    --accent-foreground: 218 5% 11%;
-    --destructive: 0 100% 30%;
-    --destructive-foreground: 218 5% 90%;
-    --border: 218 30% 50%;
-    --input: 218 30% 18%;
-    --ring: 218 54.4% 22.4%;
-    --radius: 1rem;
+    --background: 218 100% 95%; /* Light background */
+    --foreground: 218 5% 10%; /* Text color */
+    --card: 218 50% 90%; /* Card background */
+    --card-foreground: 218 5% 11%; /* Card text color */
+    --popover: 218 100% 95%; /* Popover background */
+    --popover-foreground: 218 100% 10%; /* Popover text color */
+    --primary: 218 90% 35%; /* Primary button color (darker for contrast) */
+    --primary-foreground: 0 0% 100%; /* White text for primary button */
+    --secondary: 218 30% 70%; /* Secondary color */
+    --secondary-foreground: 0 0% 0%; /* Secondary text color */
+    --muted: 180 30% 85%; /* Muted background */
+    --muted-foreground: 218 5% 35%; /* Muted text color */
+    --accent: 180 30% 80%; /* Accent background */
+    --accent-foreground: 218 5% 11%; /* Accent text color */
+    --destructive: 0 100% 30%; /* Destructive background */
+    --destructive-foreground: 218 5% 90%; /* Destructive text color */
+    --border: 218 30% 50%; /* Border color */
+    --input: 218 30% 18%; /* Input background */
+    --ring: 218 54.4% 22.4%; /* Ring color */
+    --radius: 1rem; /* Border radius */
   }
+
   .dark {
-    --background: 218 50% 10%;
-    --foreground: 218 5% 90%;
-    --card: 218 50% 10%;
-    --card-foreground: 218 5% 90%;
-    --popover: 218 50% 5%;
-    --popover-foreground: 218 5% 90%;
-    --primary: 218 54.4% 22.4%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 218 30% 11%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 180 30% 15%;
-    --muted-foreground: 218 5% 60%;
-    --accent: 180 30% 15%;
-    --accent-foreground: 218 5% 90%;
-    --destructive: 0 100% 30%;
-    --destructive-foreground: 218 5% 90%;
-    --border: 218 30% 18%;
-    --input: 218 30% 18%;
-    --ring: 218 54.4% 22.4%;
-    --radius: 1rem;
+    --background: 218 50% 10%; /* Dark background */
+    --foreground: 218 5% 90%; /* Text color */
+    --card: 218 50% 10%; /* Card background */
+    --card-foreground: 218 5% 90%; /* Card text color */
+    --popover: 218 50% 5%; /* Popover background */
+    --popover-foreground: 218 5% 90%; /* Popover text color */
+    --primary: 218 100% 50%; /* Primary button color (brighter for contrast) */
+    --primary-foreground: 0 0% 100%; /* White text for primary button */
+    --secondary: 218 30% 11%; /* Secondary color */
+    --secondary-foreground: 0 0% 100%; /* Secondary text color */
+    --muted: 180 30% 15%; /* Muted background */
+    --muted-foreground: 218 5% 60%; /* Muted text color */
+    --accent: 180 30% 15%; /* Accent background */
+    --accent-foreground: 218 5% 90%; /* Accent text color */
+    --destructive: 0 100% 30%; /* Destructive background */
+    --destructive-foreground: 218 5% 90%; /* Destructive text color */
+    --border: 218 30% 18%; /* Border color */
+    --input: 218 30% 18%; /* Input background */
+    --ring: 218 54.4% 22.4%; /* Ring color */
+    --radius: 1rem; /* Border radius */
   }
 }
 
