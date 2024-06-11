@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "./index.css";
-///
+import "./assets/font.ttf";
+
 import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { Loader } from "./components/Loader";
 import { routeTree } from "./routeTree.gen";
