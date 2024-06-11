@@ -5,11 +5,18 @@ import {
   GitCommitVerticalIcon,
   UsersIcon,
 } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 export type Dao = {
   name: string;
+  description: string;
   governance: "decentralized" | "centralized" | "hybrid";
   revenues: number;
   expenses: number;
@@ -28,14 +35,15 @@ export const DaoItem = ({ dao }: DaoItemProps) => {
   const subItem = "flex items-center space-x-2 flex-1";
   return (
     <Card className="cursor-pointer bg-white dark:bg-gray-950 p-4  shadow-md">
-      <CardHeader>
-        <CardTitle className="flex items-center gap-4">
-          <Avatar>
-            <AvatarImage src={dao.avatarUrl} alt={dao.name} />
-            <AvatarFallback>{dao.name.slice(0, 2)}</AvatarFallback>
-          </Avatar>
-          {dao.name}
-        </CardTitle>
+      <CardHeader className="flex flex-row gap-4 items-center">
+        <Avatar className="w-16 h-16">
+          <AvatarImage src={dao.avatarUrl} alt={dao.name} />
+          <AvatarFallback>{dao.name.slice(0, 2)}</AvatarFallback>
+        </Avatar>
+        <div className="flex flex-col gap-1">
+          <CardTitle>{dao.name}</CardTitle>
+          <CardDescription>{dao.description}</CardDescription>
+        </div>
       </CardHeader>
       <CardContent>
         <div className={itemClass}>

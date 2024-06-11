@@ -22,7 +22,7 @@ function Root() {
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <div>
         <Header />
-        <main className="flex-1 p-4 flex flex-col gap-4 min-h-[calc(100dvh-56px)] max-w-[1400px] mx-auto">
+        <main className="flex-1 flex flex-col gap-4 min-h-[calc(100dvh-56px)] max-w-[1400px]">
           <Outlet />
           <Toaster />
           {import.meta.env.DEV && (

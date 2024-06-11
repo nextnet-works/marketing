@@ -3,6 +3,7 @@ import { Dao, DaoItem } from "./DaoItem";
 const daos: Dao[] = [
   {
     name: "DeFi Protocol DAO",
+    description: "A decentralized finance protocol DAO",
     governance: "decentralized",
     revenues: 3500000,
     expenses: 1000000,
@@ -13,6 +14,7 @@ const daos: Dao[] = [
   },
   {
     name: "NFT Marketplace DAO",
+    description: "A decentralized NFT marketplace DAO",
     governance: "decentralized",
     revenues: 1200000,
     expenses: 600000,
@@ -23,6 +25,7 @@ const daos: Dao[] = [
   },
   {
     name: "Social Media DAO",
+    description: "A social media DAO",
     governance: "hybrid",
     revenues: 750000,
     expenses: 300000,
@@ -33,6 +36,7 @@ const daos: Dao[] = [
   },
   {
     name: "Gaming Guild DAO",
+    description: "A decentralized gaming guild DAO",
     governance: "decentralized",
     revenues: 5000000,
     expenses: 2500000,
@@ -43,6 +47,7 @@ const daos: Dao[] = [
   },
   {
     name: "Web3 Development DAO",
+    description: "A web3 development DAO",
     governance: "centralized",
     revenues: 950000,
     expenses: 450000,
@@ -53,6 +58,7 @@ const daos: Dao[] = [
   },
   {
     name: "Metaverse DAO",
+    description: "A decentralized metaverse DAO",
     governance: "hybrid",
     revenues: 2800000,
     expenses: 1500000,
@@ -63,6 +69,7 @@ const daos: Dao[] = [
   },
   {
     name: "Decentralized Finance DAO",
+    description: "A decentralized finance DAO",
     governance: "decentralized",
     revenues: 4200000,
     expenses: 2100000,
@@ -73,6 +80,7 @@ const daos: Dao[] = [
   },
   {
     name: "Content Creation DAO",
+    description: "A content creation DAO",
     governance: "hybrid",
     revenues: 600000,
     expenses: 300000,
@@ -83,6 +91,7 @@ const daos: Dao[] = [
   },
   {
     name: "Insurance DAO",
+    description: "An insurance DAO",
     governance: "centralized",
     revenues: 1800000,
     expenses: 900000,
