@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   return (
-    <div>
+    <div className="p-4 mx-auto">
       <Section1 />
       <Section2 />
       <Section3 />
