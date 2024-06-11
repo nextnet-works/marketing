@@ -32,24 +32,6 @@ export const Section4 = () => {
               sustainability of the open-source community.
             </p>
           </div>
-          <ul className="grid gap-2 py-4">
-            <li>
-              <CheckIcon className="mr-2 inline-block h-4 w-4" />
-              Decentralised R&D: Reward contributors, Increased decentralization
-              and democratization (with the extent determined by the project).
-            </li>
-            <li>
-              <CheckIcon className="mr-2 inline-block h-4 w-4" />
-              Offloaded services (testing, support, contribution of
-              efforts/activities).
-            </li>
-            <li>
-              <CheckIcon className="mr-2 inline-block h-4 w-4" />
-              Food Chain optimization (shark picture): Codified cloud spend &
-              budgets with business input and DAO service consumption, Resources
-              steering (budget & features prioritization).
-            </li>
-          </ul>
         </div>
       </div>
     </SectionWrapper>
