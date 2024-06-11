@@ -11,8 +11,8 @@ export const Section1 = () => {
             SaaS Your CloudDAO
           </h1>
           <h2 className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-            An Open Governance Cloud Protocol (OGCP) provides a declarative
-            specification for business modeling, multicloud operations and
+            An Open Governance Cloud Protocol "OGCP"
+            Providing a declarative specification for business modeling, multicloud operations and
             decentralized governance using a unified permisionless ledger.
           </h2>
         </div>
