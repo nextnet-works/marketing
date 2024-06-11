@@ -9,6 +9,7 @@ const daos: Dao[] = [
     contributors: 450,
     proposals: 200,
     gitPushes: 1500,
+    avatarUrl: "https://i.pravatar.cc/300",
   },
   {
     name: "NFT Marketplace DAO",
@@ -18,6 +19,7 @@ const daos: Dao[] = [
     contributors: 200,
     proposals: 80,
     gitPushes: 600,
+    avatarUrl: "https://i.pravatar.cc/301",
   },
   {
     name: "Social Media DAO",
@@ -27,6 +29,7 @@ const daos: Dao[] = [
     contributors: 320,
     proposals: 150,
     gitPushes: 900,
+    avatarUrl: "https://i.pravatar.cc/302",
   },
   {
     name: "Gaming Guild DAO",
@@ -36,6 +39,7 @@ const daos: Dao[] = [
     contributors: 520,
     proposals: 350,
     gitPushes: 2200,
+    avatarUrl: "https://i.pravatar.cc/303",
   },
   {
     name: "Web3 Development DAO",
@@ -45,6 +49,7 @@ const daos: Dao[] = [
     contributors: 150,
     proposals: 90,
     gitPushes: 800,
+    avatarUrl: "https://i.pravatar.cc/304",
   },
   {
     name: "Metaverse DAO",
@@ -54,6 +59,7 @@ const daos: Dao[] = [
     contributors: 400,
     proposals: 220,
     gitPushes: 1700,
+    avatarUrl: "https://i.pravatar.cc/305",
   },
   {
     name: "Decentralized Finance DAO",
@@ -63,6 +69,7 @@ const daos: Dao[] = [
     contributors: 340,
     proposals: 190,
     gitPushes: 1200,
+    avatarUrl: "https://i.pravatar.cc/306",
   },
   {
     name: "Content Creation DAO",
@@ -72,6 +79,7 @@ const daos: Dao[] = [
     contributors: 180,
     proposals: 70,
     gitPushes: 500,
+    avatarUrl: "https://i.pravatar.cc/307",
   },
   {
     name: "Insurance DAO",
@@ -81,6 +89,7 @@ const daos: Dao[] = [
     contributors: 250,
     proposals: 120,
     gitPushes: 1000,
+    avatarUrl: "https://i.pravatar.cc/308",
   },
 ];
 

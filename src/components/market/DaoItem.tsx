@@ -6,6 +6,7 @@ import {
   UsersIcon,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 export type Dao = {
   name: string;
@@ -15,6 +16,7 @@ export type Dao = {
   contributors: number;
   proposals: number;
   gitPushes: number;
+  avatarUrl: string;
 };
 
 type DaoItemProps = {
@@ -27,7 +29,13 @@ export const DaoItem = ({ dao }: DaoItemProps) => {
   return (
     <Card className="cursor-pointer bg-white dark:bg-gray-950 p-4  shadow-md">
       <CardHeader>
-        <CardTitle>{dao.name}</CardTitle>
+        <CardTitle className="flex items-center gap-4">
+          <Avatar>
+            <AvatarImage src={dao.avatarUrl} alt={dao.name} />
+            <AvatarFallback>{dao.name.slice(0, 2)}</AvatarFallback>
+          </Avatar>
+          {dao.name}
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <div className={itemClass}>
