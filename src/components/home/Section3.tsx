@@ -7,10 +7,10 @@ export const Section3 = () => {
         <div className="flex flex-col justify-center space-y-4">
           <div className="space-y-2">
             <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-              Creating Permissionless Open Businesses With Code
+              Why Now?
             </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              Open GOV - no ops overheads
+              The era of open-source software and cloud native businesses
             </h2>
             <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
               No need for administrative/regulatory overhead. Viable Funding
