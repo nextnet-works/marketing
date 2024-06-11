@@ -18,7 +18,14 @@ export const Section1 = () => {
           </h2>
         </div>
         <Button asChild size="lg" className="w-72">
-          <Link to="/market">Go To App</Link>
+          <Link
+            to="/market"
+            search={{
+              section: "home",
+            }}
+          >
+            Go To App
+          </Link>
         </Button>
       </div>
     </SectionWrapper>
