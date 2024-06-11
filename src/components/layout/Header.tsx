@@ -1,20 +1,28 @@
 import { Link } from "@tanstack/react-router";
+import { MountainIcon } from "lucide-react";
 import { Button } from "../ui/button";
-import { AvatarMenu } from "./AvatarMenu";
 
 export const Header = () => {
   return (
-    <div className="p-4 flex gap-4">
-      <AvatarMenu />
-      <Button asChild variant="ghost">
-        <Link to="/">Dashboard</Link>
-      </Button>
-      <Button asChild variant="ghost">
-        <Link to="/">Deployments</Link>
-      </Button>
-      <Button asChild variant="ghost">
-        <Link to="/sdl-editor">SDL Editor</Link>
-      </Button>
-    </div>
+    <header className="px-4 lg:px-6 h-14 flex items-center border-b border-gray-50">
+      <Link href="#" className="flex items-center justify-center">
+        <MountainIcon className="h-6 w-6" />
+        <span className="sr-only">NextNet Protocol</span>
+      </Link>
+      <nav className="ml-auto flex gap-4 sm:gap-6">
+        <Button variant="link" asChild>
+          <Link href="#">Features</Link>
+        </Button>
+        <Button variant="link" asChild>
+          <Link href="#">Pricing</Link>
+        </Button>
+        <Button variant="link" asChild>
+          <Link href="#">About</Link>
+        </Button>
+        <Button variant="link" asChild>
+          <Link href="#">Contact</Link>
+        </Button>
+      </nav>
+    </header>
   );
 };
