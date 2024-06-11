@@ -1,4 +1,3 @@
-import { CheckIcon } from "lucide-react";
 import { SectionWrapper } from "./SectionWrapper";
 
 export const Section4 = () => {
