@@ -36,10 +36,12 @@ export const Section5 = () => {
           </p>
           <div className="flex flex-col gap-4 sm:flex-row w-full">
             <Button asChild variant="outline">
-              <Link href="#">Join Community</Link>
+              <Link href="https://discord.gg/zkcVfNDP">Join Community</Link>
             </Button>
             <Button>
-              <Link href="#">Contribute to the Project</Link>
+              <Link href="https://github.com/nextnet-works/akash-fleet-managment">
+                Contribute to the Project
+              </Link>
             </Button>
           </div>
         </div>

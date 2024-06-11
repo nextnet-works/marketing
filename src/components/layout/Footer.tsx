@@ -30,10 +30,14 @@ export const Footer = () => {
       </div>
       <nav className="flex gap-4 sm:gap-6">
         <Button variant="link" asChild className={buttonLinkClass}>
-          <Link href="#"> Terms of Service</Link>
+          <Link href="https://github.com/nextnet-works/akash-fleet-managment/tree/main#readme">
+            Terms of Service
+          </Link>
         </Button>
         <Button variant="link" asChild className={buttonLinkClass}>
-          <Link href="#">Privacy</Link>
+          <Link href="https://github.com/nextnet-works/akash-fleet-managment/tree/main#readme">
+            Privacy
+          </Link>
         </Button>
       </nav>
     </footer>
