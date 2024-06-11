@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 import Logo from "../../assets/logo.svg?react";
 export const Header = () => {
   return (
-    <header className="px-4 lg:px-6 h-14 flex items-center border-b border-gray-50">
+    <header className="px-4 lg:px-6 h-14 flex items-center">
       <Link href="#" className="flex items-center justify-center">
         <Logo className="h-36 w-auto" />
       </Link>
