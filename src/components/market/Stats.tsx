@@ -3,12 +3,12 @@ import { Card } from "../ui/card";
 
 const statsData = [
   {
-    title: "Total Revenues",
+    title: "Revenues",
     icon: DollarSignIcon,
     value: "$1.2M",
   },
   {
-    title: "Total Expenses",
+    title: "Expenses",
     icon: DollarSignIcon,
     value: "$800K",
   },
@@ -23,7 +23,7 @@ const statsData = [
     value: "3,450",
   },
   {
-    title: "Proposals  /Git-pushes",
+    title: "Commits",
     icon: GitCommitVerticalIcon,
     value: "12,345",
   },
