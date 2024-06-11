@@ -13,7 +13,8 @@ export const Section3 = () => {
               The era of open-source software and cloud native businesses
             </h2>
             <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-            The convergence of critical trends makes it an ideal time for DAO creation on our platform. Cloud-native businesses are shifting toward code-based operations, driving the demand for flexible, multi-cloud solutions. Avoiding vendor lock-in and reducing costs are paramount, leading to the adoption of abstracted cloud infrastructures. Web3 business models and the open-source economy enable sustainable and democratized product development. The increasing challenges in multi-cloud environments and rising demand driven by AI for alternatve  & cheaper infrastructure offers underscore the need for decentralized cloud infrastructure. Our platform offers an ideal environment for creating secure, transparent, and immutable cloud-native businesses today.
+            Cloud-native businesses are shifting toward code-based operations  while driving demand for more flexible & abstracted multi-cloud architecture in order to avoid vendor lock-in and the rising demand driven by AI for alternatve & cheaper infrastructure offers. 
+This underscores the need for decentralized cloud solutions and superior business models that align with the promises of Web3 and the open-source economy ethos, to enable sustainable and democratized product development.  Our platform provides a revolutionary environment for creating secure, transparent, and immutable cloud-native businesses today.
             </p>
           </div>
         </div>
