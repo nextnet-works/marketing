@@ -13,7 +13,7 @@ const queryClient = new QueryClient();
 
 const router = createRouter({
   routeTree,
-  defaultPendingComponent: () => <Loader />,
+  defaultPendingComponent: Loader,
   defaultErrorComponent: ({ error }) => <ErrorUI message={error.message} />,
   context: {
     queryClient,
