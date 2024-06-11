@@ -15,15 +15,16 @@ export const Section4 = () => {
         <div className="flex flex-col justify-center space-y-4">
           <div className="space-y-2">
             <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-              Cost-Efficient Cloud Development
+              Vision & Mission
             </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              Cloud OPEX reduction
+              Allowing developers to change the cloud market with code
             </h2>
             <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              DePIN Alternatives, Automated deployments of abstracted cloud
-              (Time-to-value, no learning curve), Open-source platform
-              experience (no locking).
+              Our vision is to democratize the cloud and open-source ecosystems, creating a more equitable, accessible, and efficient infrastructure for all.
+              Our mission is to empower developers and businesses with the tools and platform they need to create,
+              manage, and grow their own decentralized, cloud-native organizations. Our decentralized model fosters collaboration,
+              innovation, and fair revenue distribution, ensuring the growth and sustainability of the open-source community.
             </p>
           </div>
           <ul className="grid gap-2 py-4">
