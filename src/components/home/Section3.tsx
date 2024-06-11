@@ -1,8 +1,8 @@
-import { Section } from "./Section";
+import { SectionWrapper } from "./SectionWrapper";
 
 export const Section3 = () => {
   return (
-    <Section>
+    <SectionWrapper>
       <div className="grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
         <div className="flex flex-col justify-center space-y-4">
           <div className="space-y-2">
@@ -27,6 +27,6 @@ export const Section3 = () => {
           className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
         />
       </div>
-    </Section>
+    </SectionWrapper>
   );
 };
