@@ -25,7 +25,7 @@ export const DaoItem = ({ dao }: DaoItemProps) => {
   const itemClass = "flex items-center space-x-2 text-sm text-gray-500";
   const subItem = "flex items-center space-x-2 flex-1";
   return (
-    <Card className="p-4">
+    <Card>
       <CardHeader>
         <CardTitle>{dao.name}</CardTitle>
       </CardHeader>
