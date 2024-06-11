@@ -9,9 +9,8 @@ const buttons = [
   { label: "Contact", href: "#" },
 ] as const;
 
+export const buttonLinkClass = "text-white-500";
 export const Header = () => {
-  const buttonClass = "text-white-500";
-
   return (
     <header className="px-4 lg:px-6 h-14 flex items-center">
       <Link href="#" className="flex items-center justify-center">
@@ -23,7 +22,7 @@ export const Header = () => {
             key={button.label}
             variant="link"
             asChild
-            className={buttonClass}
+            className={buttonLinkClass}
           >
             <Link href={button.href}>{button.label}</Link>
           </Button>

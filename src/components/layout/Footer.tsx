@@ -6,6 +6,7 @@ import {
   GitHubLogoIcon,
   TwitterLogoIcon,
 } from "@radix-ui/react-icons";
+import { buttonLinkClass } from "./Header";
 
 export const Footer = () => {
   return (
@@ -28,10 +29,10 @@ export const Footer = () => {
         </Button>
       </div>
       <nav className="flex gap-4 sm:gap-6">
-        <Button variant="link" asChild>
+        <Button variant="link" asChild className={buttonLinkClass}>
           <Link href="#"> Terms of Service</Link>
         </Button>
-        <Button variant="link" asChild>
+        <Button variant="link" asChild className={buttonLinkClass}>
           <Link href="#">Privacy</Link>
         </Button>
       </nav>
