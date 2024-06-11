@@ -1,4 +1,4 @@
-import { Section } from "./Section";
+import { SectionWrapper } from "./SectionWrapper";
 
 const sectionsData = [
   {
@@ -20,7 +20,7 @@ const sectionsData = [
 
 export const Section2 = () => {
   return (
-    <Section>
+    <SectionWrapper>
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
         <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-3 lg:gap-12">
           {sectionsData.map((section, index) => (
@@ -33,6 +33,6 @@ export const Section2 = () => {
           ))}
         </div>
       </div>
-    </Section>
+    </SectionWrapper>
   );
 };

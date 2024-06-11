@@ -1,10 +1,10 @@
 import { Link } from "@tanstack/react-router";
-import { Section } from "./Section";
+import { SectionWrapper } from "./SectionWrapper";
 import { Button } from "../ui/button";
 
 export const Section5 = () => {
   return (
-    <Section>
+    <SectionWrapper>
       <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
         <div className="space-y-4">
           <div className="inline-block rounded-lg bg-gray-200 px-3 py-1 text-sm font-medium dark:bg-gray-700">
@@ -44,6 +44,6 @@ export const Section5 = () => {
           </div>
         </div>
       </div>
-    </Section>
+    </SectionWrapper>
   );
 };
