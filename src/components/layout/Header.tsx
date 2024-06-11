@@ -12,7 +12,7 @@ const buttons = [
 export const buttonLinkClass = "text-white-500";
 export const Header = () => {
   return (
-    <header className="px-4 lg:px-6 h-14 flex items-center">
+    <header className="px-4 lg:px-6 h-14 flex items-center sticky">
       <Link to="/" className="flex items-center justify-center">
         <Logo className="h-36 w-auto" />
       </Link>
