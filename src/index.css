@@ -61,10 +61,7 @@
 
 @font-face {
   font-family: "Font";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/assets/font.ttf") format("truetype");
+  src: url("assets/font.ttf") format("truetype");
 }
 
 body {
