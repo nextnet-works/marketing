@@ -13,7 +13,7 @@ const statsData = [
     value: "$800K",
   },
   {
-    title: "Active DAOs",
+    title: "DAOs",
     icon: UsersIcon,
     value: "124",
   },
