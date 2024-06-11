@@ -5,7 +5,6 @@ import {
   DropdownMenuContent,
   DropdownMenu,
 } from "@/components/ui/dropdown-menu";
-import { getKeplerAccounts } from "@/lib/kepler";
 import { useStore } from "@/store";
 import { LogOutIcon, LucideProps, UserIcon } from "lucide-react";
 import { ForwardRefExoticComponent, RefAttributes } from "react";
@@ -19,15 +18,7 @@ type Action = {
 };
 
 export function AvatarMenu() {
-  const { setAkashKey, akashKey } = useStore((state) => state);
-  const handleLoginWithKepler = async () => {
-    if (akashKey) {
-      setAkashKey(null);
-      return;
-    }
-    const accounts = await getKeplerAccounts();
-    setAkashKey(accounts[0].address);
-  };
+  const { akashKey } = useStore((state) => state);
 
   const accounts: Action[] = [
     {
@@ -50,7 +41,7 @@ export function AvatarMenu() {
         {accounts.map((account) => (
           <DropdownMenuItem
             key={account.name}
-            onClick={handleLoginWithKepler}
+            // onClick={handleLoginWithKepler}
             asChild
           >
             <Button

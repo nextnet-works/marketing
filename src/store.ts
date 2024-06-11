@@ -9,4 +9,3 @@ export const useStore = create<Store>((set) => ({
   akashKey: null,
   setAkashKey: (akashKey: string | null) => set({ akashKey }),
 }));
-////
