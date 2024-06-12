@@ -1,10 +1,4 @@
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  CardDescription,
-} from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import {
   Table,
   TableHeader,
@@ -15,7 +9,6 @@ import {
 } from "@/components/ui/table";
 
 import { Badge } from "@/components/ui/badge";
-import { Link } from "@tanstack/react-router";
 import { BookIcon, GlobeIcon, PowerIcon } from "lucide-react";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 

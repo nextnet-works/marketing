@@ -1,14 +1,14 @@
 import { Link } from "@tanstack/react-router";
-import { Button } from "../ui/button";
+// import { Button } from "../ui/button";
 import Logo from "../../assets/logo.svg?react";
 import ConnectWalletButton from "../wallet/connect-wallet";
 
-const buttons = [
-  { label: "Features", to: "/" },
-  { label: "Pricing", to: "/" },
-  { label: "About", to: "/" },
-  { label: "Contact", to: "/" },
-] as const;
+// const buttons = [
+//   { label: "Features", to: "/" },
+//   { label: "Pricing", to: "/" },
+//   { label: "About", to: "/" },
+//   { label: "Contact", to: "/" },
+// ] as const;
 
 export const buttonLinkClass = "text-white-500";
 export const Header = () => {
@@ -17,7 +17,7 @@ export const Header = () => {
       <Link to="/" className="flex items-center justify-center">
         <Logo className="h-36 w-auto" />
       </Link>
-      
+
       <nav className="ml-auto flex gap-4 sm:gap-6">
         <ConnectWalletButton />
         {/*buttons.map((button) => (
