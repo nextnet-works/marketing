@@ -1,8 +1,9 @@
-import { Route } from "@/routes/market";
+import { Route } from "@/routes/market/index";
 import { Dao, DaoItem } from "./DaoItem";
 
 const daos: Dao[] = [
   {
+    id: "1",
     name: "DeFi Protocol DAO",
     description: "A decentralized finance protocol DAO",
     governance: "decentralized",
@@ -14,6 +15,7 @@ const daos: Dao[] = [
     avatarUrl: "https://i.pravatar.cc/300",
   },
   {
+    id: "2",
     name: "NFT Marketplace DAO",
     description: "A decentralized NFT marketplace DAO",
     governance: "decentralized",
@@ -25,6 +27,7 @@ const daos: Dao[] = [
     avatarUrl: "https://i.pravatar.cc/301",
   },
   {
+    id: "3",
     name: "Social Media DAO",
     description: "A social media DAO",
     governance: "hybrid",
@@ -36,6 +39,7 @@ const daos: Dao[] = [
     avatarUrl: "https://i.pravatar.cc/302",
   },
   {
+    id: "4",
     name: "Gaming Guild DAO",
     description: "A decentralized gaming guild DAO",
     governance: "decentralized",
@@ -47,6 +51,7 @@ const daos: Dao[] = [
     avatarUrl: "https://i.pravatar.cc/303",
   },
   {
+    id: "5",
     name: "Web3 Development DAO",
     description: "A web3 development DAO",
     governance: "centralized",
@@ -58,6 +63,7 @@ const daos: Dao[] = [
     avatarUrl: "https://i.pravatar.cc/304",
   },
   {
+    id: "6",
     name: "Metaverse DAO",
     description: "A decentralized metaverse DAO",
     governance: "hybrid",
@@ -69,6 +75,7 @@ const daos: Dao[] = [
     avatarUrl: "https://i.pravatar.cc/305",
   },
   {
+    id: "7",
     name: "Decentralized Finance DAO",
     description: "A decentralized finance DAO",
     governance: "decentralized",
@@ -80,6 +87,7 @@ const daos: Dao[] = [
     avatarUrl: "https://i.pravatar.cc/306",
   },
   {
+    id: "8",
     name: "Content Creation DAO",
     description: "A content creation DAO",
     governance: "hybrid",
@@ -91,6 +99,7 @@ const daos: Dao[] = [
     avatarUrl: "https://i.pravatar.cc/307",
   },
   {
+    id: "9",
     name: "Insurance DAO",
     description: "An insurance DAO",
     governance: "centralized",

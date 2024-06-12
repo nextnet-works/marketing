@@ -1,3 +1,4 @@
+import { Layout } from "@/components/home/Layout";
 import { Section1 } from "@/components/home/Section1";
 import { Section2 } from "@/components/home/Section2";
 import { Section3 } from "@/components/home/Section3";
@@ -11,12 +12,12 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   return (
-    <div className="p-4 mx-auto">
+    <Layout>
       <Section1 />
       <Section2 />
       <Section3 />
       <Section4 />
       <Section5 />
-    </div>
+    </Layout>
   );
 }

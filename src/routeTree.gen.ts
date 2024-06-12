@@ -11,18 +11,24 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as MarketImport } from './routes/market'
 import { Route as IndexImport } from './routes/index'
+import { Route as MarketIndexImport } from './routes/market/index'
+import { Route as MarketDaoIdImport } from './routes/market/$daoId'
 
 // Create/Update Routes
 
-const MarketRoute = MarketImport.update({
-  path: '/market',
+const IndexRoute = IndexImport.update({
+  path: '/',
   getParentRoute: () => rootRoute,
 } as any)
 
-const IndexRoute = IndexImport.update({
-  path: '/',
+const MarketIndexRoute = MarketIndexImport.update({
+  path: '/market/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const MarketDaoIdRoute = MarketDaoIdImport.update({
+  path: '/market/$daoId',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -37,11 +43,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/market': {
-      id: '/market'
+    '/market/$daoId': {
+      id: '/market/$daoId'
+      path: '/market/$daoId'
+      fullPath: '/market/$daoId'
+      preLoaderRoute: typeof MarketDaoIdImport
+      parentRoute: typeof rootRoute
+    }
+    '/market/': {
+      id: '/market/'
       path: '/market'
       fullPath: '/market'
-      preLoaderRoute: typeof MarketImport
+      preLoaderRoute: typeof MarketIndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -49,7 +62,11 @@ declare module '@tanstack/react-router' {
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren({ IndexRoute, MarketRoute })
+export const routeTree = rootRoute.addChildren({
+  IndexRoute,
+  MarketDaoIdRoute,
+  MarketIndexRoute,
+})
 
 /* prettier-ignore-end */
 
@@ -60,14 +77,18 @@ export const routeTree = rootRoute.addChildren({ IndexRoute, MarketRoute })
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/market"
+        "/market/$daoId",
+        "/market/"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/market": {
-      "filePath": "market.tsx"
+    "/market/$daoId": {
+      "filePath": "market/$daoId.tsx"
+    },
+    "/market/": {
+      "filePath": "market/index.tsx"
     }
   }
 }

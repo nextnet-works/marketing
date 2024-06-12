@@ -21,6 +21,7 @@ export const SideBar = () => {
               search={{
                 section: s.section,
               }}
+              to="/market"
             >
               {({ isActive }) => {
                 return (

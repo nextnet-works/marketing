@@ -1,4 +1,5 @@
 import { DaoList } from "@/components/market/DaoList";
+import { Layout } from "@/components/market/Layout";
 import { SideBar } from "@/components/market/SideBar";
 import { Stats } from "@/components/market/Stats";
 import { Input } from "@/components/ui/input";
@@ -9,7 +10,7 @@ const MarketPageSchema = z.object({
 });
 export type MarketPageSchema = z.infer<typeof MarketPageSchema>;
 
-export const Route = createFileRoute("/market")({
+export const Route = createFileRoute("/market/")({
   component: Market,
   validateSearch: MarketPageSchema,
 });
@@ -17,8 +18,7 @@ export const Route = createFileRoute("/market")({
 function Market() {
   const { section } = Route.useSearch();
   return (
-    <div className="flex gap-4 min-h-[calc(100dvh-56px)] p-4">
-      <SideBar />
+    <Layout>
       <div className="flex-1 flex flex-col gap-4">
         {section === "home" && <Stats />}
         {section === "explore" && (
@@ -26,6 +26,6 @@ function Market() {
         )}
         <DaoList />
       </div>
-    </div>
+    </Layout>
   );
 }
