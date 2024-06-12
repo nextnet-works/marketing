@@ -1,13 +1,24 @@
 import { Button } from "../ui/button";
-import { HomeIcon, SearchIcon } from "lucide-react";
+import { HomeIcon, PlusIcon, SearchIcon } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { title } from "process";
 
 const sidebarSections = [
   {
     section: "home",
+    title: "Home",
     icon: <HomeIcon />,
   },
-  { section: "explore", icon: <SearchIcon /> },
+  { 
+    section: "explore",
+    title: "Explore",
+    icon: <SearchIcon />,
+  },
+  {
+    section: "create_dao",
+    title: "Create DAO",
+    icon: <PlusIcon />,
+  },
 ] as const;
 
 export const SideBar = () => {
@@ -30,7 +41,7 @@ export const SideBar = () => {
                     className="w-full flex gap-2 justify-start"
                   >
                     {s.icon}
-                    <span>{s.section}</span>
+                    <span>{s.title}</span>
                   </Button>
                 );
               }}
