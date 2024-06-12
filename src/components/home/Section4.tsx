@@ -1,11 +1,12 @@
 import { SectionWrapper } from "./SectionWrapper";
+import CloudHandImage from "../../assets/hero_hand_cloud.jpeg"
 
 export const Section4 = () => {
   return (
     <SectionWrapper>
       <div className="grid items-center gap-6 lg:grid-cols-[500px_1fr] lg:gap-12 xl:grid-cols-[550px_1fr]">
         <img
-          src="https://cdn.prod.website-files.com/5ff66329429d880392f6cba2/612e29f939931e7abcbde11b_saas%20Preview-p-800.png"
+          src={CloudHandImage}
           width="550"
           height="310"
           alt="Image"

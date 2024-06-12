@@ -1,4 +1,5 @@
 import { SectionWrapper } from "./SectionWrapper";
+import HeroCloudImage from "../../assets/hero_cloud_image.jpeg"
 
 export const Section3 = () => {
   return (
@@ -20,7 +21,7 @@ export const Section3 = () => {
           </div>
         </div>
         <img
-          src="https://cdn.prod.website-files.com/5ff66329429d880392f6cba2/612e29f939931e7abcbde11b_saas%20Preview-p-800.png"
+          src={HeroCloudImage}
           width="550"
           height="310"
           alt="Image"
