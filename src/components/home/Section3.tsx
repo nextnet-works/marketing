@@ -15,7 +15,7 @@ export const Section3 = () => {
             </h2>
             <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
             Cloud-native businesses are shifting toward code-based operations  while driving demand for more flexible & abstracted multi-cloud architecture to avoid vendor lock-in and the rising demand driven by AI for alternative & cheaper infrastructure offers.
-            This underscores the need for decentralized cloud solutions and superior business models that align with Web3's promises and the open-source economy ethos to enable sustainable and democratized product development.
+            <br />This underscores the need for decentralized cloud solutions and superior business models that align with Web3's promises and the open-source economy ethos to enable sustainable and democratized product development.
             Our platform provides a revolutionary environment for creating secure, transparent, immutable cloud-native businesses today.
             </p>
           </div>
