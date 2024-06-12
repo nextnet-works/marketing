@@ -63,9 +63,19 @@ export const Stats = ({ daoId }: StatsProps) => {
               Revenues:
             </div>
             <div className="font-semibold text-gray-900 dark:text-gray-100">
-              {dao.revenues}
+              ${dao.revenues}
             </div>
           </div>
+          <div className="flex items-center justify-between gap-1">
+            <div className="text-sm text-gray-600 dark:text-gray-400">
+              Expenses:
+            </div>
+            <div className="font-semibold text-gray-900 dark:text-gray-100">
+              ${dao.expenses}
+            </div>
+          </div>
+        </div>
+        <div className="mt-6 flex flex-wrap gap-2">
           <div className="flex items-center justify-between gap-1">
             <div className="text-sm text-gray-600 dark:text-gray-400">
               Code Commits:
@@ -80,6 +90,24 @@ export const Stats = ({ daoId }: StatsProps) => {
             </div>
             <div className="font-semibold text-gray-900 dark:text-gray-100">
               {dao.contributors}
+            </div>
+          </div>
+          <div className="flex items-center justify-between gap-1">
+            <div className="text-sm text-gray-600 dark:text-gray-400">
+              Proposals:
+            </div>
+            <div className="font-semibold text-gray-900 dark:text-gray-100">
+              {dao.proposals}
+            </div>
+          </div>
+        </div>
+        <div className="mt-6 flex flex-wrap gap-2">
+          <div className="flex items-center justify-between gap-1">
+            <div className="text-sm text-gray-600 dark:text-gray-400">
+              Governance:
+            </div>
+            <div className="font-semibold text-gray-900 dark:text-gray-100">
+              {dao.governance}
             </div>
           </div>
         </div>
