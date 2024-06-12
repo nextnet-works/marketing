@@ -113,41 +113,6 @@ export const HomeSection = () => {
                 </CardContent>
               </Card>
             </div>
-            <div className="flex flex-col gap-4">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Contributors</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid gap-2">
-                    <div className="flex items-center justify-between">
-                      <div className="text-sm text-gray-600 dark:text-gray-400">
-                        Funding
-                      </div>
-                      <div className="font-semibold text-gray-900 dark:text-gray-100">
-                        25
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <div className="text-sm text-gray-600 dark:text-gray-400">
-                        Code
-                      </div>
-                      <div className="font-semibold text-gray-900 dark:text-gray-100">
-                        15
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <div className="text-sm text-gray-600 dark:text-gray-400">
-                        Community
-                      </div>
-                      <div className="font-semibold text-gray-900 dark:text-gray-100">
-                        40
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
           </div>
         </div>
       </section>
