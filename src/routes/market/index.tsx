@@ -1,3 +1,4 @@
+import { CreateDAO } from "@/components/market/CreateDAO";
 import { DaoList } from "@/components/market/DaoList";
 import { Layout } from "@/components/market/Layout";
 import { SideBar } from "@/components/market/SideBar";
@@ -24,7 +25,8 @@ function Market() {
         {section === "explore" && (
           <Input placeholder="Search..." className="w-full" />
         )}
-        <DaoList />
+        {section === "create_dao" && <CreateDAO />}
+        {section !== "create_dao" && <DaoList />}
       </div>
     </Layout>
   );
