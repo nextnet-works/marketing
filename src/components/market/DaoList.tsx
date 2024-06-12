@@ -1,11 +1,12 @@
 import { Route } from "@/routes/market/index";
 import { Dao, DaoItem } from "./DaoItem";
 
-const daos: Dao[] = [
+export const daos: Dao[] = [
   {
     id: "1",
     name: "DeFi Protocol DAO",
     description: "A decentralized finance protocol DAO",
+    category: ["DeFi"],
     governance: "decentralized",
     revenues: 3500000,
     expenses: 1000000,
@@ -17,6 +18,7 @@ const daos: Dao[] = [
   {
     id: "2",
     name: "NFT Marketplace DAO",
+    category: ["NFT"],
     description: "A decentralized NFT marketplace DAO",
     governance: "decentralized",
     revenues: 1200000,
@@ -29,6 +31,7 @@ const daos: Dao[] = [
   {
     id: "3",
     name: "Social Media DAO",
+    category: ["Social"],
     description: "A social media DAO",
     governance: "hybrid",
     revenues: 750000,
@@ -41,6 +44,7 @@ const daos: Dao[] = [
   {
     id: "4",
     name: "Gaming Guild DAO",
+    category: ["Gaming"],
     description: "A decentralized gaming guild DAO",
     governance: "decentralized",
     revenues: 5000000,
@@ -54,6 +58,7 @@ const daos: Dao[] = [
     id: "5",
     name: "Web3 Development DAO",
     description: "A web3 development DAO",
+    category: ["Web3"],
     governance: "centralized",
     revenues: 950000,
     expenses: 450000,
@@ -65,6 +70,7 @@ const daos: Dao[] = [
   {
     id: "6",
     name: "Metaverse DAO",
+    category: ["Gaming", "NFT"],
     description: "A decentralized metaverse DAO",
     governance: "hybrid",
     revenues: 2800000,
@@ -77,6 +83,7 @@ const daos: Dao[] = [
   {
     id: "7",
     name: "Decentralized Finance DAO",
+    category: ["DeFi"],
     description: "A decentralized finance DAO",
     governance: "decentralized",
     revenues: 4200000,
@@ -89,6 +96,7 @@ const daos: Dao[] = [
   {
     id: "8",
     name: "Content Creation DAO",
+    category: ["Social"],
     description: "A content creation DAO",
     governance: "hybrid",
     revenues: 600000,
@@ -101,6 +109,7 @@ const daos: Dao[] = [
   {
     id: "9",
     name: "Insurance DAO",
+    category: ["DeFi"],
     description: "An insurance DAO",
     governance: "centralized",
     revenues: 1800000,
