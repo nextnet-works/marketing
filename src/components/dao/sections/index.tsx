@@ -6,6 +6,7 @@ import { Infrastructure } from "./Infrastructure";
 import { Financials } from "./Financials";
 import { Governance } from "./Governance";
 import { Analytics } from "./Analytics";
+import { Contributors } from "./Contributors";
 
 type TabsProps = {
   daoId: string;
@@ -35,7 +36,7 @@ const sections = [
   {
     name: "Contributors",
     icon: UsersIcon,
-    component: HomeSection,
+    component: Contributors,
   },
   {
     name: "Analytics",

@@ -11,7 +11,15 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "@tanstack/react-router";
-import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
+import {
+  BracketsIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+  CodeIcon,
+  GavelIcon,
+  GitPullRequestIcon,
+  HashIcon,
+} from "lucide-react";
 type Proposal = {
   id: string;
   name: string;
@@ -131,7 +139,34 @@ export const Governance = () => {
     return 0;
   });
   return (
-    <div className="w-full max-w-6xl mx-auto p-4 md:p-6">
+    <div className="w-full max-w-6xl mx-auto p-4 md:p-6 flex flex-col gap-4">
+      <div className="bg-[#333] p-4 flex space-x-4 rounded-lg">
+        <div className="bg-[#444] p-3 rounded-lg flex flex-col items-center justify-center">
+          <CodeIcon className="text-white h-6 w-6" />
+          <div className="text-white mt-1">Active Code Members</div>
+          <div className="text-white font-bold">345</div>
+        </div>
+        <div className="bg-[#444] p-3 rounded-lg flex flex-col items-center justify-center">
+          <GavelIcon className="text-white h-6 w-6" />
+          <div className="text-white mt-1">Active Gov Members</div>
+          <div className="text-white font-bold">345</div>
+        </div>
+        <div className="bg-[#444] p-3 rounded-lg flex flex-col items-center justify-center">
+          <BracketsIcon className="text-white h-6 w-6" />
+          <div className="text-white mt-1">Code updates proposals</div>
+          <div className="text-white font-bold">1.2M</div>
+        </div>
+        <div className="bg-[#444] p-3 rounded-lg flex flex-col items-center justify-center">
+          <GitPullRequestIcon className="text-white h-6 w-6" />
+          <div className="text-white mt-1">Open Pull-Requests</div>
+          <div className="text-white font-bold">0.5M</div>
+        </div>
+        <div className="bg-[#444] p-3 rounded-lg flex flex-col items-center justify-center">
+          <HashIcon className="text-white h-6 w-6" />
+          <div className="text-white mt-1"># Of Commits</div>
+          <div className="text-white font-bold">1234</div>
+        </div>
+      </div>
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-200">
           Change Management Proposals
