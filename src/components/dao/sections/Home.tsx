@@ -16,6 +16,8 @@ import {
 
 import { Badge } from "@/components/ui/badge";
 import { Link } from "@tanstack/react-router";
+import { BookIcon, GlobeIcon, PowerIcon } from "lucide-react";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 export const HomeSection = () => {
   return (
@@ -167,52 +169,97 @@ export const HomeSection = () => {
               owned by the Acme DAO.
             </p>
           </div>
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
             <Card>
               <CardHeader>
-                <CardTitle>Acme Cloud</CardTitle>
-                <CardDescription>
-                  A decentralized cloud computing platform.
-                </CardDescription>
+                <CardTitle>Acme Swap</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-col gap-2">
-                  <Link href="#" className="text-indigo-600 underline">
-                    acmecloud.xyz
-                  </Link>
-                  <Link href="#" className="text-indigo-600 underline">
-                    GitHub Repository
-                  </Link>
-                  <Link href="#" className="text-indigo-600 underline">
-                    Documentation
-                  </Link>
-                  <Link href="#" className="text-indigo-600 underline">
-                    Support Discord
-                  </Link>
+                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                  <GlobeIcon className="h-4 w-4" />
+                  <a href="#" className="underline underline-offset-2">
+                    acme.swap
+                  </a>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                  <GitHubLogoIcon className="h-4 w-4" />
+                  <a href="#" className="underline underline-offset-2">
+                    acme-dao/acme-swap
+                  </a>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                  <BookIcon className="h-4 w-4" />
+                  <a href="#" className="underline underline-offset-2">
+                    Docs
+                  </a>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                  <PowerIcon className="h-4 w-4" />
+                  <a href="#" className="underline underline-offset-2">
+                    Support
+                  </a>
                 </div>
               </CardContent>
             </Card>
             <Card>
               <CardHeader>
-                <CardTitle>Acme Wallet</CardTitle>
-                <CardDescription>
-                  A secure multi-chain crypto wallet.
-                </CardDescription>
+                <CardTitle>Acme Lend</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-col gap-2">
-                  <Link href="#" className="text-indigo-600 underline">
-                    acmewallet.app
-                  </Link>
-                  <Link href="#" className="text-indigo-600 underline">
-                    GitHub Repository
-                  </Link>
-                  <Link href="#" className="text-indigo-600 underline">
-                    Documentation
-                  </Link>
-                  <Link href="#" className="text-indigo-600 underline">
-                    Support Twitter
-                  </Link>
+                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                  <GlobeIcon className="h-4 w-4" />
+                  <a href="#" className="underline underline-offset-2">
+                    acme.lend
+                  </a>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                  <GitHubLogoIcon className="h-4 w-4" />
+                  <a href="#" className="underline underline-offset-2">
+                    acme-dao/acme-lend
+                  </a>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                  <BookIcon className="h-4 w-4" />
+                  <a href="#" className="underline underline-offset-2">
+                    Docs
+                  </a>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                  <PowerIcon className="h-4 w-4" />
+                  <a href="#" className="underline underline-offset-2">
+                    Support
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Acme Earn</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                  <GlobeIcon className="h-4 w-4" />
+                  <a href="#" className="underline underline-offset-2">
+                    acme.earn
+                  </a>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                  <GitHubLogoIcon className="h-4 w-4" />
+                  <a href="#" className="underline underline-offset-2">
+                    acme-dao/acme-earn
+                  </a>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                  <BookIcon className="h-4 w-4" />
+                  <a href="#" className="underline underline-offset-2">
+                    Docs
+                  </a>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                  <PowerIcon className="h-4 w-4" />
+                  <a href="#" className="underline underline-offset-2">
+                    Support
+                  </a>
                 </div>
               </CardContent>
             </Card>
