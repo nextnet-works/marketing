@@ -11,15 +11,10 @@ export const Section5 = () => {
             About Us
           </div>
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            NextNet Protocol: Decentralizing the Internet
+            Decentralizing the Cloud
           </h2>
           <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-            NextNet Protocol is on a mission to create a decentralized,
-            user-centric internet that empowers individuals and communities. By
-            leveraging blockchain technology and decentralized infrastructure,
-            we're building a platform that puts control back in the hands of
-            users, ensuring privacy, security, and equitable access to
-            information and opportunities.
+            NextNet is a collective of forward-thinking individuals dedicated to changing the way businesses operate in the digital age. With decades of experience in the fields of cloud technology, open-source software, and decentralized systems, our team is committed to creating a platform that empowers businesses to create, operate, and govern in a truly democratic and transparent manner.
           </p>
         </div>
         <div className="space-y-4">
