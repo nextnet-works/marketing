@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Footer } from "@/components/layout/Footer";
 import { useEffect } from "react";
+import { HeaderControllerProvider } from "@/components/layout/HeaderControllerProvider";
 
 export const Route = createRootRoute({
   component: Root,
@@ -20,18 +21,20 @@ function Root() {
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <Header />
-      <main className="min-h-[calc(100dvh-56px)]">
-        <Outlet />
-      </main>
-      <Toaster />
-      {import.meta.env.DEV && (
-        <>
-          <TanStackRouterDevtools position="bottom-right" />
-          <ReactQueryDevtools buttonPosition="top-right" />
-        </>
-      )}
-      <Footer />
+      <HeaderControllerProvider>
+        <Header />
+        <main className="min-h-[calc(100dvh-56px)]">
+          <Outlet />
+        </main>
+        <Toaster />
+        {import.meta.env.DEV && (
+          <>
+            <TanStackRouterDevtools position="bottom-right" />
+            <ReactQueryDevtools buttonPosition="top-right" />
+          </>
+        )}
+        <Footer />
+      </HeaderControllerProvider>
     </ThemeProvider>
   );
 }

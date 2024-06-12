@@ -1,9 +1,11 @@
+import { useHeaderController } from "@/components/layout/HeaderControllerContext";
 import { CreateDAO } from "@/components/market/CreateDAO";
 import { DaoList } from "@/components/market/DaoList";
 import { Layout } from "@/components/market/Layout";
 import { Stats } from "@/components/market/Stats";
 import { Input } from "@/components/ui/input";
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
 import z from "zod";
 const MarketPageSchema = z.object({
   section: z.string().optional().default("home"),
@@ -17,6 +19,12 @@ export const Route = createFileRoute("/market/")({
 
 function Market() {
   const { section } = Route.useSearch();
+  const { setShowConnectWallet } = useHeaderController()
+
+  useEffect(() => {
+    setShowConnectWallet(true)
+  }, [setShowConnectWallet])
+
   return (
     <Layout>
       <div className="flex-1 flex flex-col gap-4">
