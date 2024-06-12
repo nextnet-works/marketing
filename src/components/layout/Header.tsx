@@ -1,14 +1,6 @@
 import { Link } from "@tanstack/react-router";
-// import { Button } from "../ui/button";
 import Logo from "../../assets/logo.svg?react";
 import ConnectWalletButton from "../wallet/connect-wallet";
-
-// const buttons = [
-//   { label: "Features", to: "/" },
-//   { label: "Pricing", to: "/" },
-//   { label: "About", to: "/" },
-//   { label: "Contact", to: "/" },
-// ] as const;
 
 export const buttonLinkClass = "text-white-500";
 export const Header = () => {
