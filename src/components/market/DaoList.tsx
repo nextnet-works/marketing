@@ -1,6 +1,8 @@
 import { Route } from "@/routes/market/index";
 import { Dao, DaoItem } from "./DaoItem";
 
+const LOGO_TOKEN = "pk_LIVAP5iSTZa72Y5Iqm7PEQ";
+
 export const daos: Dao[] = [
   {
     id: "1",
@@ -13,7 +15,7 @@ export const daos: Dao[] = [
     contributors: 450,
     proposals: 200,
     gitPushes: 1500,
-    avatarUrl: "https://i.pravatar.cc/300",
+    avatarUrl: `https://img.logo.dev/nvidia.com?token=${LOGO_TOKEN}`,
   },
   {
     id: "2",
@@ -26,7 +28,7 @@ export const daos: Dao[] = [
     contributors: 200,
     proposals: 80,
     gitPushes: 600,
-    avatarUrl: "https://i.pravatar.cc/301",
+    avatarUrl: `https://img.logo.dev/ethereum.org?token=${LOGO_TOKEN}`,
   },
   {
     id: "3",
@@ -39,7 +41,7 @@ export const daos: Dao[] = [
     contributors: 320,
     proposals: 150,
     gitPushes: 900,
-    avatarUrl: "https://i.pravatar.cc/302",
+    avatarUrl: `https://img.logo.dev/facebook.com?token=${LOGO_TOKEN}`,
   },
   {
     id: "4",
@@ -52,7 +54,7 @@ export const daos: Dao[] = [
     contributors: 520,
     proposals: 350,
     gitPushes: 2200,
-    avatarUrl: "https://i.pravatar.cc/303",
+    avatarUrl: `https://img.logo.dev/sony.com?token=${LOGO_TOKEN}`,
   },
   {
     id: "5",
@@ -65,7 +67,7 @@ export const daos: Dao[] = [
     contributors: 150,
     proposals: 90,
     gitPushes: 800,
-    avatarUrl: "https://i.pravatar.cc/304",
+    avatarUrl: `https://img.logo.dev/google.com?token=${LOGO_TOKEN}`,
   },
   {
     id: "6",
@@ -78,7 +80,7 @@ export const daos: Dao[] = [
     contributors: 400,
     proposals: 220,
     gitPushes: 1700,
-    avatarUrl: "https://i.pravatar.cc/305",
+    avatarUrl: `https://img.logo.dev/microsoft.com?token=${LOGO_TOKEN}`,
   },
   {
     id: "7",
@@ -91,7 +93,7 @@ export const daos: Dao[] = [
     contributors: 340,
     proposals: 190,
     gitPushes: 1200,
-    avatarUrl: "https://i.pravatar.cc/306",
+    avatarUrl: `https://img.logo.dev/apple.com?token=${LOGO_TOKEN}`,
   },
   {
     id: "8",
@@ -104,7 +106,7 @@ export const daos: Dao[] = [
     contributors: 180,
     proposals: 70,
     gitPushes: 500,
-    avatarUrl: "https://i.pravatar.cc/307",
+    avatarUrl: `https://img.logo.dev/amazon.com?token=${LOGO_TOKEN}`,
   },
   {
     id: "9",
@@ -117,7 +119,7 @@ export const daos: Dao[] = [
     contributors: 250,
     proposals: 120,
     gitPushes: 1000,
-    avatarUrl: "https://i.pravatar.cc/308",
+    avatarUrl: `https://img.logo.dev/netflix.com?token=${LOGO_TOKEN}`,
   },
 ];
 
