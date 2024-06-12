@@ -19,8 +19,8 @@ export type Dao = {
   id: string;
   name: string;
   description: string;
-  category: ("DeFi" | "NFT" | "Social" | "Gaming" | "Web3" | "Cloud Services")[];
-  governance: "decentralized" | "centralized" | "hybrid" | "NFT Based";
+  category: ("DeFi" | "NFT" | "Social" | "Gaming" | "Web3" | "Cloud Services" | "DePin")[];
+  governance: "decentralized" | "centralized" | "hybrid" | "NFT Based" | "Multi-Sig" | "Token Based";
   revenues: number;
   expenses: number;
   contributors: number;
