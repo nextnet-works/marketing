@@ -1,48 +1,68 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
-import {
-  HomeIcon,
-  SettingsIcon,
-  UsersIcon,
-  GlobeIcon,
-  ExpandIcon,
-  Home,
-} from "lucide-react";
+import { HomeIcon, SettingsIcon, UsersIcon, GlobeIcon } from "lucide-react";
 import { HomeSection } from "./Home";
+import { Infrastructure } from "./Infrastructure";
+import { Financials } from "./Financials";
+import { Governance } from "./Governance";
 
 type TabsProps = {
   daoId: string;
 };
+
+const sections = [
+  {
+    name: "Home",
+    icon: HomeIcon,
+    component: HomeSection,
+  },
+  {
+    name: "Infrastructure",
+    icon: SettingsIcon,
+    component: Infrastructure,
+  },
+  {
+    name: "Financials",
+    icon: UsersIcon,
+    component: Financials,
+  },
+  {
+    name: "Governance",
+    icon: GlobeIcon,
+    component: Governance,
+  },
+  {
+    name: "Contributors",
+    icon: UsersIcon,
+    component: HomeSection,
+  },
+  {
+    name: "Analytics",
+    icon: GlobeIcon,
+    component: HomeSection,
+  },
+] as const;
 
 export const Sections = ({ daoId }: TabsProps) => {
   return (
     <div className="container px-4 md:px-6">
       <Tabs defaultValue="home">
         <TabsList className="flex w-full justify-center gap-4">
-          <TabsTrigger value="home" className="flex items-center gap-2">
-            <HomeIcon className="h-5 w-5" />
-            Home
-          </TabsTrigger>
-          <TabsTrigger value="settings" className="flex items-center gap-2">
-            <SettingsIcon className="h-5 w-5" />
-            Settings
-          </TabsTrigger>
-          <TabsTrigger value="members" className="flex items-center gap-2">
-            <UsersIcon className="h-5 w-5" />
-            Members
-          </TabsTrigger>
-          <TabsTrigger value="governance" className="flex items-center gap-2">
-            <GlobeIcon className="h-5 w-5" />
-            Governance
-          </TabsTrigger>
-          <TabsTrigger value="more" className="flex items-center gap-2">
-            <ExpandIcon className="h-5 w-5" />
-            More
-          </TabsTrigger>
+          {sections.map((section) => (
+            <TabsTrigger
+              value={section.name}
+              className="flex items-center gap-2"
+            >
+              <section.icon className="h-5 w-5" />
+              {section.name}
+            </TabsTrigger>
+          ))}
         </TabsList>
-        <TabsContent value="home">
-          <HomeSection />
-        </TabsContent>
+        {sections.map((section) => (
+          <TabsContent value={section.name}>
+            <section.component />
+          </TabsContent>
+        ))}
       </Tabs>
     </div>
   );
