@@ -1,7 +1,6 @@
 import { Button } from "../ui/button";
 import { HomeIcon, PlusIcon, SearchIcon } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import { title } from "process";
 
 const sidebarSections = [
   {
@@ -9,7 +8,7 @@ const sidebarSections = [
     title: "Home",
     icon: <HomeIcon />,
   },
-  { 
+  {
     section: "explore",
     title: "Explore",
     icon: <SearchIcon />,

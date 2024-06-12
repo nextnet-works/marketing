@@ -12,9 +12,23 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "@tanstack/react-router";
 import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
+interface Proposal {
+  id: string;
+  name: string;
+  version: string;
+  changeType: string;
+  approvalRequired: string;
+  status: string;
+  approvedBy: string;
+  changeset: string;
+  discussionLinks: string[];
+  transactionId: string;
+}
+
+type ProposalKey = keyof Proposal;
 
 export const Governance = () => {
-  const [proposals, setProposals] = useState([
+  const [proposals, _] = useState([
     {
       id: "PROP-001",
       name: "Increase Staking Rewards",
@@ -111,8 +125,9 @@ export const Governance = () => {
     );
   });
   const sortedProposals = filteredProposals.sort((a, b) => {
-    if (a[sortColumn] < b[sortColumn]) return sortDirection === "asc" ? -1 : 1;
-    if (a[sortColumn] > b[sortColumn]) return sortDirection === "asc" ? 1 : -1;
+    const key = sortColumn as ProposalKey;
+    if (a[key] < b[key]) return sortDirection === "asc" ? -1 : 1;
+    if (a[key] > b[key]) return sortDirection === "asc" ? 1 : -1;
     return 0;
   });
   return (
@@ -295,7 +310,7 @@ export const Governance = () => {
                   </Link>
                 </TableCell>
                 <TableCell>
-                  {proposal.discussionLinks.map((link, index) => (
+                  {proposal.discussionLinks.map((_, index) => (
                     <div key={index}>
                       <Link
                         href="#"
@@ -400,7 +415,7 @@ export const Governance = () => {
               <div>
                 {proposals
                   .find((p) => p.id === expandedProposalId)
-                  ?.discussionLinks.map((link, index) => (
+                  ?.discussionLinks.map((_, index) => (
                     <div key={index}>
                       <Link
                         href="#"

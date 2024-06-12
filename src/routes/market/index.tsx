@@ -1,7 +1,6 @@
 import { CreateDAO } from "@/components/market/CreateDAO";
 import { DaoList } from "@/components/market/DaoList";
 import { Layout } from "@/components/market/Layout";
-import { SideBar } from "@/components/market/SideBar";
 import { Stats } from "@/components/market/Stats";
 import { Input } from "@/components/ui/input";
 import { createFileRoute } from "@tanstack/react-router";

@@ -5,6 +5,7 @@ import { HomeSection } from "./Home";
 import { Infrastructure } from "./Infrastructure";
 import { Financials } from "./Financials";
 import { Governance } from "./Governance";
+import { Analytics } from "./Analytics";
 
 type TabsProps = {
   daoId: string;
@@ -39,11 +40,12 @@ const sections = [
   {
     name: "Analytics",
     icon: GlobeIcon,
-    component: HomeSection,
+    component: Analytics,
   },
 ] as const;
 
 export const Sections = ({ daoId }: TabsProps) => {
+  console.log(daoId);
   return (
     <div className="container px-4 md:px-6">
       <Tabs defaultValue="home">
