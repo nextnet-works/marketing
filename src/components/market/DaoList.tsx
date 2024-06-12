@@ -6,15 +6,15 @@ const LOGO_TOKEN = "pk_LIVAP5iSTZa72Y5Iqm7PEQ";
 export const daos: Dao[] = [
   {
     id: "1",
-    name: "DeFi Protocol DAO",
-    description: "A decentralized finance protocol DAO",
-    category: ["DeFi"],
-    governance: "decentralized",
+    name: "The Observability CloudDao",
+    description: "aims to provide a managed OpenTelemetry Service (OTaaS) in a vendor agnostic way, to instrument and collect application data in order to provide developers best-in-class Observability capabilities. This central service will provide all teams with their own OpenTelemetry collector instance. These instances contains configuration that is managed and owned centrally by the DAOs or users of the service",
+    category: ["Cloud Services"],
+    governance: "NFT Based",
     revenues: 3500000,
     expenses: 1000000,
-    contributors: 450,
-    proposals: 200,
-    gitPushes: 1500,
+    contributors: 137,
+    proposals: 2000,
+    gitPushes: 789,
     avatarUrl: `https://img.logo.dev/nvidia.com?token=${LOGO_TOKEN}`,
   },
   {
