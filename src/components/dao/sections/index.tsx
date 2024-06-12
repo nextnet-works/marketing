@@ -49,7 +49,7 @@ export const Sections = ({ daoId }: TabsProps) => {
   console.log(daoId);
   return (
     <div className="container px-4 md:px-6">
-      <Tabs defaultValue="home">
+      <Tabs defaultValue="Home" >
         <TabsList className="flex w-full justify-center gap-4">
           {sections.map((section) => (
             <TabsTrigger
