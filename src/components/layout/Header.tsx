@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "../ui/button";
 import Logo from "../../assets/logo.svg?react";
+import ConnectWalletButton from "../wallet/connect-wallet";
 
 const buttons = [
   { label: "Features", to: "/" },
@@ -16,8 +17,10 @@ export const Header = () => {
       <Link to="/" className="flex items-center justify-center">
         <Logo className="h-36 w-auto" />
       </Link>
+      
       <nav className="ml-auto flex gap-4 sm:gap-6">
-        {buttons.map((button) => (
+        <ConnectWalletButton />
+        {/*buttons.map((button) => (
           <Button
             key={button.label}
             variant="link"
@@ -26,7 +29,7 @@ export const Header = () => {
           >
             <Link to={button.to}>{button.label}</Link>
           </Button>
-        ))}
+        ))*/}
       </nav>
     </header>
   );
