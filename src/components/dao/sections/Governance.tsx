@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "@tanstack/react-router";
 import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
-interface Proposal {
+type Proposal = {
   id: string;
   name: string;
   version: string;
@@ -23,7 +23,7 @@ interface Proposal {
   changeset: string;
   discussionLinks: string[];
   transactionId: string;
-}
+};
 
 type ProposalKey = keyof Proposal;
 

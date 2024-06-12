@@ -301,6 +301,39 @@ export const HomeSection = () => {
                 </Table>
               </CardContent>
             </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Active Resources</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Service</TableHead>
+                      <TableHead>Provider</TableHead>
+                      <TableHead>Cost</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell>Cloud Compute</TableCell>
+                      <TableCell>Acme Cloud</TableCell>
+                      <TableCell>$5,000/month</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Storage</TableCell>
+                      <TableCell>Filecoin</TableCell>
+                      <TableCell>$2,000/month</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>CDN</TableCell>
+                      <TableCell>Cloudflare</TableCell>
+                      <TableCell>$500/month</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
