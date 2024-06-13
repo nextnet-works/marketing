@@ -19,9 +19,87 @@ import {
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { CircleIcon } from "lucide-react";
 
+const mockData = {
+  leftBlock: [
+    {
+      title: "Total Active Nodes",
+      description: "Total number of nodes based on current filters",
+      value: "25",
+    },
+    {
+      title: "Total Duration",
+      description:
+        "Total duration of all leases combined based on current filters",
+      value: "10 days 5 hours",
+    },
+    {
+      title: "Remaining Duration~",
+      description:
+        "Remaining duration before out of funds based on current filters",
+      value: "2 days 3 hours",
+    },
+  ],
+  rightBlock: [
+    {
+      title: "Total Balance",
+      description:
+        "Total balance (wallet + all escrow accounts + amount spent on leases)",
+      value: "5000.00",
+    },
+    {
+      title: "Remaining Balance",
+      description: "Remaining balance (wallet + all escrow accounts)",
+      value: "1200.00",
+    },
+    {
+      title: "Total Spending",
+      description: "Total spending on leases",
+      value: "3800.00",
+    },
+    {
+      title: "Spending per Hour",
+      description: "Spending per hour based on current leases",
+      value: "15.50",
+    },
+  ],
+};
+
 export const Financials = () => {
   return (
     <div className="grid grid-cols-1 gap-8 mx-auto justify-center items-center">
+      <Card>
+        <CardHeader>
+          <CardTitle>Analytics</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div>
+              {mockData.leftBlock.map((item) => (
+                <div key={item.title} className="mb-4">
+                  <h3 className="text-sm font-semibold text-gray-500 flex items-center gap-2">
+                    <span className="min-w-[150px]">{item.title}: </span>
+                    <span className="text-lg font-semibold text-gray-800 dark:text-gray-200 min-w-[100px] text-end">
+                      {item.value}
+                    </span>
+                  </h3>
+                </div>
+              ))}
+            </div>
+            <div>
+              {mockData.rightBlock.map((item) => (
+                <div key={item.title} className="mb-4">
+                  <h3 className="text-sm font-semibold text-gray-500 flex items-center gap-2">
+                    <span className="min-w-[150px]">{item.title}: </span>
+                    <span className="text-lg font-semibold text-gray-800 dark:text-gray-200 min-w-[100px] text-end">
+                      ${item.value}
+                    </span>
+                  </h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </CardContent>
+      </Card>
       <Card className="h-full w-full mx-auto">
         <CardHeader>
           <CardTitle>Profit & Loss Statement</CardTitle>
