@@ -48,12 +48,13 @@ const statsData: Stat[] = [
 const statsTimeFrames = ["7 days", "30 days", "6 months", "1 year"] as const;
 
 export const Stats = () => (
-  <Card className="bg-gray-100 dark:bg-gray-800 py-8 px-4 lg:px-6 ">
-    <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
+  <Card className="bg-gray-100 dark:bg-gray-800 py-8 px-4 lg:px-6">
+    <div className="container mx-auto grid grid-cols-1 gap-6">
       <div className="grid gap-4">
         <h1 className="text-2xl font-bold">Home</h1>
         <p className="text-gray-500 dark:text-gray-400">
-          Explore and discover the latest decentralized cloud businesses on the internet.
+          Explore and discover the latest decentralized cloud businesses on the
+          internet.
         </p>
       </div>
       <div className="flex flex-col gap-4">

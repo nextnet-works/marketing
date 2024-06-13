@@ -1,8 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 import { SectionWrapper } from "./SectionWrapper";
+import { ArrowDownIcon } from "lucide-react";
 
 export const Section1 = () => {
+  const handleScrollDown = () =>
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: "smooth",
+    });
+
   return (
     <SectionWrapper>
       <div className="flex flex-col items-center gap-10 text-center">
@@ -25,6 +32,15 @@ export const Section1 = () => {
           >
             Go To App
           </Link>
+        </Button>
+        <Button
+          onClick={handleScrollDown}
+          aria-label="Scroll Down"
+          className="mt-24"
+          size="icon"
+          variant="ghost"
+        >
+          <ArrowDownIcon className="h-12 w-12" />
         </Button>
       </div>
     </SectionWrapper>
