@@ -11,8 +11,9 @@ export const Section1 = () => {
             SaaS Your CloudDAO
           </h1>
           <h2 className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-            <br />Enable a SaaS like experiance for building your cloud-native DAO business,<br />
-            fully codified by the Open Governance Cloud Protocol "OGCP".
+            Enable a SaaS-like experience for building your cloud-native DAO
+            business, fully codified by the Open Governance Cloud Protocol
+            (OGCP).
           </h2>
         </div>
         <Button asChild size="lg" className="w-72">

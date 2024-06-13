@@ -1,5 +1,7 @@
 import { Route } from "@/routes/market/index";
 import { Dao, DaoItem } from "./DaoItem";
+import Logo1 from "@/assets/logo-1.png";
+import Logo2 from "@/assets/logo-2.png";
 
 const LOGO_TOKEN = "pk_LIVAP5iSTZa72Y5Iqm7PEQ";
 
@@ -7,34 +9,37 @@ export const daos: Dao[] = [
   {
     id: "1",
     name: "The Observability CloudDao",
-    description: "aims to provide a managed OpenTelemetry Service (OTaaS) in a vendor agnostic way, to instrument and collect application data in order to provide developers best-in-class Observability capabilities. This central service will provide all teams with their own OpenTelemetry collector instance. These instances contains configuration that is managed and owned centrally by the DAOs or users of the service",
+    description:
+      "aims to provide a managed OpenTelemetry Service (OTaaS) in a vendor agnostic way, to instrument and collect application data in order to provide developers best-in-class Observability capabilities. This central service will provide all teams with their own OpenTelemetry collector instance. These instances contains configuration that is managed and owned centrally by the DAOs or users of the service",
     category: ["Cloud Services"],
     governance: "NFT Based",
     revenues: 3500000,
     expenses: 1000000,
+    avatarUrl: Logo1,
     contributors: 137,
     proposals: 2000,
     gitPushes: 789,
-    avatarUrl: `https://img.logo.dev/nvidia.com?token=${LOGO_TOKEN}`,
   },
   {
     id: "2",
     name: "Morpheus AI Fleet Management",
     category: ["DePin"],
-    description: "Morpheus AI offers a cutting-edge solution for automating and optimizing fleet deployments across decentralized cloud infrastructure, such as Akash Network and other DePINs (Decentralized Physical Infrastructure Networks). By leveraging advanced APIs and automated protocols, Morpheus AI ensures the seamless deployment and management of AI workloads. This not only optimizes costs but also significantly enhances operational efficiency and scalability.",
+    description:
+      "Morpheus AI offers a cutting-edge solution for automating and optimizing fleet deployments across decentralized cloud infrastructure, such as Akash Network and other DePINs (Decentralized Physical Infrastructure Networks). By leveraging advanced APIs and automated protocols, Morpheus AI ensures the seamless deployment and management of AI workloads. This not only optimizes costs but also significantly enhances operational efficiency and scalability.",
     governance: "Token Based",
     revenues: 1200000,
     expenses: 600000,
     contributors: 200,
     proposals: 80,
     gitPushes: 600,
-    avatarUrl: `https://img.logo.dev/ethereum.org?token=${LOGO_TOKEN}`,
+    avatarUrl: Logo2,
   },
   {
     id: "3",
     name: "Social Media DAO",
     category: ["Social"],
-    description: "A social media DAO",
+    description:
+      "A social media DAO, focused on content creation and curation, and community building. The DAO is governed by a hybrid model, with a core team of elected members and a community of token holders who can vote on proposals. The DAO generates revenue through a combination of advertising, subscriptions, and NFT sales.",
     governance: "hybrid",
     revenues: 750000,
     expenses: 300000,

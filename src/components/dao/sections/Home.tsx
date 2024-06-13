@@ -26,93 +26,89 @@ export const HomeSection = () => {
               finances, treasury, and contributors.
             </p>
           </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            <div className="flex flex-col gap-4">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Monthly Finances</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid gap-2">
-                    <div className="flex items-center justify-between">
-                      <div className="text-sm text-gray-600 dark:text-gray-400">
-                        Revenue
-                      </div>
-                      <div className="font-semibold text-gray-900 dark:text-gray-100">
-                        $120,000
-                      </div>
+          <div className="flex gap-4 w-full">
+            <Card className="flex-1">
+              <CardHeader>
+                <CardTitle>Monthly Finances</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid gap-2">
+                  <div className="flex items-center justify-between">
+                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                      Revenue
                     </div>
-                    <div className="flex items-center justify-between">
-                      <div className="text-sm text-gray-600 dark:text-gray-400">
-                        Expenses
-                      </div>
-                      <div className="font-semibold text-gray-900 dark:text-gray-100">
-                        $80,000
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <div className="text-sm text-gray-600 dark:text-gray-400">
-                        Infrastructure
-                      </div>
-                      <div className="font-semibold text-gray-900 dark:text-gray-100">
-                        $40,000
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <div className="text-sm text-gray-600 dark:text-gray-400">
-                        Community
-                      </div>
-                      <div className="font-semibold text-gray-900 dark:text-gray-100">
-                        $20,000
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <div className="text-sm text-gray-600 dark:text-gray-400">
-                        Contributions
-                      </div>
-                      <div className="font-semibold text-gray-900 dark:text-gray-100">
-                        $20,000
-                      </div>
+                    <div className="font-semibold text-gray-900 dark:text-gray-100">
+                      $120,000
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
-            <div className="flex flex-col gap-4">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Treasury</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid gap-2">
-                    <div className="flex items-center justify-between">
-                      <div className="text-sm text-gray-600 dark:text-gray-400">
-                        Total Value
-                      </div>
-                      <div className="font-semibold text-gray-900 dark:text-gray-100">
-                        $2,500,000
-                      </div>
+                  <div className="flex items-center justify-between">
+                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                      Expenses
                     </div>
-                    <div className="flex items-center justify-between">
-                      <div className="text-sm text-gray-600 dark:text-gray-400">
-                        ETH
-                      </div>
-                      <div className="font-semibold text-gray-900 dark:text-gray-100">
-                        1,000
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <div className="text-sm text-gray-600 dark:text-gray-400">
-                        USDC
-                      </div>
-                      <div className="font-semibold text-gray-900 dark:text-gray-100">
-                        $500,000
-                      </div>
+                    <div className="font-semibold text-gray-900 dark:text-gray-100">
+                      $80,000
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
+                  <div className="flex items-center justify-between">
+                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                      Infrastructure
+                    </div>
+                    <div className="font-semibold text-gray-900 dark:text-gray-100">
+                      $40,000
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                      Community
+                    </div>
+                    <div className="font-semibold text-gray-900 dark:text-gray-100">
+                      $20,000
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                      Contributions
+                    </div>
+                    <div className="font-semibold text-gray-900 dark:text-gray-100">
+                      $20,000
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="flex-1">
+              <CardHeader>
+                <CardTitle>Treasury</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid gap-2">
+                  <div className="flex items-center justify-between">
+                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                      Total Value
+                    </div>
+                    <div className="font-semibold text-gray-900 dark:text-gray-100">
+                      $2,500,000
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                      ETH
+                    </div>
+                    <div className="font-semibold text-gray-900 dark:text-gray-100">
+                      1,000
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                      USDC
+                    </div>
+                    <div className="font-semibold text-gray-900 dark:text-gray-100">
+                      $500,000
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

@@ -19,8 +19,22 @@ export type Dao = {
   id: string;
   name: string;
   description: string;
-  category: ("DeFi" | "NFT" | "Social" | "Gaming" | "Web3" | "Cloud Services" | "DePin")[];
-  governance: "decentralized" | "centralized" | "hybrid" | "NFT Based" | "Multi-Sig" | "Token Based";
+  category: (
+    | "DeFi"
+    | "NFT"
+    | "Social"
+    | "Gaming"
+    | "Web3"
+    | "Cloud Services"
+    | "DePin"
+  )[];
+  governance:
+    | "decentralized"
+    | "centralized"
+    | "hybrid"
+    | "NFT Based"
+    | "Multi-Sig"
+    | "Token Based";
   revenues: number;
   expenses: number;
   contributors: number;
@@ -47,7 +61,10 @@ export const DaoItem = ({ dao }: DaoItemProps) => {
           </Avatar>
           <div className="flex flex-col gap-1">
             <CardTitle>{dao.name}</CardTitle>
-            <CardDescription>{dao.description}</CardDescription>
+            <CardDescription>
+              {dao.description.slice(0, 120)}
+              {dao.description.length > 120 && "..."}
+            </CardDescription>
           </div>
         </CardHeader>
         <CardContent>

@@ -20,6 +20,7 @@ import {
   GitPullRequestIcon,
   HashIcon,
 } from "lucide-react";
+import { Card } from "@/components/ui/card";
 type Proposal = {
   id: string;
   name: string;
@@ -140,32 +141,32 @@ export const Governance = () => {
   });
   return (
     <div className="w-full max-w-6xl mx-auto p-4 md:p-6 flex flex-col gap-4">
-      <div className="bg-[#333] p-4 flex space-x-4 rounded-lg">
-        <div className="bg-[#444] p-3 rounded-lg flex flex-col items-center justify-center">
+      <div className="bg-white dark:bg-gray-950 p-4 flex space-x-4 rounded-lg">
+        <Card className=" p-3 flex-1 rounded-lg flex flex-col items-center justify-center">
           <CodeIcon className="text-white h-6 w-6" />
           <div className="text-white mt-1">Active Code Members</div>
           <div className="text-white font-bold">345</div>
-        </div>
-        <div className="bg-[#444] p-3 rounded-lg flex flex-col items-center justify-center">
+        </Card>
+        <Card className="p-3 flex-1 rounded-lg flex flex-col items-center justify-center">
           <GavelIcon className="text-white h-6 w-6" />
           <div className="text-white mt-1">Active Gov Members</div>
           <div className="text-white font-bold">345</div>
-        </div>
-        <div className="bg-[#444] p-3 rounded-lg flex flex-col items-center justify-center">
+        </Card>
+        <Card className="p-3  flex-1 rounded-lg flex flex-col items-center justify-center">
           <BracketsIcon className="text-white h-6 w-6" />
           <div className="text-white mt-1">Code updates proposals</div>
           <div className="text-white font-bold">1.2M</div>
-        </div>
-        <div className="bg-[#444] p-3 rounded-lg flex flex-col items-center justify-center">
+        </Card>
+        <Card className="p-3  flex-1 rounded-lg flex flex-col items-center justify-center">
           <GitPullRequestIcon className="text-white h-6 w-6" />
           <div className="text-white mt-1">Open Pull-Requests</div>
           <div className="text-white font-bold">0.5M</div>
-        </div>
-        <div className="bg-[#444] p-3 rounded-lg flex flex-col items-center justify-center">
+        </Card>
+        <Card className="p-3  flex-1 rounded-lg flex flex-col items-center justify-center">
           <HashIcon className="text-white h-6 w-6" />
           <div className="text-white mt-1"># Of Commits</div>
           <div className="text-white font-bold">1234</div>
-        </div>
+        </Card>
       </div>
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-200">
@@ -178,193 +179,184 @@ export const Governance = () => {
           onChange={handleFilter}
         />
       </div>
-      <div className="border rounded-lg overflow-hidden bg-white dark:bg-gray-800">
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead
-                className="cursor-pointer text-gray-600 dark:text-gray-300"
-                onClick={() => handleSort("id")}
-              >
-                Proposal ID{" "}
-                {sortColumn === "id" && (
-                  <span className="ml-1">
-                    {sortDirection === "asc" ? "\u2191" : "\u2193"}
+      <Table className="bg-white dark:bg-gray-950 p-4 rounded-lg">
+        <TableHeader>
+          <TableRow>
+            <TableHead
+              className="cursor-pointer text-gray-600 dark:text-gray-300"
+              onClick={() => handleSort("id")}
+            >
+              Proposal ID{" "}
+              {sortColumn === "id" && (
+                <span className="ml-1">
+                  {sortDirection === "asc" ? "\u2191" : "\u2193"}
+                </span>
+              )}
+            </TableHead>
+            <TableHead
+              className="cursor-pointer text-gray-600 dark:text-gray-300"
+              onClick={() => handleSort("name")}
+            >
+              Proposal Name{" "}
+              {sortColumn === "name" && (
+                <span className="ml-1">
+                  {sortDirection === "asc" ? "\u2191" : "\u2193"}
+                </span>
+              )}
+            </TableHead>
+            <TableHead
+              className="cursor-pointer text-gray-600 dark:text-gray-300"
+              onClick={() => handleSort("version")}
+            >
+              Version{" "}
+              {sortColumn === "version" && (
+                <span className="ml-1">
+                  {sortDirection === "asc" ? "\u2191" : "\u2193"}
+                </span>
+              )}
+            </TableHead>
+            <TableHead
+              className="cursor-pointer text-gray-600 dark:text-gray-300"
+              onClick={() => handleSort("changeType")}
+            >
+              Change Type{" "}
+              {sortColumn === "changeType" && (
+                <span className="ml-1">
+                  {sortDirection === "asc" ? "\u2191" : "\u2193"}
+                </span>
+              )}
+            </TableHead>
+            <TableHead
+              className="cursor-pointer text-gray-600 dark:text-gray-300"
+              onClick={() => handleSort("approvalRequired")}
+            >
+              Approval Required{" "}
+              {sortColumn === "approvalRequired" && (
+                <span className="ml-1">
+                  {sortDirection === "asc" ? "\u2191" : "\u2193"}
+                </span>
+              )}
+            </TableHead>
+            <TableHead
+              className="cursor-pointer text-gray-600 dark:text-gray-300"
+              onClick={() => handleSort("status")}
+            >
+              Status{" "}
+              {sortColumn === "status" && (
+                <span className="ml-1">
+                  {sortDirection === "asc" ? "\u2191" : "\u2193"}
+                </span>
+              )}
+            </TableHead>
+            <TableHead
+              className="cursor-pointer text-gray-600 dark:text-gray-300"
+              onClick={() => handleSort("approvedBy")}
+            >
+              Approved By{" "}
+              {sortColumn === "approvedBy" && (
+                <span className="ml-1">
+                  {sortDirection === "asc" ? "\u2191" : "\u2193"}
+                </span>
+              )}
+            </TableHead>
+            <TableHead className="text-gray-600 dark:text-gray-300">
+              Changeset
+            </TableHead>
+            <TableHead className="text-gray-600 dark:text-gray-300">
+              Discussion
+            </TableHead>
+            <TableHead
+              className="cursor-pointer text-gray-600 dark:text-gray-300"
+              onClick={() => handleSort("transactionId")}
+            >
+              Transaction ID{" "}
+              {sortColumn === "transactionId" && (
+                <span className="ml-1">
+                  {sortDirection === "asc" ? "\u2191" : "\u2193"}
+                </span>
+              )}
+            </TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {sortedProposals.map((proposal) => (
+            <TableRow key={proposal.id}>
+              <TableCell>
+                <div className="flex items-center gap-2">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="rounded-full text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                    onClick={() => handleExpand(proposal.id)}
+                  >
+                    {expandedProposalId === proposal.id ? (
+                      <ChevronUpIcon className="h-4 w-4" />
+                    ) : (
+                      <ChevronDownIcon className="h-4 w-4" />
+                    )}
+                  </Button>
+                  <span className="text-gray-600 dark:text-gray-300">
+                    {proposal.id}
                   </span>
-                )}
-              </TableHead>
-              <TableHead
-                className="cursor-pointer text-gray-600 dark:text-gray-300"
-                onClick={() => handleSort("name")}
-              >
-                Proposal Name{" "}
-                {sortColumn === "name" && (
-                  <span className="ml-1">
-                    {sortDirection === "asc" ? "\u2191" : "\u2193"}
-                  </span>
-                )}
-              </TableHead>
-              <TableHead
-                className="cursor-pointer text-gray-600 dark:text-gray-300"
-                onClick={() => handleSort("version")}
-              >
-                Version{" "}
-                {sortColumn === "version" && (
-                  <span className="ml-1">
-                    {sortDirection === "asc" ? "\u2191" : "\u2193"}
-                  </span>
-                )}
-              </TableHead>
-              <TableHead
-                className="cursor-pointer text-gray-600 dark:text-gray-300"
-                onClick={() => handleSort("changeType")}
-              >
-                Change Type{" "}
-                {sortColumn === "changeType" && (
-                  <span className="ml-1">
-                    {sortDirection === "asc" ? "\u2191" : "\u2193"}
-                  </span>
-                )}
-              </TableHead>
-              <TableHead
-                className="cursor-pointer text-gray-600 dark:text-gray-300"
-                onClick={() => handleSort("approvalRequired")}
-              >
-                Approval Required{" "}
-                {sortColumn === "approvalRequired" && (
-                  <span className="ml-1">
-                    {sortDirection === "asc" ? "\u2191" : "\u2193"}
-                  </span>
-                )}
-              </TableHead>
-              <TableHead
-                className="cursor-pointer text-gray-600 dark:text-gray-300"
-                onClick={() => handleSort("status")}
-              >
-                Status{" "}
-                {sortColumn === "status" && (
-                  <span className="ml-1">
-                    {sortDirection === "asc" ? "\u2191" : "\u2193"}
-                  </span>
-                )}
-              </TableHead>
-              <TableHead
-                className="cursor-pointer text-gray-600 dark:text-gray-300"
-                onClick={() => handleSort("approvedBy")}
-              >
-                Approved By{" "}
-                {sortColumn === "approvedBy" && (
-                  <span className="ml-1">
-                    {sortDirection === "asc" ? "\u2191" : "\u2193"}
-                  </span>
-                )}
-              </TableHead>
-              <TableHead className="text-gray-600 dark:text-gray-300">
-                Changeset
-              </TableHead>
-              <TableHead className="text-gray-600 dark:text-gray-300">
-                Discussion
-              </TableHead>
-              <TableHead
-                className="cursor-pointer text-gray-600 dark:text-gray-300"
-                onClick={() => handleSort("transactionId")}
-              >
-                Transaction ID{" "}
-                {sortColumn === "transactionId" && (
-                  <span className="ml-1">
-                    {sortDirection === "asc" ? "\u2191" : "\u2193"}
-                  </span>
-                )}
-              </TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {sortedProposals.map((proposal) => (
-              <TableRow key={proposal.id}>
-                <TableCell>
-                  <div className="flex items-center gap-2">
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="rounded-full text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-                      onClick={() => handleExpand(proposal.id)}
+                </div>
+              </TableCell>
+              <TableCell className="text-gray-600 dark:text-gray-300">
+                {proposal.name}
+              </TableCell>
+              <TableCell className="text-gray-600 dark:text-gray-300">
+                {proposal.version}
+              </TableCell>
+              <TableCell className="text-gray-600 dark:text-gray-300">
+                {proposal.changeType}
+              </TableCell>
+              <TableCell className="text-gray-600 dark:text-gray-300">
+                {proposal.approvalRequired}
+              </TableCell>
+              <TableCell>
+                <Badge
+                  className={
+                    proposal.status === "Pending"
+                      ? "bg-yellow-100 text-yellow-800"
+                      : proposal.status === "Approved"
+                        ? "bg-green-100 text-green-800"
+                        : "bg-red-100 text-red-800"
+                  }
+                >
+                  {proposal.status}
+                </Badge>
+              </TableCell>
+              <TableCell className="text-gray-600 dark:text-gray-300">
+                {proposal.approvedBy || "-"}
+              </TableCell>
+              <TableCell>
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="text-blue-500 hover:underline"
+                >
+                  View Changeset
+                </Link>
+              </TableCell>
+              <TableCell>
+                {proposal.discussionLinks.map((_, index) => (
+                  <div key={index}>
+                    <Link
+                      href="#"
+                      target="_blank"
+                      className="text-blue-500 hover:underline"
                     >
-                      {expandedProposalId === proposal.id ? (
-                        <ChevronUpIcon className="h-4 w-4" />
-                      ) : (
-                        <ChevronDownIcon className="h-4 w-4" />
-                      )}
-                    </Button>
-                    <span className="text-gray-600 dark:text-gray-300">
-                      {proposal.id}
-                    </span>
+                      Discussion {index + 1}
+                    </Link>
                   </div>
-                </TableCell>
-                <TableCell className="text-gray-600 dark:text-gray-300">
-                  {proposal.name}
-                </TableCell>
-                <TableCell className="text-gray-600 dark:text-gray-300">
-                  {proposal.version}
-                </TableCell>
-                <TableCell className="text-gray-600 dark:text-gray-300">
-                  {proposal.changeType}
-                </TableCell>
-                <TableCell className="text-gray-600 dark:text-gray-300">
-                  {proposal.approvalRequired}
-                </TableCell>
-                <TableCell>
-                  <Badge
-                    // variant={
-                    //   proposal.status === "Pending"
-                    //     ? "pending"
-                    //     : proposal.status === "Approved"
-                    //       ? "success"
-                    //       : "danger"
-                    // }
-                    className={
-                      proposal.status === "Pending"
-                        ? "bg-yellow-100 text-yellow-800"
-                        : proposal.status === "Approved"
-                          ? "bg-green-100 text-green-800"
-                          : "bg-red-100 text-red-800"
-                    }
-                  >
-                    {proposal.status}
-                  </Badge>
-                </TableCell>
-                <TableCell className="text-gray-600 dark:text-gray-300">
-                  {proposal.approvedBy || "-"}
-                </TableCell>
-                <TableCell>
-                  <Link
-                    href="#"
-                    target="_blank"
-                    className="text-blue-500 hover:underline"
-                  >
-                    View Changeset
-                  </Link>
-                </TableCell>
-                <TableCell>
-                  {proposal.discussionLinks.map((_, index) => (
-                    <div key={index}>
-                      <Link
-                        href="#"
-                        target="_blank"
-                        className="text-blue-500 hover:underline"
-                      >
-                        Discussion {index + 1}
-                      </Link>
-                    </div>
-                  ))}
-                </TableCell>
-                <TableCell className="text-gray-600 dark:text-gray-300">
-                  {proposal.transactionId}
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </div>
+                ))}
+              </TableCell>
+              <TableCell className="text-gray-600 dark:text-gray-300">
+                {proposal.transactionId}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
       {expandedProposalId && (
         <div className="mt-4 border rounded-lg p-4 bg-white dark:bg-gray-800">
           <h2 className="text-lg font-bold mb-2 text-gray-800 dark:text-gray-200">

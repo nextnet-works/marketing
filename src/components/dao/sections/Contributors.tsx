@@ -14,6 +14,7 @@ export const Contributors = () => {
   return (
     <div className="flex flex-col space-y-10">
       <PieChart className="w-full h-[300px]" />
+      <h1 className="text-2xl font-bold">Top Contributors</h1>
       <div className="grid grid-cols-3 gap-4">
         <Card className=" p-4 shadow rounded-lg flex flex-col items-center justify-center">
           <Avatar>
@@ -46,7 +47,8 @@ export const Contributors = () => {
           </div>
         </Card>
       </div>
-      <Table>
+      <h1 className="text-2xl font-bold">Contributors Table</h1>
+      <Table className="w-full bg-white dark:bg-gray-950 rounded-lg">
         <TableHeader>
           <TableRow>
             <TableHead>Member</TableHead>
@@ -96,17 +98,16 @@ export const Contributors = () => {
   );
 };
 
-function PieChart(props: React.HTMLProps<HTMLDivElement>) {
+interface PieChartProps extends React.HTMLProps<HTMLDivElement> {}
+
+const PieChart: React.FC<PieChartProps> = (props) => {
   return (
     <div {...props}>
       <ResponsivePie
         data={[
-          { id: "Jan", value: 111 },
-          { id: "Feb", value: 157 },
-          { id: "Mar", value: 129 },
-          { id: "Apr", value: 150 },
-          { id: "May", value: 119 },
-          { id: "Jun", value: 72 },
+          { id: "Funders", value: 45 },
+          { id: "Code", value: 35 },
+          { id: "Both", value: 20 },
         ]}
         sortByValue
         margin={{ top: 10, right: 10, bottom: 10, left: 10 }}
@@ -118,7 +119,7 @@ function PieChart(props: React.HTMLProps<HTMLDivElement>) {
         arcLabel={(d) => `${d.id}`}
         arcLabelsTextColor={"#ffffff"}
         arcLabelsRadiusOffset={0.65}
-        colors={["#2563eb"]}
+        colors={["#2563eb", "#34d399", "#f59e0b"]}
         theme={{
           labels: {
             text: {
@@ -133,6 +134,7 @@ function PieChart(props: React.HTMLProps<HTMLDivElement>) {
               fontSize: "12px",
               textTransform: "capitalize",
               borderRadius: "6px",
+              color: "#000000",
             },
           },
         }}
@@ -140,4 +142,4 @@ function PieChart(props: React.HTMLProps<HTMLDivElement>) {
       />
     </div>
   );
-}
+};

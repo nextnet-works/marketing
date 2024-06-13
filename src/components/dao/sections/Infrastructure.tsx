@@ -300,6 +300,7 @@ function TimeseriesChart(props: React.ComponentProps<"div">) {
               fontSize: "12px",
               textTransform: "capitalize",
               borderRadius: "6px",
+              color: "#000000",
             },
           },
           grid: {
