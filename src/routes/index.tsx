@@ -4,6 +4,7 @@ import { Section2 } from "@/components/home/Section2";
 import { Section3 } from "@/components/home/Section3";
 import { Section4 } from "@/components/home/Section4";
 import { Section5 } from "@/components/home/Section5";
+import Section6 from "@/components/home/Section6";
 import { useHeaderController } from "@/components/layout/HeaderControllerContext";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
@@ -26,6 +27,7 @@ function Home() {
       <Section3 />
       <Section4 />
       <Section5 />
+      <Section6 />
     </Layout>
   );
 }
