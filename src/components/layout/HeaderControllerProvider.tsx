@@ -1,15 +1,19 @@
-import { useState } from 'react';
-import { HeaderControllerContext } from './HeaderControllerContext';
+import { useState } from "react";
+import { HeaderControllerContext } from "./HeaderControllerContext";
 
 type HeaderControllerProviderProps = {
-  children: React.ReactNode
+  children: React.ReactNode;
 };
 
-export function HeaderControllerProvider({ children }: HeaderControllerProviderProps) {
+export function HeaderControllerProvider({
+  children,
+}: HeaderControllerProviderProps) {
   const [showConnectWallet, setShowConnectWallet] = useState(true);
 
   return (
-    <HeaderControllerContext.Provider value={{ showConnectWallet, setShowConnectWallet }}>
+    <HeaderControllerContext.Provider
+      value={{ showConnectWallet, setShowConnectWallet }}
+    >
       {children}
     </HeaderControllerContext.Provider>
   );

@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Wallet } from 'lucide-react'
+import { useState } from "react";
+import { Wallet } from "lucide-react";
 
 const ConnectWalletButton = () => {
   const [connected, setConnected] = useState(false);

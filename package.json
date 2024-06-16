@@ -15,7 +15,9 @@
     "serve-functions": "npx supabase functions serve --no-verify-jwt --env-file ./supabase/.env.local",
     "new-migration": "npx supabase db diff -f",
     "prettier": "prettier --write ../",
-    "knip": "knip"
+    "knip": "knip",
+    "ncu": "npm-check-updates",
+    "ncu-update": "npm-check-updates -u && npm install"
   },
   "dependencies": {
     "@nivo/bar": "^0.87.0",

@@ -19,11 +19,11 @@ export const Route = createFileRoute("/market/")({
 
 function Market() {
   const { section } = Route.useSearch();
-  const { setShowConnectWallet } = useHeaderController()
+  const { setShowConnectWallet } = useHeaderController();
 
   useEffect(() => {
-    setShowConnectWallet(true)
-  }, [setShowConnectWallet])
+    setShowConnectWallet(true);
+  }, [setShowConnectWallet]);
 
   return (
     <Layout>

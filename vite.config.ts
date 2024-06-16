@@ -12,7 +12,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
       "@codemirror/state": path.resolve(
         __dirname,
-        "node_modules/@codemirror/state"
+        "node_modules/@codemirror/state",
       ),
     },
   },

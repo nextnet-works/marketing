@@ -103,7 +103,7 @@ export const Governance = () => {
   const [sortDirection, setSortDirection] = useState("asc");
   const [filterText, setFilterText] = useState("");
   const [expandedProposalId, setExpandedProposalId] = useState<string | null>(
-    null
+    null,
   );
   const handleSort = (column: string) => {
     if (sortColumn === column) {

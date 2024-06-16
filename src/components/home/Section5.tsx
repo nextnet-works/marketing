@@ -14,7 +14,12 @@ export const Section5 = () => {
             Decentralizing the Cloud
           </h2>
           <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-            NextNet is a collective of forward-thinking individuals dedicated to changing the way businesses operate in the digital age. With decades of experience in the fields of cloud technology, open-source software, and decentralized systems, our team is committed to creating a platform that empowers businesses to create, operate, and govern in a truly democratic and transparent manner.
+            NextNet is a collective of forward-thinking individuals dedicated to
+            changing the way businesses operate in the digital age. With decades
+            of experience in the fields of cloud technology, open-source
+            software, and decentralized systems, our team is committed to
+            creating a platform that empowers businesses to create, operate, and
+            govern in a truly democratic and transparent manner.
           </p>
         </div>
         <div className="space-y-4">
