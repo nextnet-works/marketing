@@ -157,7 +157,7 @@ export const Financials = () => {
           </div>
         </CardContent>
       </Card>
-      <div className="bg-[#0d0d2b] text-white p-8">
+      <div className="p-8">
         <div className="mb-8">
           <div className="flex justify-between items-center mb-2">
             <h2 className="text-2xl font-semibold">Treasury Value</h2>

@@ -11,17 +11,21 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { BookIcon, GlobeIcon, PowerIcon } from "lucide-react";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
+import { daos } from "@/lib/mock";
+import { Route } from "@/routes/market/$daoId";
 
 export const HomeSection = () => {
+  const { daoId } = Route.useParams();
+  const dao = daos.find((dao) => dao.id === daoId)!;
   return (
     <>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+      <section className="w-full py-12 md:py-24 lg:py-32">
         <div className="container grid gap-8 px-4 md:px-6">
-          <div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gray-900 dark:text-gray-100">
+          <div className="space-y-4">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               DAO Metrics & Statistics
             </h2>
-            <p className="mt-4 text-gray-600 md:text-xl/relaxed dark:text-gray-400">
+            <p>
               Explore key metrics and statistics related to the Acme DAO's
               finances, treasury, and contributors.
             </p>
@@ -29,32 +33,26 @@ export const HomeSection = () => {
           <div className="flex gap-4 w-full">
             <Card className="flex-1">
               <CardHeader>
-                <CardTitle>Monthly Finances</CardTitle>
+                <CardTitle>Finances</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid gap-2">
                   <div className="flex items-center justify-between">
-                    <div className="text-sm text-gray-600 dark:text-gray-400">
-                      Revenue
-                    </div>
-                    <div className="font-semibold text-gray-900 dark:text-gray-100">
-                      $120,000
+                    <div className="text-sm ">Revenue</div>
+                    <div className="font-semibold ">
+                      ${dao.financial.revenues}
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
-                    <div className="text-sm text-gray-600 dark:text-gray-400">
-                      Expenses
-                    </div>
-                    <div className="font-semibold text-gray-900 dark:text-gray-100">
-                      $80,000
+                    <div className="text-sm ">Expenses</div>
+                    <div className="font-semibold ">
+                      ${dao.financial.expenses}
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
-                    <div className="text-sm text-gray-600 dark:text-gray-400">
-                      Infrastructure
-                    </div>
-                    <div className="font-semibold text-gray-900 dark:text-gray-100">
-                      $40,000
+                    <div className="text-sm ">Infrastructure</div>
+                    <div className="font-semibold ">
+                      ${dao.financial.infrastructure}
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
@@ -250,10 +248,7 @@ export const HomeSection = () => {
                     <TableRow>
                       <TableCell>Upgrade Acme Cloud to v2.1</TableCell>
                       <TableCell>
-                        <Badge
-                          variant="secondary"
-                          className="bg-green-600 text-white"
-                        >
+                        <Badge variant="secondary" className="bg-green-600 ">
                           Approved
                         </Badge>
                       </TableCell>
@@ -262,10 +257,7 @@ export const HomeSection = () => {
                     <TableRow>
                       <TableCell>Allocate $50,000 to Community Fund</TableCell>
                       <TableCell>
-                        <Badge
-                          variant="secondary"
-                          className="bg-green-600 text-white"
-                        >
+                        <Badge variant="secondary" className="bg-green-600 ">
                           Approved
                         </Badge>
                       </TableCell>
@@ -274,10 +266,7 @@ export const HomeSection = () => {
                     <TableRow>
                       <TableCell>Hire 2 Full-Time Developers</TableCell>
                       <TableCell>
-                        <Badge
-                          variant="destructive"
-                          className="bg-red-600 text-white"
-                        >
+                        <Badge variant="destructive" className="bg-red-600 ">
                           Rejected
                         </Badge>
                       </TableCell>
@@ -286,10 +275,7 @@ export const HomeSection = () => {
                     <TableRow>
                       <TableCell>Launch Acme Wallet v1.0</TableCell>
                       <TableCell>
-                        <Badge
-                          variant="secondary"
-                          className="bg-green-600 text-white"
-                        >
+                        <Badge variant="secondary" className="bg-green-600 ">
                           Approved
                         </Badge>
                       </TableCell>

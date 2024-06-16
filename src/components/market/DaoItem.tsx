@@ -14,34 +14,7 @@ import {
 } from "../ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Link } from "@tanstack/react-router";
-
-export type Dao = {
-  id: string;
-  name: string;
-  description: string;
-  category: (
-    | "DeFi"
-    | "NFT"
-    | "Social"
-    | "Gaming"
-    | "Web3"
-    | "Cloud Services"
-    | "DePin"
-  )[];
-  governance:
-    | "decentralized"
-    | "centralized"
-    | "hybrid"
-    | "NFT Based"
-    | "Multi-Sig"
-    | "Token Based";
-  revenues: number;
-  expenses: number;
-  contributors: number;
-  proposals: number;
-  gitPushes: number;
-  avatarUrl: string;
-};
+import { Dao } from "@/lib/types";
 
 type DaoItemProps = {
   dao: Dao;
@@ -53,7 +26,7 @@ export const DaoItem = ({ dao }: DaoItemProps) => {
 
   return (
     <Link to={`/market/${dao.id}`}>
-      <Card className="cursor-pointer bg-white dark:bg-gray-950 p-4 shadow-md">
+      <Card className="cursor-pointer  p-4 shadow-md">
         <CardHeader className="flex flex-row gap-4 items-center">
           <Avatar className="w-16 h-16">
             <AvatarImage src={dao.avatarUrl} alt={dao.name} />
@@ -75,27 +48,27 @@ export const DaoItem = ({ dao }: DaoItemProps) => {
             </div>
             <div className={subItem}>
               <DollarSignIcon className="w-4 h-4" />
-              <span>Revenues: ${dao.revenues}</span>
+              <span>Revenues: ${dao.financial.revenues}</span>
             </div>
           </div>
           <div className={itemClass}>
             <div className={subItem}>
               <DollarSignIcon className="w-4 h-4" />
-              <span> Expenses: ${dao.expenses}</span>
+              <span> Expenses: ${dao.financial.expenses}</span>
             </div>
             <div className={subItem}>
               <UsersIcon className="w-4 h-4" />
-              <span>Contributors: {dao.contributors}</span>
+              <span>Contributors: {dao.code.contributors}</span>
             </div>
           </div>
           <div className={itemClass}>
             <div className={subItem}>
               <ClipboardListIcon className="w-4 h-4" />
-              <span>Proposals: {dao.proposals}</span>
+              <span>Proposals: {dao.code.proposals}</span>
             </div>
             <div className={subItem}>
               <GitCommitVerticalIcon className="w-4 h-4" />
-              <span>Git-pushes: {dao.gitPushes}</span>
+              <span>Git-pushes: {dao.code.pushes}</span>
             </div>
           </div>
         </CardContent>

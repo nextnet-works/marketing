@@ -33,19 +33,19 @@ export const Section2 = () => {
             >
               {index === 0 && (
                 <StartCloudDAO
-                  className="w-48 h-48 fill-current text-white"
+                  className="w-48 h-48 fill-current "
                   fill="currrentColor"
                 />
               )}
               {index === 1 && (
                 <AbstractedCloudOperations
-                  className="w-48 h-48 fill-current text-white"
+                  className="w-48 h-48 fill-current "
                   fill="currentColor"
                 />
               )}
               {index === 2 && (
                 <ThePowerOfDAOCommunity
-                  className="w-48 h-48 fill-current text-white"
+                  className="w-48 h-48 fill-current "
                   fill="currentColor"
                 />
               )}

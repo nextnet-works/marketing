@@ -103,7 +103,7 @@ export const Governance = () => {
   const [sortDirection, setSortDirection] = useState("asc");
   const [filterText, setFilterText] = useState("");
   const [expandedProposalId, setExpandedProposalId] = useState<string | null>(
-    null,
+    null
   );
   const handleSort = (column: string) => {
     if (sortColumn === column) {
@@ -141,31 +141,31 @@ export const Governance = () => {
   });
   return (
     <div className="w-full max-w-6xl mx-auto p-4 md:p-6 flex flex-col gap-4">
-      <div className="bg-white dark:bg-gray-950 p-4 flex space-x-4 rounded-lg">
+      <div className=" p-4 flex space-x-4 rounded-lg">
         <Card className=" p-3 flex-1 rounded-lg flex flex-col items-center justify-center">
-          <CodeIcon className="text-white h-6 w-6" />
-          <div className="text-white mt-1">Active Code Members</div>
-          <div className="text-white font-bold">345</div>
+          <CodeIcon className=" h-6 w-6" />
+          <div className=" mt-1">Active Code Members</div>
+          <div className=" font-bold">345</div>
         </Card>
         <Card className="p-3 flex-1 rounded-lg flex flex-col items-center justify-center">
-          <GavelIcon className="text-white h-6 w-6" />
-          <div className="text-white mt-1">Active Gov Members</div>
-          <div className="text-white font-bold">345</div>
+          <GavelIcon className=" h-6 w-6" />
+          <div className=" mt-1">Active Gov Members</div>
+          <div className=" font-bold">345</div>
         </Card>
         <Card className="p-3  flex-1 rounded-lg flex flex-col items-center justify-center">
-          <BracketsIcon className="text-white h-6 w-6" />
-          <div className="text-white mt-1">Code updates proposals</div>
-          <div className="text-white font-bold">1.2M</div>
+          <BracketsIcon className=" h-6 w-6" />
+          <div className=" mt-1">Code updates proposals</div>
+          <div className=" font-bold">1.2M</div>
         </Card>
         <Card className="p-3  flex-1 rounded-lg flex flex-col items-center justify-center">
-          <GitPullRequestIcon className="text-white h-6 w-6" />
-          <div className="text-white mt-1">Open Pull-Requests</div>
-          <div className="text-white font-bold">0.5M</div>
+          <GitPullRequestIcon className=" h-6 w-6" />
+          <div className=" mt-1">Open Pull-Requests</div>
+          <div className=" font-bold">0.5M</div>
         </Card>
         <Card className="p-3  flex-1 rounded-lg flex flex-col items-center justify-center">
-          <HashIcon className="text-white h-6 w-6" />
-          <div className="text-white mt-1"># Of Commits</div>
-          <div className="text-white font-bold">1234</div>
+          <HashIcon className=" h-6 w-6" />
+          <div className=" mt-1"># Of Commits</div>
+          <div className=" font-bold">1234</div>
         </Card>
       </div>
       <div className="flex items-center justify-between mb-4">
@@ -174,12 +174,12 @@ export const Governance = () => {
         </h1>
         <Input
           placeholder="Search proposals..."
-          className="bg-white dark:bg-gray-950 w-full max-w-md"
+          className=" w-full max-w-md"
           value={filterText}
           onChange={handleFilter}
         />
       </div>
-      <Table className="bg-white dark:bg-gray-950 p-4 rounded-lg">
+      <Table className=" p-4 rounded-lg">
         <TableHeader>
           <TableRow>
             <TableHead
@@ -350,15 +350,13 @@ export const Governance = () => {
                   </div>
                 ))}
               </TableCell>
-              <TableCell className="text-gray-600 dark:text-gray-300">
-                {proposal.transactionId}
-              </TableCell>
+              <TableCell>{proposal.transactionId}</TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
       {expandedProposalId && (
-        <div className="mt-4 border rounded-lg p-4 bg-white dark:bg-gray-800">
+        <div className="mt-4 border rounded-lg p-4 ">
           <h2 className="text-lg font-bold mb-2 text-gray-800 dark:text-gray-200">
             Proposal Details
           </h2>

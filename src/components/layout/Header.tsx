@@ -3,7 +3,7 @@ import Logo from "../../assets/logo.svg?react";
 import ConnectWalletButton from "../wallet/connect-wallet";
 import { useHeaderController } from "./HeaderControllerContext";
 
-export const buttonLinkClass = "text-white-500";
+export const buttonLinkClass = "-500";
 
 export const Header = () => {
   const { showConnectWallet } = useHeaderController();

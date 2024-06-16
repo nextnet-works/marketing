@@ -12,7 +12,7 @@ function Dao() {
   return (
     <Layout>
       <Stats daoId={daoId} />
-      <Sections daoId={daoId} />
+      <Sections />
     </Layout>
   );
 }

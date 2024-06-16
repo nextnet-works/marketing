@@ -67,10 +67,7 @@ export const Stats = () => (
         </ToggleGroup>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           {statsData.map((stat, index) => (
-            <div
-              key={index}
-              className="bg-white dark:bg-gray-950 p-4 rounded-lg shadow-md"
-            >
+            <div key={index} className=" p-4 rounded-lg shadow-md">
               <stat.icon className="w-5 h-5 text-gray-500 dark:text-gray-400" />
               <div className="flex items-center justify-between">
                 <div className="text-sm font-medium">{stat.title}</div>

@@ -8,10 +8,6 @@ import { Governance } from "./Governance";
 import { Analytics } from "./Analytics";
 import { Contributors } from "./Contributors";
 
-type TabsProps = {
-  daoId: string;
-};
-
 const sections = [
   {
     name: "Home",
@@ -45,8 +41,7 @@ const sections = [
   },
 ] as const;
 
-export const Sections = ({ daoId }: TabsProps) => {
-  console.log(daoId);
+export const Sections = () => {
   return (
     <div className="container px-4 md:px-6">
       <Tabs defaultValue="Home">
@@ -62,7 +57,7 @@ export const Sections = ({ daoId }: TabsProps) => {
           ))}
         </TabsList>
         {sections.map((section) => (
-          <TabsContent value={section.name}>
+          <TabsContent value={section.name} key={section.name}>
             <section.component />
           </TabsContent>
         ))}

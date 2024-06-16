@@ -48,7 +48,7 @@ export const Contributors = () => {
         </Card>
       </div>
       <h1 className="text-2xl font-bold">Contributors Table</h1>
-      <Table className="w-full bg-white dark:bg-gray-950 rounded-lg">
+      <Table className="w-full rounded-lg">
         <TableHeader>
           <TableRow>
             <TableHead>Member</TableHead>
