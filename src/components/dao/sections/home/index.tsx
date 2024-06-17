@@ -197,7 +197,7 @@ export const HomeSection = () => {
                 <TableBody>
                   {dao.changeManagementProposals.map((proposal) => (
                     <TableRow key={proposal.id}>
-                      <TableCell>{proposal.title}</TableCell>
+                      <TableCell>{proposal.name}</TableCell>
                       <TableCell>
                         <Badge
                           variant={
@@ -211,7 +211,6 @@ export const HomeSection = () => {
                           {proposal.status}
                         </Badge>
                       </TableCell>
-                      <TableCell>{proposal.date}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

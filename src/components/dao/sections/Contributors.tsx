@@ -47,53 +47,55 @@ export const Contributors = () => {
           </div>
         </Card>
       </div>
-      <h1 className="text-2xl font-bold">Contributors Table</h1>
-      <Table className="w-full rounded-lg">
-        <TableHeader>
-          <TableRow>
-            <TableHead>Member</TableHead>
-            <TableHead>Contributor Type</TableHead>
-            <TableHead># of votes</TableHead>
-            <TableHead>Role</TableHead>
-            <TableHead>Gov Ownership %</TableHead>
-            <TableHead>Income</TableHead>
-            <TableHead>Wallet</TableHead>
-            <TableHead>Keys Attached</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          <TableRow>
-            <TableCell>Luke</TableCell>
-            <TableCell>Code</TableCell>
-            <TableCell>213</TableCell>
-            <TableCell>Dev</TableCell>
-            <TableCell>1%</TableCell>
-            <TableCell>$$$</TableCell>
-            <TableCell>xxxx</TableCell>
-            <TableCell>IAM/Multisigs, Storage</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>xNet</TableCell>
-            <TableCell>Code</TableCell>
-            <TableCell>32</TableCell>
-            <TableCell>Tester</TableCell>
-            <TableCell>1%</TableCell>
-            <TableCell>$$</TableCell>
-            <TableCell>x</TableCell>
-            <TableCell />
-          </TableRow>
-          <TableRow>
-            <TableCell>Gusy</TableCell>
-            <TableCell>Code, Funding</TableCell>
-            <TableCell>44</TableCell>
-            <TableCell>Funder, Dev, Tester</TableCell>
-            <TableCell>1%</TableCell>
-            <TableCell>$$$</TableCell>
-            <TableCell>xx</TableCell>
-            <TableCell>A B C D Y I</TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
+      <Card>
+        <h1 className="text-2xl font-bold">Contributors Table</h1>
+        <Table className="w-full rounded-lg">
+          <TableHeader>
+            <TableRow>
+              <TableHead>Member</TableHead>
+              <TableHead>Contributor Type</TableHead>
+              <TableHead># of votes</TableHead>
+              <TableHead>Role</TableHead>
+              <TableHead>Gov Ownership %</TableHead>
+              <TableHead>Income</TableHead>
+              <TableHead>Wallet</TableHead>
+              <TableHead>Keys Attached</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell>Luke</TableCell>
+              <TableCell>Code</TableCell>
+              <TableCell>213</TableCell>
+              <TableCell>Dev</TableCell>
+              <TableCell>1%</TableCell>
+              <TableCell>$$$</TableCell>
+              <TableCell>xxxx</TableCell>
+              <TableCell>IAM/Multisigs, Storage</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>xNet</TableCell>
+              <TableCell>Code</TableCell>
+              <TableCell>32</TableCell>
+              <TableCell>Tester</TableCell>
+              <TableCell>1%</TableCell>
+              <TableCell>$$</TableCell>
+              <TableCell>x</TableCell>
+              <TableCell />
+            </TableRow>
+            <TableRow>
+              <TableCell>Gusy</TableCell>
+              <TableCell>Code, Funding</TableCell>
+              <TableCell>44</TableCell>
+              <TableCell>Funder, Dev, Tester</TableCell>
+              <TableCell>1%</TableCell>
+              <TableCell>$$$</TableCell>
+              <TableCell>xx</TableCell>
+              <TableCell>A B C D Y I</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </Card>
     </div>
   );
 };

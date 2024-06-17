@@ -5,6 +5,8 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
+import { Route } from "@/routes/market/$daoId";
+
 import { ResponsiveBar } from "@nivo/bar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -17,86 +19,34 @@ import {
   TableCell,
 } from "@/components/ui/table";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { daos } from "@/lib/mock";
 import { CircleIcon } from "lucide-react";
 
-const mockData = {
-  leftBlock: [
-    {
-      title: "Total Active Nodes",
-      description: "Total number of nodes based on current filters",
-      value: "25",
-    },
-    {
-      title: "Total Duration",
-      description:
-        "Total duration of all leases combined based on current filters",
-      value: "10 days 5 hours",
-    },
-    {
-      title: "Remaining Duration~",
-      description:
-        "Remaining duration before out of funds based on current filters",
-      value: "2 days 3 hours",
-    },
-  ],
-  rightBlock: [
-    {
-      title: "Total Balance",
-      description:
-        "Total balance (wallet + all escrow accounts + amount spent on leases)",
-      value: "5000.00",
-    },
-    {
-      title: "Remaining Balance",
-      description: "Remaining balance (wallet + all escrow accounts)",
-      value: "1200.00",
-    },
-    {
-      title: "Total Spending",
-      description: "Total spending on leases",
-      value: "3800.00",
-    },
-    {
-      title: "Spending per Hour",
-      description: "Spending per hour based on current leases",
-      value: "15.50",
-    },
-  ],
-};
-
 export const Financials = () => {
+  const { daoId } = Route.useParams();
+  const dao = daos.find((dao) => dao.id === daoId)!;
   return (
     <div className="grid grid-cols-1 gap-8 mx-auto justify-center items-center">
       <Card>
         <CardHeader>
-          <CardTitle>Analytics</CardTitle>
+          <CardTitle>Nodes Analytics</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div>
-              {mockData.leftBlock.map((item) => (
-                <div key={item.title} className="mb-4">
-                  <h3 className="text-sm font-semibold text-gray-500 flex items-center gap-2">
-                    <span className="min-w-[150px]">{item.title}: </span>
-                    <span className="text-lg font-semibold text-gray-800 dark:text-gray-200 min-w-[100px] text-end">
-                      {item.value}
-                    </span>
-                  </h3>
-                </div>
-              ))}
-            </div>
-            <div>
-              {mockData.rightBlock.map((item) => (
-                <div key={item.title} className="mb-4">
-                  <h3 className="text-sm font-semibold text-gray-500 flex items-center gap-2">
-                    <span className="min-w-[150px]">{item.title}: </span>
-                    <span className="text-lg font-semibold text-gray-800 dark:text-gray-200 min-w-[100px] text-end">
-                      ${item.value}
-                    </span>
-                  </h3>
-                </div>
-              ))}
-            </div>
+            {Object.keys(dao.financial.nodes).map((key) => (
+              <div key={key} className="mb-4">
+                <h3 className="text-sm font-semibold text-gray-500 flex items-center gap-2">
+                  <span className="min-w-[150px]">{key}: </span>
+                  <span className="text-lg font-semibold text-gray-800 dark:text-gray-200 min-w-[100px] text-end">
+                    {
+                      dao.financial.nodes[
+                        key as keyof typeof dao.financial.nodes
+                      ]
+                    }
+                  </span>
+                </h3>
+              </div>
+            ))}
           </div>
         </CardContent>
       </Card>
@@ -157,12 +107,11 @@ export const Financials = () => {
           </div>
         </CardContent>
       </Card>
-      <div className="p-8">
-        <div className="mb-8">
-          <div className="flex justify-between items-center mb-2">
-            <h2 className="text-2xl font-semibold">Treasury Value</h2>
-            <CircleIcon className="h-5 w-5" />
-          </div>
+      <Card>
+        <CardHeader className="mb-8">
+          <CardTitle>Treasury Value</CardTitle>
+        </CardHeader>
+        <CardContent>
           <LineChart className="w-full h-[300px]" />
           <div className="flex justify-center gap-4 mt-4">
             <Button variant="ghost">D</Button>
@@ -170,64 +119,64 @@ export const Financials = () => {
             <Button variant="ghost">M</Button>
             <Button variant="ghost">Y</Button>
           </div>
-        </div>
-        <div className="mb-8">
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="text-xl font-semibold">Tokens</h3>
-            <div className="flex items-center">
-              <Badge variant="secondary">Highest USD value</Badge>
-              <CircleIcon className="h-4 w-4 ml-2" />
+          <div className="mb-8">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-xl font-semibold">Tokens</h3>
+              <div className="flex items-center">
+                <Badge variant="secondary">Highest USD value</Badge>
+                <CircleIcon className="h-4 w-4 ml-2" />
+              </div>
             </div>
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Token</TableHead>
+                  <TableHead>Total</TableHead>
+                  <TableHead>Est. USD value</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell>
+                    <div className="flex items-center space-x-2">
+                      <Avatar>
+                        <AvatarImage src="/placeholder-user.jpg" />
+                      </Avatar>
+                      <span>USDC</span>
+                    </div>
+                  </TableCell>
+                  <TableCell>141,455.84075</TableCell>
+                  <TableCell>$141.46K</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>
+                    <div className="flex items-center space-x-2">
+                      <Avatar>
+                        <AvatarImage src="/placeholder-user.jpg" />
+                      </Avatar>
+                      <span>OSMO</span>
+                    </div>
+                  </TableCell>
+                  <TableCell>121,963.87561</TableCell>
+                  <TableCell>$79.33K</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>
+                    <div className="flex items-center space-x-2">
+                      <Avatar>
+                        <AvatarImage src="/placeholder-user.jpg" />
+                      </Avatar>
+                      <span>USDC.axl</span>
+                    </div>
+                  </TableCell>
+                  <TableCell>724.278375</TableCell>
+                  <TableCell>$725.00</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
           </div>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Token</TableHead>
-                <TableHead>Total</TableHead>
-                <TableHead>Est. USD value</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              <TableRow>
-                <TableCell>
-                  <div className="flex items-center space-x-2">
-                    <Avatar>
-                      <AvatarImage src="/placeholder-user.jpg" />
-                    </Avatar>
-                    <span>USDC</span>
-                  </div>
-                </TableCell>
-                <TableCell>141,455.84075</TableCell>
-                <TableCell>$141.46K</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>
-                  <div className="flex items-center space-x-2">
-                    <Avatar>
-                      <AvatarImage src="/placeholder-user.jpg" />
-                    </Avatar>
-                    <span>OSMO</span>
-                  </div>
-                </TableCell>
-                <TableCell>121,963.87561</TableCell>
-                <TableCell>$79.33K</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>
-                  <div className="flex items-center space-x-2">
-                    <Avatar>
-                      <AvatarImage src="/placeholder-user.jpg" />
-                    </Avatar>
-                    <span>USDC.axl</span>
-                  </div>
-                </TableCell>
-                <TableCell>724.278375</TableCell>
-                <TableCell>$725.00</TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </div>
-      </div>
+        </CardContent>
+      </Card>
     </div>
   );
 };

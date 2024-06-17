@@ -21,47 +21,41 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { ResponsiveLine } from "@nivo/line";
+import { Route } from "@/routes/market/$daoId";
+import { daos } from "@/lib/mock";
 
 export const Infrastructure = () => {
+  const { daoId } = Route.useParams();
+  const dao = daos.find((dao) => dao.id === daoId)!;
   return (
-    <div>
-      <div className="flex flex-col gap-8 max-w-6xl w-full mx-auto">
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-2">
-          <Card>
-            <CardHeader>
-              <CardTitle>Cumulative Costs</CardTitle>
-              <CardDescription>
-                This graph shows the cumulative costs over time.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <TimeseriesChart className="aspect-[9/4]" />
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Resource Usage</CardTitle>
-              <CardDescription>
-                This graph shows the acumulative resource usage over time.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <TimeseriesChart className="aspect-[9/4]" />
-            </CardContent>
-          </Card>
-        </div>
-        <div className="flex justify-center">
-          <ToggleGroup type="single">
-            <ToggleGroupItem value="projects">Projects</ToggleGroupItem>
-            <ToggleGroupItem value="clouds">Clouds</ToggleGroupItem>
-            <ToggleGroupItem value="components">Components</ToggleGroupItem>
-          </ToggleGroup>
-        </div>
-      </div>
-      <div className="w-full overflow-auto">
-        <Table>
+    <div className="flex flex-col gap-8">
+      <section className="flex gap-8">
+        <Card className="flex-1">
+          <CardHeader>
+            <CardTitle>Cumulative Costs</CardTitle>
+            <CardDescription>
+              This graph shows the cumulative costs over time.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <TimeseriesChart className="aspect-[9/4]" />
+          </CardContent>
+        </Card>
+        <Card className="flex-1">
+          <CardHeader>
+            <CardTitle>Resource Usage</CardTitle>
+            <CardDescription>
+              This graph shows the acumulative resource usage over time.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <TimeseriesChart className="aspect-[9/4]" />
+          </CardContent>
+        </Card>
+      </section>
+      <Card>
+        <Table className="w-full overflow-auto">
           <TableHeader>
             <TableRow>
               <TableHead>Provider</TableHead>
@@ -74,102 +68,52 @@ export const Infrastructure = () => {
             </TableRow>
           </TableHeader>
           <TableBody>
-            <TableRow>
-              <TableCell>
-                <div className="flex items-center gap-2">
-                  <CloudIcon className="w-5 h-5 text-blue-500" />
-                  <span className="text-blue-500">Cloud Hosting</span>
-                </div>
-              </TableCell>
-              <TableCell>External</TableCell>
-              <TableCell>99.98%</TableCell>
-              <TableCell>
-                <Badge className="bg-green-500 ">Operational</Badge>
-              </TableCell>
-              <TableCell>$2,500/month</TableCell>
-              <TableCell>2 weeks ago</TableCell>
-              <TableCell>
-                Provides cloud hosting services for our web applications.
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <div className="flex items-center gap-2">
-                  <DatabaseIcon className="w-5 h-5 text-green-500" />
-                  <span className="text-green-500">Database</span>
-                </div>
-              </TableCell>
-              <TableCell>Internal</TableCell>
-              <TableCell>100%</TableCell>
-              <TableCell>
-                <Badge className="bg-green-500 ">Operational</Badge>
-              </TableCell>
-              <TableCell>$1,000/month</TableCell>
-              <TableCell>1 month ago</TableCell>
-              <TableCell>
-                Manages our relational database for storing application data.
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <div className="flex items-center gap-2">
-                  <MailIcon className="w-5 h-5 text-orange-500" />
-                  <span className="text-orange-500">Email Service</span>
-                </div>
-              </TableCell>
-              <TableCell>External</TableCell>
-              <TableCell>99.95%</TableCell>
-              <TableCell>
-                <Badge variant="destructive" className="bg-orange-500 ">
-                  Degraded
-                </Badge>
-              </TableCell>
-              <TableCell>$500/month</TableCell>
-              <TableCell>3 days ago</TableCell>
-              <TableCell>
-                Handles email delivery and transactional email services.
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <div className="flex items-center gap-2">
-                  <LockIcon className="w-5 h-5 text-purple-500" />
-                  <span className="text-purple-500">Identity Provider</span>
-                </div>
-              </TableCell>
-              <TableCell>External</TableCell>
-              <TableCell>99.99%</TableCell>
-              <TableCell>
-                <Badge className="bg-green-500 ">Operational</Badge>
-              </TableCell>
-              <TableCell>$300/month</TableCell>
-              <TableCell>2 months ago</TableCell>
-              <TableCell>
-                Manages user authentication and authorization for our
-                applications.
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <div className="flex items-center gap-2">
-                  <StoreIcon className="w-5 h-5 text-red-500" />
-                  <span className="text-red-500">File Storage</span>
-                </div>
-              </TableCell>
-              <TableCell>Internal</TableCell>
-              <TableCell>100%</TableCell>
-              <TableCell>
-                <Badge className="bg-green-500 ">Operational</Badge>
-              </TableCell>
-              <TableCell>$800/month</TableCell>
-              <TableCell>6 weeks ago</TableCell>
-              <TableCell>
-                Provides file storage and content delivery for our applications.
-              </TableCell>
-            </TableRow>
+            {dao.infrastructure.map((infrastructure) => (
+              <TableRow key={infrastructure.provider}>
+                <TableCell>
+                  <div className="flex items-center gap-2">
+                    {infrastructure.provider === "Cloud Hosting" && (
+                      <CloudIcon className="w-4 h-4" />
+                    )}
+                    {infrastructure.provider === "Database" && (
+                      <DatabaseIcon className="w-4 h-4" />
+                    )}
+                    {infrastructure.provider === "Email Service" && (
+                      <MailIcon className="w-4 h-4" />
+                    )}
+                    {infrastructure.provider === "Identity Provider" && (
+                      <LockIcon className="w-4 h-4" />
+                    )}
+                    {infrastructure.provider === "File Storage" && (
+                      <StoreIcon className="w-4 h-4" />
+                    )}
+
+                    <span>{infrastructure.provider}</span>
+                  </div>
+                </TableCell>
+                <TableCell>{infrastructure.type}</TableCell>
+                <TableCell>{infrastructure.uptime}%</TableCell>
+                <TableCell>
+                  <Badge
+                    variant={
+                      infrastructure.status === "Operational"
+                        ? "success"
+                        : "destructive"
+                    }
+                  >
+                    {infrastructure.status}
+                  </Badge>
+                </TableCell>
+                <TableCell>${infrastructure.spendingPerMonth}/month</TableCell>
+                <TableCell>
+                  {infrastructure.lastIncident.toLocaleDateString()}
+                </TableCell>
+                <TableCell>{infrastructure.description}</TableCell>
+              </TableRow>
+            ))}
           </TableBody>
         </Table>
-      </div>
+      </Card>
     </div>
   );
 };
