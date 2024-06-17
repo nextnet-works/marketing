@@ -1,7 +1,7 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 import { HomeIcon, SettingsIcon, UsersIcon, GlobeIcon } from "lucide-react";
-import { HomeSection } from "./Home";
+import { HomeSection } from "./home/index";
 import { Infrastructure } from "./Infrastructure";
 import { Financials } from "./Financials";
 import { Governance } from "./Governance";

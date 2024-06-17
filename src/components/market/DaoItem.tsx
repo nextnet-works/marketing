@@ -20,13 +20,43 @@ type DaoItemProps = {
   dao: Dao;
 };
 
-export const DaoItem = ({ dao }: DaoItemProps) => {
-  const itemClass = "flex items-center space-x-2 text-sm text-gray-500";
-  const subItem = "flex items-center space-x-2 flex-1";
+const daoDetails = (dao: Dao) => [
+  {
+    icon: <BriefcaseIcon className="w-4 h-4" />,
+    label: "Governance",
+    value: dao.governance,
+  },
+  {
+    icon: <DollarSignIcon className="w-4 h-4" />,
+    label: "Revenues",
+    value: `$${dao.financial.revenues}`,
+  },
+  {
+    icon: <DollarSignIcon className="w-4 h-4" />,
+    label: "Expenses",
+    value: `$${dao.financial.expenses}`,
+  },
+  {
+    icon: <UsersIcon className="w-4 h-4" />,
+    label: "Contributors",
+    value: dao.code.contributors,
+  },
+  {
+    icon: <ClipboardListIcon className="w-4 h-4" />,
+    label: "Proposals",
+    value: dao.code.proposals,
+  },
+  {
+    icon: <GitCommitVerticalIcon className="w-4 h-4" />,
+    label: "Code-pushes",
+    value: dao.code.pushes,
+  },
+];
 
+export const DaoItem = ({ dao }: DaoItemProps) => {
   return (
     <Link to={`/market/${dao.id}`}>
-      <Card className="cursor-pointer  p-4 shadow-md">
+      <Card className="cursor-pointer p-4 shadow-md">
         <CardHeader className="flex flex-row gap-4 items-center">
           <Avatar className="w-16 h-16">
             <AvatarImage src={dao.avatarUrl} alt={dao.name} />
@@ -41,36 +71,19 @@ export const DaoItem = ({ dao }: DaoItemProps) => {
           </div>
         </CardHeader>
         <CardContent>
-          <div className={itemClass}>
-            <div className={subItem}>
-              <BriefcaseIcon className="w-4 h-4" />
-              <span> {dao.governance} </span>
+          {daoDetails(dao).map((detail, index) => (
+            <div
+              key={index}
+              className="flex items-center space-x-2 text-sm text-gray-500"
+            >
+              <div className="flex items-center space-x-2 flex-1">
+                {detail.icon}
+                <span>
+                  {detail.label}: {detail.value}
+                </span>
+              </div>
             </div>
-            <div className={subItem}>
-              <DollarSignIcon className="w-4 h-4" />
-              <span>Revenues: ${dao.financial.revenues}</span>
-            </div>
-          </div>
-          <div className={itemClass}>
-            <div className={subItem}>
-              <DollarSignIcon className="w-4 h-4" />
-              <span> Expenses: ${dao.financial.expenses}</span>
-            </div>
-            <div className={subItem}>
-              <UsersIcon className="w-4 h-4" />
-              <span>Contributors: {dao.code.contributors}</span>
-            </div>
-          </div>
-          <div className={itemClass}>
-            <div className={subItem}>
-              <ClipboardListIcon className="w-4 h-4" />
-              <span>Proposals: {dao.code.proposals}</span>
-            </div>
-            <div className={subItem}>
-              <GitCommitVerticalIcon className="w-4 h-4" />
-              <span>Git-pushes: {dao.code.pushes}</span>
-            </div>
-          </div>
+          ))}
         </CardContent>
       </Card>
     </Link>

@@ -14,7 +14,40 @@ export const daos: Dao[] = [
       revenues: 3500000,
       expenses: 1000000,
       infrastructure: 500000,
+      treasury: {
+        eth: 100000,
+        dai: 100000,
+        usdc: 100000,
+      },
     },
+    applicationsAndServices: [
+      {
+        name: "Observability Cloud",
+        description: "OpenTelemetry Service",
+        appLink: "https://observability.cloud",
+        repositoryLink: "",
+        docsLink: "",
+        communityLink: "",
+      },
+    ],
+    changeManagementProposals: [
+      {
+        id: "PROP-001",
+        title: "Add support for Prometheus",
+        type: "DAO Vote",
+        status: "pending",
+        approvedBy: ["0x1234", "0x5678"],
+        changeSetLink: "",
+        discussionLink: "",
+        version: "1.0",
+        date: "2021-09-01",
+        transactionId: "0x1234",
+        votes: {
+          yes: 120,
+          no: 20,
+        },
+      },
+    ],
     code: {
       contributors: 137,
       proposals: 2000,
@@ -26,7 +59,6 @@ export const daos: Dao[] = [
     name: "Morpheus AI Fleet Management",
     category: ["DePin"],
     avatarUrl: Logo2,
-
     description:
       "Morpheus AI offers a cutting-edge solution for automating and optimizing fleet deployments across decentralized cloud infrastructure, such as Akash Network and other DePINs (Decentralized Physical Infrastructure Networks). By leveraging advanced APIs and automated protocols, Morpheus AI ensures the seamless deployment and management of AI workloads. This not only optimizes costs but also significantly enhances operational efficiency and scalability.",
     governance: "Token Based",
@@ -34,7 +66,23 @@ export const daos: Dao[] = [
       revenues: 1200000,
       expenses: 600000,
       infrastructure: 200000,
+      treasury: {
+        eth: 100000,
+        dai: 100000,
+        usdc: 100000,
+      },
     },
+    applicationsAndServices: [
+      {
+        name: "Morpheus AI",
+        description: "AI Fleet Management",
+        appLink: "https://morpheus.ai",
+        repositoryLink: "",
+        docsLink: "",
+        communityLink: "",
+      },
+    ],
+    changeManagementProposals: [],
     code: {
       contributors: 200,
       proposals: 80,
