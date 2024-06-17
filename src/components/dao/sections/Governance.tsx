@@ -22,18 +22,6 @@ import {
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChangeManagementProposal } from "@/lib/types";
-type Proposal = {
-  id: string;
-  name: string;
-  version: string;
-  changeType: string;
-  approvalRequired: string;
-  status: string;
-  approvedBy: string;
-  changeset: string;
-  discussionLinks: string[];
-  transactionId: string;
-};
 
 export const Governance = () => {
   const [proposals, _] = useState<ChangeManagementProposal[]>([
