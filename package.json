@@ -61,6 +61,8 @@
     "cmdk": "^1.0.0",
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.1.5",
+    "eslint-define-config": "^2.1.0",
+    "eslint-plugin-react": "^7.34.2",
     "eslint-plugin-react-compiler": "^0.0.0-experimental-51a85ea-20240601",
     "eslint-plugin-react-refresh": "^0.4.7",
     "input-otp": "^1.2.4",
