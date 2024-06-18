@@ -43,35 +43,30 @@ const sections = [
   },
 ] as const;
 
-export const Sections = () => {
+export const Sections = ({ daoId }: { daoId: string }) => {
   const { tab } = Route.useSearch();
   const navigate = useNavigate({ from: Route.fullPath });
 
   return (
-    <div className="container px-4 md:px-6">
-      <Tabs
-        defaultValue={tab}
-        onValueChange={(value) =>
-          navigate({ search: { tab: value as typeof tab } })
-        }
-      >
-        <TabsList className="flex w-full justify-center gap-4">
-          {sections.map((section) => (
-            <TabsTrigger
-              value={section.name}
-              className="flex items-center gap-2"
-            >
-              <section.icon className="h-5 w-5" />
-              {section.name}
-            </TabsTrigger>
-          ))}
-        </TabsList>
+    <Tabs
+      defaultValue={tab}
+      onValueChange={(value) =>
+        navigate({ search: { tab: value as typeof tab } })
+      }
+    >
+      <TabsList className="flex w-full justify-center gap-4">
         {sections.map((section) => (
-          <TabsContent value={section.name} key={section.name}>
-            <section.component />
-          </TabsContent>
+          <TabsTrigger value={section.name} className="flex items-center gap-2">
+            <section.icon className="h-5 w-5" />
+            {section.name}
+          </TabsTrigger>
         ))}
-      </Tabs>
-    </div>
+      </TabsList>
+      {sections.map((section) => (
+        <TabsContent value={section.name} key={section.name} className="mt-24">
+          <section.component daoId={daoId} />
+        </TabsContent>
+      ))}
+    </Tabs>
   );
 };

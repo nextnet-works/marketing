@@ -4,10 +4,18 @@ import {
   LucideProps,
   UsersIcon,
 } from "lucide-react";
-import { Card } from "../ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
 
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { ForwardRefExoticComponent, RefAttributes } from "react";
+import { TypographyLarge } from "../typography/large";
+import { TypographyLead } from "../typography/lead";
 
 type Stat = {
   title: string;
@@ -48,35 +56,37 @@ const statsData: Stat[] = [
 const statsTimeFrames = ["7 days", "30 days", "6 months", "1 year"] as const;
 
 export const Stats = () => (
-  <Card className="bg-gray-100 dark:bg-gray-800 py-8 px-4 lg:px-6">
-    <div className="container mx-auto grid grid-cols-1 gap-6">
-      <div className="grid gap-4">
-        <h1 className="text-2xl font-bold">Home</h1>
-        <p className="text-gray-500 dark:text-gray-400">
-          Explore and discover the latest decentralized cloud businesses on the
-          internet.
-        </p>
+  <Card className="bg-inherit">
+    <CardHeader>
+      <CardTitle>Home</CardTitle>
+      <CardDescription>
+        Explore and discover the latest decentralized cloud businesses on the
+        internet.
+      </CardDescription>
+    </CardHeader>
+    <CardContent className="flex flex-col gap-4">
+      <ToggleGroup
+        type="single"
+        className="w-fit ml-auto bg-card p-2 rounded-2xl"
+      >
+        {statsTimeFrames.map((timeFrame) => (
+          <ToggleGroupItem key={timeFrame} value={timeFrame}>
+            {timeFrame}
+          </ToggleGroupItem>
+        ))}
+      </ToggleGroup>
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+        {statsData.map((stat, index) => (
+          <Card
+            key={index}
+            className="p-4 shadow rounded-lg flex flex-col items-center justify-center gap-1"
+          >
+            <stat.icon className="w-5 h-5 text-gray-500 dark:text-gray-400" />
+            <TypographyLarge>{stat.title}</TypographyLarge>
+            <TypographyLead>{stat.value}</TypographyLead>
+          </Card>
+        ))}
       </div>
-      <div className="flex flex-col gap-4">
-        <ToggleGroup type="single" className="w-fit ml-auto">
-          {statsTimeFrames.map((timeFrame) => (
-            <ToggleGroupItem key={timeFrame} value={timeFrame}>
-              {timeFrame}
-            </ToggleGroupItem>
-          ))}
-        </ToggleGroup>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          {statsData.map((stat, index) => (
-            <div key={index} className=" p-4 rounded-lg shadow-md">
-              <stat.icon className="w-5 h-5 text-gray-500 dark:text-gray-400" />
-              <div className="flex items-center justify-between">
-                <div className="text-sm font-medium">{stat.title}</div>
-              </div>
-              <div className="text-2xl font-bold">{stat.value}</div>
-            </div>
-          ))}
-        </div>
-      </div>{" "}
-    </div>
+    </CardContent>{" "}
   </Card>
 );

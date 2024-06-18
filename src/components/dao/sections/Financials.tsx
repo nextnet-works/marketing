@@ -5,7 +5,6 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
-import { Route } from "@/routes/market/$daoId";
 
 import { ResponsiveBar } from "@nivo/bar";
 import { Button } from "@/components/ui/button";
@@ -22,8 +21,10 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { daos } from "@/lib/mock";
 import { CircleIcon } from "lucide-react";
 
-export const Financials = () => {
-  const { daoId } = Route.useParams();
+type FinancialsProps = {
+  daoId: string;
+};
+export const Financials = ({ daoId }: FinancialsProps) => {
   const dao = daos.find((dao) => dao.id === daoId)!;
   return (
     <div className="grid grid-cols-1 gap-8 mx-auto justify-center items-center">

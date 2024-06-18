@@ -15,6 +15,8 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Link } from "@tanstack/react-router";
 import { Dao } from "@/lib/types";
+import { TypographyLarge } from "../typography/large";
+import { TypographyMuted } from "../typography/muted";
 
 type DaoItemProps = {
   dao: Dao;
@@ -72,14 +74,12 @@ export const DaoItem = ({ dao }: DaoItemProps) => {
         </CardHeader>
         <CardContent>
           {daoDetails(dao).map((detail, index) => (
-            <div
-              key={index}
-              className="flex items-center space-x-2 text-sm text-gray-500"
-            >
+            <div key={index}>
               <div className="flex items-center space-x-2 flex-1">
                 {detail.icon}
-                <span>
-                  {detail.label}: {detail.value}
+                <span className="flex gap-2 justify-between items-center w-full">
+                  <TypographyLarge>{detail.label}:</TypographyLarge>
+                  <TypographyMuted>{detail.value}</TypographyMuted>
                 </span>
               </div>
             </div>

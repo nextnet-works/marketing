@@ -9,43 +9,37 @@ import {
   TableCell,
 } from "@/components/ui/table";
 import { ResponsivePie } from "@nivo/pie";
+import { TypographyH1 } from "@/components/typography/h1";
+import { daos } from "@/lib/mock";
 
-export const Contributors = () => {
+type ContributorsProps = {
+  daoId: string;
+};
+
+export const Contributors = ({ daoId }: ContributorsProps) => {
+  const dao = daos.find((dao) => dao.id === daoId)!;
   return (
-    <div className="flex flex-col space-y-10">
-      <PieChart className="w-full h-[300px]" />
-      <h1 className="text-2xl font-bold">Top Contributors</h1>
+    <div className="flex flex-col gap-10">
+      <PieChart className="w-full h-[250px]" />
+      <TypographyH1>Top Contributors</TypographyH1>
       <div className="grid grid-cols-3 gap-4">
-        <Card className=" p-4 shadow rounded-lg flex flex-col items-center justify-center">
-          <Avatar>
-            <AvatarImage src="/placeholder-user.jpg" />
-            <AvatarFallback>TM</AvatarFallback>
-          </Avatar>
-          <div className="mt-2 text-center">
-            <div className="font-bold">Luke</div>
-            <div className="text-sm text-gray-500">213 votes</div>
-          </div>
-        </Card>
-        <Card className=" p-4 shadow rounded-lg flex flex-col items-center justify-center">
-          <Avatar>
-            <AvatarImage src="/placeholder-user.jpg" />
-            <AvatarFallback>TM</AvatarFallback>
-          </Avatar>
-          <div className="mt-2 text-center">
-            <div className="font-bold">xNet</div>
-            <div className="text-sm text-gray-500">32 votes</div>
-          </div>
-        </Card>
-        <Card className=" p-4 shadow rounded-lg flex flex-col items-center justify-center">
-          <Avatar>
-            <AvatarImage src="/placeholder-user.jpg" />
-            <AvatarFallback>TM</AvatarFallback>
-          </Avatar>
-          <div className="mt-2 text-center">
-            <div className="font-bold">Gusy</div>
-            <div className="text-sm text-gray-500">44 votes</div>
-          </div>
-        </Card>
+        {dao.contributors.slice(0, 3).map((contributor) => (
+          <Card
+            key={contributor.wallet}
+            className="p-4 shadow rounded-lg flex flex-col items-center justify-center gap-1"
+          >
+            <Avatar>
+              <AvatarImage src={contributor.avatarUrl} />
+              <AvatarFallback>{contributor.name[0]}</AvatarFallback>
+            </Avatar>
+            <div className="mt-2 text-center">
+              <div className="font-bold">{contributor.name}</div>
+              <div className="text-sm text-gray-500">
+                {contributor.votes} votes
+              </div>
+            </div>
+          </Card>
+        ))}
       </div>
       <Card>
         <h1 className="text-2xl font-bold">Contributors Table</h1>
@@ -63,36 +57,18 @@ export const Contributors = () => {
             </TableRow>
           </TableHeader>
           <TableBody>
-            <TableRow>
-              <TableCell>Luke</TableCell>
-              <TableCell>Code</TableCell>
-              <TableCell>213</TableCell>
-              <TableCell>Dev</TableCell>
-              <TableCell>1%</TableCell>
-              <TableCell>$$$</TableCell>
-              <TableCell>xxxx</TableCell>
-              <TableCell>IAM/Multisigs, Storage</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>xNet</TableCell>
-              <TableCell>Code</TableCell>
-              <TableCell>32</TableCell>
-              <TableCell>Tester</TableCell>
-              <TableCell>1%</TableCell>
-              <TableCell>$$</TableCell>
-              <TableCell>x</TableCell>
-              <TableCell />
-            </TableRow>
-            <TableRow>
-              <TableCell>Gusy</TableCell>
-              <TableCell>Code, Funding</TableCell>
-              <TableCell>44</TableCell>
-              <TableCell>Funder, Dev, Tester</TableCell>
-              <TableCell>1%</TableCell>
-              <TableCell>$$$</TableCell>
-              <TableCell>xx</TableCell>
-              <TableCell>A B C D Y I</TableCell>
-            </TableRow>
+            {dao.contributors.map((contributor) => (
+              <TableRow key={contributor.wallet}>
+                <TableCell>{contributor.name}</TableCell>
+                <TableCell>{contributor.type}</TableCell>
+                <TableCell>{contributor.votes}</TableCell>
+                <TableCell>{contributor.role}</TableCell>
+                <TableCell>{contributor.govOwnership}</TableCell>
+                <TableCell>{contributor.income}</TableCell>
+                <TableCell>{contributor.wallet}</TableCell>
+                <TableCell>{contributor.keysAttached}</TableCell>
+              </TableRow>
+            ))}
           </TableBody>
         </Table>
       </Card>
@@ -121,7 +97,7 @@ const PieChart: React.FC<PieChartProps> = (props) => {
         arcLabel={(d) => `${d.id}`}
         arcLabelsTextColor={"#ffffff"}
         arcLabelsRadiusOffset={0.65}
-        colors={["#2563eb", "#34d399", "#f59e0b"]}
+        colors={["#3c79dd", "#3ec565", "#e7b124"]}
         theme={{
           labels: {
             text: {

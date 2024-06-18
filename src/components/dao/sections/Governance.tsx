@@ -26,13 +26,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Route } from "@/routes/market/$daoId";
 import { daos } from "@/lib/mock";
 import { TypographyLead } from "@/components/typography/lead";
 import { TypographyH3 } from "@/components/typography/h3";
 
-export const Governance = () => {
-  const { daoId } = Route.useParams();
+type GovernanceProps = {
+  daoId: string;
+};
+export const Governance = ({ daoId }: GovernanceProps) => {
   const dao = daos.find((dao) => dao.id === daoId)!;
   const [expandedProposalId, setExpandedProposalId] = useState<string | null>(
     null

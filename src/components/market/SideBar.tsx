@@ -14,7 +14,7 @@ const sidebarSections = [
     icon: <SearchIcon />,
   },
   {
-    section: "create_dao",
+    section: "create-dao",
     title: "Create DAO",
     icon: <PlusIcon />,
   },
@@ -22,10 +22,14 @@ const sidebarSections = [
 
 export const SideBar = () => {
   return (
-    <aside className="w-64 bg-gray-800 rounded-sm p-2">
+    <aside className="w-64 bg-secondary p-4 rounded-xl">
       <ul className="flex flex-col gap-2">
         {sidebarSections.map((s) => (
-          <li key={s.section} className="w-full">
+          <li
+            key={s.section}
+            className="w-full"
+            onClick={(e) => e.preventDefault()}
+          >
             <Link
               className="w-full flex gap-2 items-center"
               search={{

@@ -30,10 +30,10 @@ function Market() {
       <div className="flex-1 flex flex-col gap-4">
         {section === "home" && <Stats />}
         {section === "explore" && (
-          <Input placeholder="Search..." className="w-full" />
+          <Input placeholder="Search..." className="w-full bg-card" />
         )}
-        {section === "create_dao" && <CreateDAO />}
-        {section !== "create_dao" && <DaoList />}
+        {section === "create-dao" && <CreateDAO />}
+        {section !== "create-dao" && <DaoList />}
       </div>
     </Layout>
   );

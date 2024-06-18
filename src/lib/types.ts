@@ -28,8 +28,21 @@ export type Dao = {
     pulls: number;
     govMembers: number;
   };
+  contributors: Contributors[];
   applicationsAndServices: ApplicationOrService[];
   changeManagementProposals: ChangeManagementProposal[];
+};
+
+type Contributors = {
+  name: string;
+  avatarUrl: string;
+  type: "Core" | "Community" | "Investor" | "Advisory" | "Funding";
+  votes: number;
+  role: string;
+  govOwnership: number;
+  income: number;
+  wallet: string;
+  keysAttached: number;
 };
 
 type Financial = {
