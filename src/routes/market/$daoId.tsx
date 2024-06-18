@@ -3,8 +3,23 @@ import { Stats } from "@/components/dao/Stats";
 import { Layout } from "@/components/market/Layout";
 import { createFileRoute } from "@tanstack/react-router";
 
+type TabSearch = {
+  tab:
+    | "home"
+    | "infrastructure"
+    | "financials"
+    | "governance"
+    | "analytics"
+    | "contributors";
+};
+
 export const Route = createFileRoute("/market/$daoId")({
   component: Dao,
+  validateSearch: (search: Record<string, unknown>): TabSearch => {
+    return {
+      tab: (search.tab as TabSearch["tab"]) || "home",
+    };
+  },
 });
 
 function Dao() {

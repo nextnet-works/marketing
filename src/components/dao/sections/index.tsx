@@ -7,6 +7,8 @@ import { Financials } from "./Financials";
 import { Governance } from "./Governance";
 import { Analytics } from "./Analytics";
 import { Contributors } from "./Contributors";
+import { useNavigate } from "@tanstack/react-router";
+import { Route } from "@/routes/market/$daoId";
 
 const sections = [
   {
@@ -42,9 +44,17 @@ const sections = [
 ] as const;
 
 export const Sections = () => {
+  const { tab } = Route.useSearch();
+  const navigate = useNavigate({ from: Route.fullPath });
+
   return (
     <div className="container px-4 md:px-6">
-      <Tabs defaultValue="Home">
+      <Tabs
+        defaultValue={tab}
+        onValueChange={(value) =>
+          navigate({ search: { tab: value as typeof tab } })
+        }
+      >
         <TabsList className="flex w-full justify-center gap-4">
           {sections.map((section) => (
             <TabsTrigger

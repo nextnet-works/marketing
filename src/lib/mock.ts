@@ -163,6 +163,8 @@ export const daos: Dao[] = [
       contributors: 137,
       proposals: 2000,
       pushes: 789,
+      pulls: 123,
+      govMembers: 1000,
     },
   },
   {
@@ -326,6 +328,8 @@ export const daos: Dao[] = [
       contributors: 200,
       proposals: 80,
       pushes: 600,
+      pulls: 123,
+      govMembers: 1000,
     },
   },
 ];
