@@ -25,6 +25,8 @@ export type Dao = {
     contributors: number;
     proposals: number;
     pushes: number;
+    pulls: number;
+    govMembers: number;
   };
   applicationsAndServices: ApplicationOrService[];
   changeManagementProposals: ChangeManagementProposal[];

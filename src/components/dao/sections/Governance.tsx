@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Input } from "@/components/ui/input";
 import {
   Table,
   TableHeader,
@@ -20,227 +19,84 @@ import {
   GitPullRequestIcon,
   HashIcon,
 } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ChangeManagementProposal } from "@/lib/types";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Route } from "@/routes/market/$daoId";
+import { daos } from "@/lib/mock";
+import { TypographyLead } from "@/components/typography/lead";
+import { TypographyH3 } from "@/components/typography/h3";
 
 export const Governance = () => {
-  const [proposals, _] = useState<ChangeManagementProposal[]>([
-    {
-      id: "PROP-001",
-      name: "Increase Staking Rewards",
-      version: "1.0",
-      type: "Parameter Change",
-      approvalRequired: "DAO Vote",
-      status: "pending",
-      approvedBy: ["0x123...abc", "0x456...def"],
-      changeSetLink: "https://github.com/dao/proposal/diff",
-      discussionLink: "https://forum.dao.com/proposal-001",
-      transactionId: "0x456...def",
-      date: "2021-09-01",
-    },
-    {
-      id: "PROP-002",
-      name: "Add New Token to Ecosystem",
-      version: "2.1",
-      type: "Contract Upgrade",
-      approvalRequired: "DAO Vote",
-      status: "approved",
-      approvedBy: ["0x123...abc"],
-      changeSetLink: "https://github.com/dao/proposal/diff",
-      discussionLink: "https://forum.dao.com/proposal-002",
-      transactionId: "0x789...ghi",
-      date: "2021-09-15",
-    },
-    {
-      id: "PROP-003",
-      name: "Modify Governance Parameters",
-      version: "1.5",
-      type: "Parameter Change",
-      approvalRequired: "DAO Vote",
-      status: "rejected",
-      approvedBy: ["0x123...abc"],
-      changeSetLink: "",
-      discussionLink: "https://forum.dao.com/proposal-003",
-      transactionId: "0x789...ghi",
-      date: "2021-09-15",
-    },
-  ]);
-  const [sortColumn, setSortColumn] = useState("id");
-  const [sortDirection, setSortDirection] = useState("asc");
-  const [filterText, setFilterText] = useState("");
+  const { daoId } = Route.useParams();
+  const dao = daos.find((dao) => dao.id === daoId)!;
   const [expandedProposalId, setExpandedProposalId] = useState<string | null>(
     null
   );
-  const handleSort = (column: string) => {
-    if (sortColumn === column) {
-      setSortDirection(sortDirection === "asc" ? "desc" : "asc");
-    } else {
-      setSortColumn(column);
-      setSortDirection("asc");
-    }
-  };
-  const handleFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFilterText(e.target.value);
-  };
+
   const handleExpand = (id: string) => {
     setExpandedProposalId(expandedProposalId === id ? null : id);
   };
-  const filteredProposals = proposals.filter((proposal) => {
-    return (
-      proposal.id.toLowerCase().includes(filterText.toLowerCase()) ||
-      proposal.name.toLowerCase().includes(filterText.toLowerCase()) ||
-      proposal.version.toLowerCase().includes(filterText.toLowerCase()) ||
-      proposal.type.toLowerCase().includes(filterText.toLowerCase()) ||
-      (proposal?.approvalRequired || "")
-        .toLowerCase()
-        .includes(filterText.toLowerCase()) ||
-      proposal.status.toLowerCase().includes(filterText.toLowerCase()) ||
-      proposal.approvedBy[0].toLowerCase().includes(filterText.toLowerCase()) ||
-      proposal.transactionId.toLowerCase().includes(filterText.toLowerCase())
-    );
-  });
+
+  const selectedChangeManagementProposal = dao.changeManagementProposals.find(
+    (p) => p.id === expandedProposalId
+  );
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-4 md:p-6 flex flex-col gap-4">
-      <div className=" p-4 flex space-x-4 rounded-lg">
-        <Card className=" p-3 flex-1 rounded-lg flex flex-col items-center justify-center">
-          <CodeIcon className=" h-6 w-6" />
-          <div className=" mt-1">Active Code Members</div>
-          <div className=" font-bold">345</div>
+    <div className="w-full flex flex-col gap-4">
+      <div className="flex gap-4">
+        <Card className="flex flex-col items-center justify-center gap-2 flex-1 text-center">
+          <CodeIcon className="h-6 w-6" />
+          <CardTitle>Active Code Members</CardTitle>
+          <CardDescription>{dao.code.contributors}</CardDescription>
         </Card>
-        <Card className="p-3 flex-1 rounded-lg flex flex-col items-center justify-center">
-          <GavelIcon className=" h-6 w-6" />
-          <div className=" mt-1">Active Gov Members</div>
-          <div className=" font-bold">345</div>
+        <Card className="flex flex-col items-center justify-center gap-2 flex-1 text-center">
+          <GavelIcon className="h-6 w-6" />
+          <CardTitle>Gov Members</CardTitle>
+          <CardDescription>{dao.code.govMembers}</CardDescription>
         </Card>
-        <Card className="p-3  flex-1 rounded-lg flex flex-col items-center justify-center">
-          <BracketsIcon className=" h-6 w-6" />
-          <div className=" mt-1">Code updates proposals</div>
-          <div className=" font-bold">1.2M</div>
+        <Card className="flex flex-col items-center justify-center gap-2 flex-1 text-center">
+          <BracketsIcon className="h-6 w-6" />
+          <CardTitle>Code updates proposals</CardTitle>
+          <CardDescription>{dao.code.proposals}</CardDescription>
         </Card>
-        <Card className="p-3  flex-1 rounded-lg flex flex-col items-center justify-center">
-          <GitPullRequestIcon className=" h-6 w-6" />
-          <div className=" mt-1">Open Pull-Requests</div>
-          <div className=" font-bold">0.5M</div>
+        <Card className="flex flex-col items-center justify-center gap-2 flex-1 text-center">
+          <GitPullRequestIcon className="h-6 w-6" />
+          <CardTitle>Open Pull-Requests</CardTitle>
+          <CardDescription>{dao.code.pulls}</CardDescription>
         </Card>
-        <Card className="p-3  flex-1 rounded-lg flex flex-col items-center justify-center">
-          <HashIcon className=" h-6 w-6" />
-          <div className=" mt-1"># Of Commits</div>
-          <div className=" font-bold">1234</div>
+        <Card className="flex flex-col items-center justify-center gap-2 flex-1 text-center">
+          <HashIcon className="h-6 w-6" />
+          <CardTitle># Of Commits</CardTitle>
+          <CardDescription>{dao.code.pushes}</CardDescription>
         </Card>
       </div>
       <Card>
         <CardHeader className="flex gap-4">
           <CardTitle>Change Management Proposals</CardTitle>
-          <Input
-            placeholder="Search proposals..."
-            className=" w-full max-w-md"
-            value={filterText}
-            onChange={handleFilter}
-          />
         </CardHeader>
         <CardContent>
-          <Table className=" p-4 rounded-lg">
+          <Table>
             <TableHeader>
               <TableRow>
-                <TableHead
-                  className="cursor-pointer text-gray-600 dark:text-gray-300"
-                  onClick={() => handleSort("id")}
-                >
-                  Proposal ID{" "}
-                  {sortColumn === "id" && (
-                    <span className="ml-1">
-                      {sortDirection === "asc" ? "\u2191" : "\u2193"}
-                    </span>
-                  )}
-                </TableHead>
-                <TableHead
-                  className="cursor-pointer text-gray-600 dark:text-gray-300"
-                  onClick={() => handleSort("name")}
-                >
-                  Proposal Name{" "}
-                  {sortColumn === "name" && (
-                    <span className="ml-1">
-                      {sortDirection === "asc" ? "\u2191" : "\u2193"}
-                    </span>
-                  )}
-                </TableHead>
-                <TableHead
-                  className="cursor-pointer text-gray-600 dark:text-gray-300"
-                  onClick={() => handleSort("version")}
-                >
-                  Version{" "}
-                  {sortColumn === "version" && (
-                    <span className="ml-1">
-                      {sortDirection === "asc" ? "\u2191" : "\u2193"}
-                    </span>
-                  )}
-                </TableHead>
-                <TableHead
-                  className="cursor-pointer text-gray-600 dark:text-gray-300"
-                  onClick={() => handleSort("changeType")}
-                >
-                  Change Type{" "}
-                  {sortColumn === "changeType" && (
-                    <span className="ml-1">
-                      {sortDirection === "asc" ? "\u2191" : "\u2193"}
-                    </span>
-                  )}
-                </TableHead>
-                <TableHead
-                  className="cursor-pointer text-gray-600 dark:text-gray-300"
-                  onClick={() => handleSort("approvalRequired")}
-                >
-                  Approval Required{" "}
-                  {sortColumn === "approvalRequired" && (
-                    <span className="ml-1">
-                      {sortDirection === "asc" ? "\u2191" : "\u2193"}
-                    </span>
-                  )}
-                </TableHead>
-                <TableHead
-                  className="cursor-pointer text-gray-600 dark:text-gray-300"
-                  onClick={() => handleSort("status")}
-                >
-                  Status{" "}
-                  {sortColumn === "status" && (
-                    <span className="ml-1">
-                      {sortDirection === "asc" ? "\u2191" : "\u2193"}
-                    </span>
-                  )}
-                </TableHead>
-                <TableHead
-                  className="cursor-pointer text-gray-600 dark:text-gray-300"
-                  onClick={() => handleSort("approvedBy")}
-                >
-                  Approved By{" "}
-                  {sortColumn === "approvedBy" && (
-                    <span className="ml-1">
-                      {sortDirection === "asc" ? "\u2191" : "\u2193"}
-                    </span>
-                  )}
-                </TableHead>
-                <TableHead className="text-gray-600 dark:text-gray-300">
-                  Changeset
-                </TableHead>
-                <TableHead className="text-gray-600 dark:text-gray-300">
-                  Discussion
-                </TableHead>
-                <TableHead
-                  className="cursor-pointer text-gray-600 dark:text-gray-300"
-                  onClick={() => handleSort("transactionId")}
-                >
-                  Transaction ID{" "}
-                  {sortColumn === "transactionId" && (
-                    <span className="ml-1">
-                      {sortDirection === "asc" ? "\u2191" : "\u2193"}
-                    </span>
-                  )}
-                </TableHead>
+                <TableHead>Proposal ID</TableHead>
+                <TableHead>Proposal Name</TableHead>
+                <TableHead>Version</TableHead>
+                <TableHead>Change Type</TableHead>
+                <TableHead>Approval Required</TableHead>
+                <TableHead>Status</TableHead>
+                <TableHead>Approved By</TableHead>
+                <TableHead>Changeset</TableHead>
+                <TableHead>Discussion</TableHead>
+                <TableHead>Transaction ID</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
-              {filteredProposals.map((proposal) => (
+              {dao.changeManagementProposals.map((proposal) => (
                 <TableRow key={proposal.id}>
                   <TableCell>
                     <div className="flex items-center gap-2">
@@ -256,23 +112,13 @@ export const Governance = () => {
                           <ChevronDownIcon className="h-4 w-4" />
                         )}
                       </Button>
-                      <span className="text-gray-600 dark:text-gray-300">
-                        {proposal.id}
-                      </span>
+                      <span>{proposal.id}</span>
                     </div>
                   </TableCell>
-                  <TableCell className="text-gray-600 dark:text-gray-300">
-                    {proposal.name}
-                  </TableCell>
-                  <TableCell className="text-gray-600 dark:text-gray-300">
-                    {proposal.version}
-                  </TableCell>
-                  <TableCell className="text-gray-600 dark:text-gray-300">
-                    {proposal.type}
-                  </TableCell>
-                  <TableCell className="text-gray-600 dark:text-gray-300">
-                    {proposal.approvalRequired}
-                  </TableCell>
+                  <TableCell>{proposal.name}</TableCell>
+                  <TableCell>{proposal.version}</TableCell>
+                  <TableCell>{proposal.type}</TableCell>
+                  <TableCell>{proposal.approvalRequired}</TableCell>
                   <TableCell>
                     <Badge
                       variant={
@@ -286,12 +132,10 @@ export const Governance = () => {
                       {proposal.status}
                     </Badge>
                   </TableCell>
-                  <TableCell className="text-gray-600 dark:text-gray-300">
-                    {proposal.approvedBy || "-"}
-                  </TableCell>
+                  <TableCell>{proposal.approvedBy || "-"}</TableCell>
                   <TableCell>
                     <Link
-                      href="#"
+                      href={proposal.changeSetLink}
                       target="_blank"
                       className="text-blue-500 hover:underline"
                     >
@@ -300,7 +144,7 @@ export const Governance = () => {
                   </TableCell>
                   <TableCell>
                     <Link
-                      href="#"
+                      href={proposal.discussionLink}
                       target="_blank"
                       className="text-blue-500 hover:underline"
                     >
@@ -312,81 +156,60 @@ export const Governance = () => {
               ))}
             </TableBody>
           </Table>
-          {expandedProposalId && (
-            <div className="mt-4 border rounded-lg p-4 ">
-              <h2 className="text-lg font-bold mb-2 text-gray-800 dark:text-gray-200">
-                Proposal Details
-              </h2>
-              <div className="grid grid-cols-2 gap-4">
+          {selectedChangeManagementProposal && (
+            <Card>
+              <CardHeader>
+                <CardTitle>Proposal Details</CardTitle>
+              </CardHeader>
+              <CardContent className="grid grid-cols-2 gap-4">
                 <div>
-                  <div className="font-medium text-gray-600 dark:text-gray-300">
-                    Proposal ID:
-                  </div>
-                  <div className="text-gray-800 dark:text-gray-200">
-                    {proposals.find((p) => p.id === expandedProposalId)?.id}
-                  </div>
+                  <TypographyH3>Proposal ID:</TypographyH3>
+                  <TypographyLead>
+                    {selectedChangeManagementProposal.id}
+                  </TypographyLead>
                 </div>
                 <div>
-                  <div className="font-medium text-gray-600 dark:text-gray-300">
-                    Proposal Name:
-                  </div>
-                  <div className="text-gray-800 dark:text-gray-200">
-                    {proposals.find((p) => p.id === expandedProposalId)?.name}
-                  </div>
+                  <TypographyH3>Proposal Name:</TypographyH3>
+                  <TypographyLead>
+                    {selectedChangeManagementProposal.name}
+                  </TypographyLead>
                 </div>
                 <div>
-                  <div className="font-medium text-gray-600 dark:text-gray-300">
-                    Version:
-                  </div>
-                  <div className="text-gray-800 dark:text-gray-200">
-                    {
-                      proposals.find((p) => p.id === expandedProposalId)
-                        ?.version
-                    }
-                  </div>
+                  <TypographyH3>Version:</TypographyH3>
+                  <TypographyLead>
+                    {selectedChangeManagementProposal.version}
+                  </TypographyLead>
                 </div>
                 <div>
-                  <div className="font-medium text-gray-600 dark:text-gray-300">
-                    Change Type:
-                  </div>
-                  <div className="text-gray-800 dark:text-gray-200">
-                    {proposals.find((p) => p.id === expandedProposalId)?.type}
-                  </div>
+                  <TypographyH3>Change Type:</TypographyH3>
+                  <TypographyLead>
+                    {selectedChangeManagementProposal.type}
+                  </TypographyLead>
                 </div>
                 <div>
-                  <div className="font-medium text-gray-600 dark:text-gray-300">
-                    Approval Required:
-                  </div>
-                  <div className="text-gray-800 dark:text-gray-200">
-                    {
-                      proposals.find((p) => p.id === expandedProposalId)
-                        ?.approvalRequired
-                    }
-                  </div>
+                  <TypographyH3>Approval Required:</TypographyH3>
+                  <TypographyLead>
+                    {selectedChangeManagementProposal.approvalRequired}
+                  </TypographyLead>
                 </div>
                 <div>
-                  <div className="font-medium text-gray-600 dark:text-gray-300">
-                    Status:
-                  </div>
-                  <div className="text-gray-800 dark:text-gray-200">
-                    {proposals.find((p) => p.id === expandedProposalId)?.status}
-                  </div>
+                  <TypographyH3>Status:</TypographyH3>
+                  <TypographyLead>
+                    {selectedChangeManagementProposal.status}
+                  </TypographyLead>
                 </div>
                 <div>
-                  <div className="font-medium text-gray-600 dark:text-gray-300">
-                    Approved By:
-                  </div>
-                  <div className="text-gray-800 dark:text-gray-200">
-                    {proposals.find((p) => p.id === expandedProposalId)
-                      ?.approvedBy || "-"}
-                  </div>
+                  <TypographyH3>Approved By:</TypographyH3>
+                  <TypographyLead>
+                    {dao.changeManagementProposals.find(
+                      (p) => p.id === expandedProposalId
+                    )?.approvedBy || "-"}
+                  </TypographyLead>
                 </div>
                 <div>
-                  <div className="font-medium text-gray-600 dark:text-gray-300">
-                    Changeset:
-                  </div>
+                  <TypographyH3>Changeset:</TypographyH3>
                   <Link
-                    href="#"
+                    href={selectedChangeManagementProposal.changeSetLink}
                     target="_blank"
                     className="text-blue-500 hover:underline"
                   >
@@ -394,38 +217,23 @@ export const Governance = () => {
                   </Link>
                 </div>
                 <div>
-                  <div className="font-medium text-gray-600 dark:text-gray-300">
-                    Discussion Links:
-                  </div>
-                  <div>
-                    {proposals.find((p) => p.id === expandedProposalId)
-                      ?.discussionLink && (
-                      <Link
-                        href={
-                          proposals.find((p) => p.id === expandedProposalId)
-                            ?.discussionLink
-                        }
-                        target="_blank"
-                        className="text-blue-500 hover:underline"
-                      >
-                        View Discussion
-                      </Link>
-                    )}
-                  </div>
+                  <TypographyH3>Discussion:</TypographyH3>
+                  <Link
+                    href={selectedChangeManagementProposal.discussionLink}
+                    target="_blank"
+                    className="text-blue-500 hover:underline"
+                  >
+                    View Discussion
+                  </Link>
                 </div>
                 <div>
-                  <div className="font-medium text-gray-600 dark:text-gray-300">
-                    Transaction ID:
-                  </div>
-                  <div className="text-gray-800 dark:text-gray-200">
-                    {
-                      proposals.find((p) => p.id === expandedProposalId)
-                        ?.transactionId
-                    }
-                  </div>
+                  <TypographyH3>Transaction ID:</TypographyH3>
+                  <TypographyLead>
+                    {selectedChangeManagementProposal.transactionId}
+                  </TypographyLead>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           )}
         </CardContent>
       </Card>
