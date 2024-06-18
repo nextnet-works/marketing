@@ -6,19 +6,19 @@ import { createFileRoute } from "@tanstack/react-router";
 
 type TabSearch = {
   tab:
-    | "home"
-    | "infrastructure"
-    | "financials"
-    | "governance"
-    | "analytics"
-    | "contributors";
+    | "Home"
+    | "Infrastructure"
+    | "Financials"
+    | "Governance"
+    | "Analytics"
+    | "Contributors";
 };
 
 export const Route = createFileRoute("/market/$daoId")({
   component: Dao,
   validateSearch: (search: Record<string, unknown>): TabSearch => {
     return {
-      tab: (search.tab as TabSearch["tab"]) || "home",
+      tab: (search.tab as TabSearch["tab"]) || "Home",
     };
   },
 });
