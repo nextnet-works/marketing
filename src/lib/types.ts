@@ -129,3 +129,23 @@ type Infrastructure = {
   lastIncident: Date;
   description: string;
 };
+
+type InfrastructureAppVariant =
+  | "Web-Development"
+  | "Mobile-App-Development"
+  | "UI/UX"
+  | "Cloud-Computing"
+  | "Artificial-Intelligence"
+  | "Blockchain-Development";
+
+type InfrastructureApp = {
+  name: string;
+  description: string;
+  apps: InfrastructureAppVariantApp[];
+};
+
+type InfrastructureAppVariantApp = {
+  name: string;
+  description: string;
+  link: string;
+};

@@ -22,14 +22,120 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { ResponsiveLine } from "@nivo/line";
-import { Route } from "@/routes/market/$daoId";
 import { daos } from "@/lib/mock";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { TypographyMuted } from "@/components/typography/muted";
 
-export const Infrastructure = () => {
-  const { daoId } = Route.useParams();
+type InfrastructureProps = {
+  daoId: string;
+};
+
+export const Infrastructure = ({ daoId }: InfrastructureProps) => {
   const dao = daos.find((dao) => dao.id === daoId)!;
   return (
     <div className="flex flex-col gap-8">
+      <Card>
+        <CardHeader>
+          <CardTitle>Infrastructure</CardTitle>
+          <CardDescription>
+            This section shows the infrastructure used by the DAO.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Table className="w-full overflow-auto">
+            <TableHeader>
+              <TableRow>
+                <TableHead>Provider</TableHead>
+                <TableHead>Type</TableHead>
+                <TableHead>Uptime</TableHead>
+                <TableHead>Status</TableHead>
+                <TableHead>Spending</TableHead>
+                <TableHead>Last Incident</TableHead>
+                <TableHead>Description</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {dao.infrastructure.map((infrastructure) => (
+                <TableRow key={infrastructure.provider}>
+                  <TableCell>
+                    <div className="flex items-center gap-2">
+                      {infrastructure.provider === "Cloud Hosting" && (
+                        <CloudIcon className="w-4 h-4" />
+                      )}
+                      {infrastructure.provider === "Database" && (
+                        <DatabaseIcon className="w-4 h-4" />
+                      )}
+                      {infrastructure.provider === "Email Service" && (
+                        <MailIcon className="w-4 h-4" />
+                      )}
+                      {infrastructure.provider === "Identity Provider" && (
+                        <LockIcon className="w-4 h-4" />
+                      )}
+                      {infrastructure.provider === "File Storage" && (
+                        <StoreIcon className="w-4 h-4" />
+                      )}
+
+                      <span>{infrastructure.provider}</span>
+                    </div>
+                  </TableCell>
+                  <TableCell>{infrastructure.type}</TableCell>
+                  <TableCell>{infrastructure.uptime}%</TableCell>
+                  <TableCell>
+                    <Badge
+                      variant={
+                        infrastructure.status === "Operational"
+                          ? "success"
+                          : "destructive"
+                      }
+                    >
+                      {infrastructure.status}
+                    </Badge>
+                  </TableCell>
+                  <TableCell>
+                    ${infrastructure.spendingPerMonth}/month
+                  </TableCell>
+                  <TableCell>
+                    {infrastructure.lastIncident.toLocaleDateString()}
+                  </TableCell>
+                  <TableCell>{infrastructure.description}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </CardContent>
+      </Card>
+      <Card className="flex-1">
+        <CardHeader>
+          <CardTitle>Applications and Services</CardTitle>
+          <CardDescription>
+            This section shows the applications and services used by the DAO.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-8 w-full grid-cols-2 md:grid-cols-3">
+          {Object.entries(dao.apps).map(([name, app]) => (
+            <Card key={name}>
+              <CardHeader>
+                <CardTitle>{name}</CardTitle>
+                <CardDescription>{app.description}</CardDescription>
+              </CardHeader>
+              <CardContent className="grid grid-cols-3 gap-4">
+                {app.apps.map((app) => (
+                  <div
+                    key={app.name}
+                    className="flex flex-col items-center gap-4"
+                  >
+                    <Avatar>
+                      <AvatarImage src={app.link} />
+                      <AvatarFallback>{app.name[0]}</AvatarFallback>
+                    </Avatar>
+                    <TypographyMuted>{app.name}</TypographyMuted>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          ))}
+        </CardContent>
+      </Card>
       <section className="flex gap-8">
         <Card className="flex-1">
           <CardHeader>
@@ -54,66 +160,6 @@ export const Infrastructure = () => {
           </CardContent>
         </Card>
       </section>
-      <Card>
-        <Table className="w-full overflow-auto">
-          <TableHeader>
-            <TableRow>
-              <TableHead>Provider</TableHead>
-              <TableHead>Type</TableHead>
-              <TableHead>Uptime</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead>Spending</TableHead>
-              <TableHead>Last Incident</TableHead>
-              <TableHead>Description</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {dao.infrastructure.map((infrastructure) => (
-              <TableRow key={infrastructure.provider}>
-                <TableCell>
-                  <div className="flex items-center gap-2">
-                    {infrastructure.provider === "Cloud Hosting" && (
-                      <CloudIcon className="w-4 h-4" />
-                    )}
-                    {infrastructure.provider === "Database" && (
-                      <DatabaseIcon className="w-4 h-4" />
-                    )}
-                    {infrastructure.provider === "Email Service" && (
-                      <MailIcon className="w-4 h-4" />
-                    )}
-                    {infrastructure.provider === "Identity Provider" && (
-                      <LockIcon className="w-4 h-4" />
-                    )}
-                    {infrastructure.provider === "File Storage" && (
-                      <StoreIcon className="w-4 h-4" />
-                    )}
-
-                    <span>{infrastructure.provider}</span>
-                  </div>
-                </TableCell>
-                <TableCell>{infrastructure.type}</TableCell>
-                <TableCell>{infrastructure.uptime}%</TableCell>
-                <TableCell>
-                  <Badge
-                    variant={
-                      infrastructure.status === "Operational"
-                        ? "success"
-                        : "destructive"
-                    }
-                  >
-                    {infrastructure.status}
-                  </Badge>
-                </TableCell>
-                <TableCell>${infrastructure.spendingPerMonth}/month</TableCell>
-                <TableCell>
-                  {infrastructure.lastIncident.toLocaleDateString()}
-                </TableCell>
-                <TableCell>{infrastructure.description}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </Card>
     </div>
   );
 };

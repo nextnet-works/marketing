@@ -4,6 +4,111 @@ import { Dao } from "./types";
 export const daos: Dao[] = [
   {
     id: "1",
+    apps: {
+      "Web-Development": {
+        name: "React",
+        description: "A JavaScript library for building user interfaces",
+        apps: [
+          {
+            name: "Create React App",
+            description: "Create React apps with no build configuration.",
+            link: "https://create-react-app.dev/",
+          },
+          {
+            name: "Next.js",
+            description: "The React Framework for Production",
+            link: "https://nextjs.org/",
+          },
+          {
+            name: "Vue",
+            description: "The Progressive JavaScript Framework",
+            link: "https://vuejs.org/",
+          },
+        ],
+      },
+      "Mobile-App-Development": {
+        name: "React Native",
+        description: "Create native apps for Android and iOS using React",
+        apps: [
+          {
+            name: "Expo",
+            description: "The fastest way to build an app",
+            link: "https://expo.dev/",
+          },
+          {
+            name: "React Native CLI",
+            description: "Create a new React Native project",
+            link: "https://reactnative.dev/docs/environment-setup",
+          },
+        ],
+      },
+
+      "UI/UX": {
+        name: "Figma",
+        description: "The collaborative interface design tool",
+        apps: [
+          {
+            name: "Figma",
+            description: "The collaborative interface design tool",
+            link: "https://www.figma.com/",
+          },
+          {
+            name: "Sketch",
+            description:
+              "Create, prototype, collaborate, and turn your ideas into incredible products with the definitive platform for digital design.",
+            link: "https://www.sketch.com/",
+          },
+        ],
+      },
+      "Cloud-Computing": {
+        name: "AWS",
+        description: "Amazon Web Services",
+        apps: [
+          {
+            name: "EC2",
+            description: "Elastic Compute Cloud",
+            link: "https://aws.amazon.com/ec2/",
+          },
+          {
+            name: "S3",
+            description: "Simple Storage Service",
+            link: "https://aws.amazon.com/s3/",
+          },
+        ],
+      },
+      "Artificial-Intelligence": {
+        name: "TensorFlow",
+        description: "An open-source machine learning framework",
+        apps: [
+          {
+            name: "TensorFlow",
+            description: "An open-source machine learning framework",
+            link: "https://www.tensorflow.org/",
+          },
+          {
+            name: "Keras",
+            description: "Deep Learning for humans",
+            link: "https://keras.io/",
+          },
+        ],
+      },
+      "Blockchain-Development": {
+        name: "Ethereum",
+        description: "A decentralized platform that runs smart contracts",
+        apps: [
+          {
+            name: "Solidity",
+            description: "The language of Ethereum smart contracts",
+            link: "https://docs.soliditylang.org/en/v0.8.7/",
+          },
+          {
+            name: "Hardhat",
+            description: "Ethereum development environment",
+            link: "https://hardhat.org/",
+          },
+        ],
+      },
+    },
     name: "The Observability CloudDao",
     description:
       "aims to provide a managed OpenTelemetry Service (OTaaS) in a vendor agnostic way, to instrument and collect application data in order to provide developers best-in-class Observability capabilities. This central service will provide all teams with their own OpenTelemetry collector instance. These instances contains configuration that is managed and owned centrally by the DAOs or users of the service",
@@ -245,6 +350,111 @@ export const daos: Dao[] = [
         keysAttached: 6,
       },
     ],
+    apps: {
+      "Web-Development": {
+        name: "React",
+        description: "A JavaScript library for building user interfaces",
+        apps: [
+          {
+            name: "Create React App",
+            description: "Create React apps with no build configuration.",
+            link: "https://create-react-app.dev/",
+          },
+          {
+            name: "Next.js",
+            description: "The React Framework for Production",
+            link: "https://nextjs.org/",
+          },
+          {
+            name: "Vue",
+            description: "The Progressive JavaScript Framework",
+            link: "https://vuejs.org/",
+          },
+        ],
+      },
+      "Mobile-App-Development": {
+        name: "React Native",
+        description: "Create native apps for Android and iOS using React",
+        apps: [
+          {
+            name: "Expo",
+            description: "The fastest way to build an app",
+            link: "https://expo.dev/",
+          },
+          {
+            name: "React Native CLI",
+            description: "Create a new React Native project",
+            link: "https://reactnative.dev/docs/environment-setup",
+          },
+        ],
+      },
+
+      "UI/UX": {
+        name: "Figma",
+        description: "The collaborative interface design tool",
+        apps: [
+          {
+            name: "Figma",
+            description: "The collaborative interface design tool",
+            link: "https://www.figma.com/",
+          },
+          {
+            name: "Sketch",
+            description:
+              "Create, prototype, collaborate, and turn your ideas into incredible products with the definitive platform for digital design.",
+            link: "https://www.sketch.com/",
+          },
+        ],
+      },
+      "Cloud-Computing": {
+        name: "AWS",
+        description: "Amazon Web Services",
+        apps: [
+          {
+            name: "EC2",
+            description: "Elastic Compute Cloud",
+            link: "https://aws.amazon.com/ec2/",
+          },
+          {
+            name: "S3",
+            description: "Simple Storage Service",
+            link: "https://aws.amazon.com/s3/",
+          },
+        ],
+      },
+      "Artificial-Intelligence": {
+        name: "TensorFlow",
+        description: "An open-source machine learning framework",
+        apps: [
+          {
+            name: "TensorFlow",
+            description: "An open-source machine learning framework",
+            link: "https://www.tensorflow.org/",
+          },
+          {
+            name: "Keras",
+            description: "Deep Learning for humans",
+            link: "https://keras.io/",
+          },
+        ],
+      },
+      "Blockchain-Development": {
+        name: "Ethereum",
+        description: "A decentralized platform that runs smart contracts",
+        apps: [
+          {
+            name: "Solidity",
+            description: "The language of Ethereum smart contracts",
+            link: "https://docs.soliditylang.org/en/v0.8.7/",
+          },
+          {
+            name: "Hardhat",
+            description: "Ethereum development environment",
+            link: "https://hardhat.org/",
+          },
+        ],
+      },
+    },
     financial: {
       revenues: 300000,
       expenses: 200000,
@@ -292,6 +502,7 @@ export const daos: Dao[] = [
         },
       ],
     },
+
     infrastructure: [
       {
         provider: "Cloud Hosting",
