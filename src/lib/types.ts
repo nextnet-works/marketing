@@ -3,6 +3,7 @@ export type Dao = {
   name: string;
   avatarUrl: string;
   description: string;
+  apps: Record<InfrastructureAppVariant, InfrastructureApp>;
   category: (
     | "DeFi"
     | "NFT"
