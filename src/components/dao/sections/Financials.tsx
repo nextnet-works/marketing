@@ -20,6 +20,8 @@ import {
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { daos } from "@/lib/mock";
 import { CircleIcon } from "lucide-react";
+import { TypographyMuted } from "@/components/typography/muted";
+import { TypographyLarge } from "@/components/typography/large";
 
 type FinancialsProps = {
   daoId: string;
@@ -35,17 +37,27 @@ export const Financials = ({ daoId }: FinancialsProps) => {
         <CardContent>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {Object.keys(dao.financial.nodes).map((key) => (
-              <div key={key} className="mb-4">
-                <h3 className="text-sm font-semibold text-gray-500 flex items-center gap-2">
-                  <span className="min-w-[150px]">{key}: </span>
-                  <span className="text-lg font-semibold text-gray-800 dark:text-gray-200 min-w-[100px] text-end">
+              <div key={key}>
+                <div className="flex items-center justify-between gap-2 max-w-96">
+                  <TypographyLarge>{key}: </TypographyLarge>
+                  <TypographyMuted>
+                    {[
+                      "remainingBalance",
+                      "spendingPerHour",
+                      "totalBalance",
+                      "totalSpending",
+                    ].includes(key) && `$`}
                     {
                       dao.financial.nodes[
                         key as keyof typeof dao.financial.nodes
                       ]
                     }
-                  </span>
-                </h3>
+                    {[
+                      "remainingActiveDuration",
+                      "totalActiveDuration",
+                    ].includes(key) && ` Hours`}
+                  </TypographyMuted>
+                </div>
               </div>
             ))}
           </div>
