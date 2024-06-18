@@ -36,7 +36,7 @@ type GovernanceProps = {
 export const Governance = ({ daoId }: GovernanceProps) => {
   const dao = daos.find((dao) => dao.id === daoId)!;
   const [expandedProposalId, setExpandedProposalId] = useState<string | null>(
-    null
+    null,
   );
 
   const handleExpand = (id: string) => {
@@ -44,7 +44,7 @@ export const Governance = ({ daoId }: GovernanceProps) => {
   };
 
   const selectedChangeManagementProposal = dao.changeManagementProposals.find(
-    (p) => p.id === expandedProposalId
+    (p) => p.id === expandedProposalId,
   );
 
   return (
@@ -203,7 +203,7 @@ export const Governance = ({ daoId }: GovernanceProps) => {
                   <TypographyH3>Approved By:</TypographyH3>
                   <TypographyLead>
                     {dao.changeManagementProposals.find(
-                      (p) => p.id === expandedProposalId
+                      (p) => p.id === expandedProposalId,
                     )?.approvedBy || "-"}
                   </TypographyLead>
                 </div>

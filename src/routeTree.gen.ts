@@ -10,53 +10,53 @@
 
 // Import Routes
 
-import { Route as rootRoute } from './routes/__root'
-import { Route as IndexImport } from './routes/index'
-import { Route as MarketIndexImport } from './routes/market/index'
-import { Route as MarketDaoIdImport } from './routes/market/$daoId'
+import { Route as rootRoute } from "./routes/__root";
+import { Route as IndexImport } from "./routes/index";
+import { Route as MarketIndexImport } from "./routes/market/index";
+import { Route as MarketDaoIdImport } from "./routes/market/$daoId";
 
 // Create/Update Routes
 
 const IndexRoute = IndexImport.update({
-  path: '/',
+  path: "/",
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const MarketIndexRoute = MarketIndexImport.update({
-  path: '/market/',
+  path: "/market/",
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const MarketDaoIdRoute = MarketDaoIdImport.update({
-  path: '/market/$daoId',
+  path: "/market/$daoId",
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 // Populate the FileRoutesByPath interface
 
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexImport
-      parentRoute: typeof rootRoute
-    }
-    '/market/$daoId': {
-      id: '/market/$daoId'
-      path: '/market/$daoId'
-      fullPath: '/market/$daoId'
-      preLoaderRoute: typeof MarketDaoIdImport
-      parentRoute: typeof rootRoute
-    }
-    '/market/': {
-      id: '/market/'
-      path: '/market'
-      fullPath: '/market'
-      preLoaderRoute: typeof MarketIndexImport
-      parentRoute: typeof rootRoute
-    }
+    "/": {
+      id: "/";
+      path: "/";
+      fullPath: "/";
+      preLoaderRoute: typeof IndexImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/market/$daoId": {
+      id: "/market/$daoId";
+      path: "/market/$daoId";
+      fullPath: "/market/$daoId";
+      preLoaderRoute: typeof MarketDaoIdImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/market/": {
+      id: "/market/";
+      path: "/market";
+      fullPath: "/market";
+      preLoaderRoute: typeof MarketIndexImport;
+      parentRoute: typeof rootRoute;
+    };
   }
 }
 
@@ -66,7 +66,7 @@ export const routeTree = rootRoute.addChildren({
   IndexRoute,
   MarketDaoIdRoute,
   MarketIndexRoute,
-})
+});
 
 /* prettier-ignore-end */
 
