@@ -11,11 +11,17 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as TeamImport } from './routes/team'
 import { Route as IndexImport } from './routes/index'
 import { Route as MarketIndexImport } from './routes/market/index'
 import { Route as MarketDaoIdImport } from './routes/market/$daoId'
 
 // Create/Update Routes
+
+const TeamRoute = TeamImport.update({
+  path: '/team',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const IndexRoute = IndexImport.update({
   path: '/',
@@ -43,6 +49,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamImport
+      parentRoute: typeof rootRoute
+    }
     '/market/$daoId': {
       id: '/market/$daoId'
       path: '/market/$daoId'
@@ -64,6 +77,7 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren({
   IndexRoute,
+  TeamRoute,
   MarketDaoIdRoute,
   MarketIndexRoute,
 })
@@ -77,12 +91,16 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/team",
         "/market/$daoId",
         "/market/"
       ]
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/team": {
+      "filePath": "team.tsx"
     },
     "/market/$daoId": {
       "filePath": "market/$daoId.tsx"
