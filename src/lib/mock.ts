@@ -261,7 +261,7 @@ export const daos: Dao[] = [
     changeManagementProposals: [
       {
         id: "PROP-001",
-        name: "Increase Staking Rewards",
+        name: "upgrading OTEL Collector version to v0.103.1",
         version: "1.0",
         type: "Parameter Change",
         approvalRequired: "DAO Vote",
@@ -274,7 +274,7 @@ export const daos: Dao[] = [
       },
       {
         id: "PROP-002",
-        name: "Add New Token to Ecosystem",
+        name: "add support for HostMetricsReceiver in the DAO collector",
         version: "2.1",
         type: "Contract Upgrade",
         approvalRequired: "DAO Vote",
