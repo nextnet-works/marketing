@@ -21,7 +21,7 @@ const socialLinks = [
   },
   {
     icon: <GitHubLogoIcon className="w-6 h-6" color="#5c6bc0" />,
-    href: "https://github.com/NarutoPi/website",
+    href: "https://github.com/nextnet-works/marketing",
     ariaLabel: "GitHub",
   },
   // {
