@@ -1,9 +1,9 @@
-/// <reference types="./vite-env-override.d.ts" />
 /// <reference types="vite/client" />
 /// <reference types="vite-plugin-svgr/client" />
 
 interface ImportMetaEnv {
-  NODE_SERVER_API: string;
+  readonly VITE_PUBLIC_SUPABASE_URL: string;
+  readonly VITE_PUBLIC_SUPABASE_ANON_KEY: string;
 }
 
 interface ImportMeta {

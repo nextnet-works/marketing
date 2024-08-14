@@ -5,7 +5,7 @@ type ErrorUIProps = {
 };
 
 export const ErrorUI = ({ message }: ErrorUIProps) => (
-  <div className="m-auto flex flex-col items-center justify-center gap-8">
+  <div className="flex flex-col justify-center items-center gap-8 m-auto">
     <h1 className="text-4xl">
       {message ?? "Something went wrong. Please try again later."}
     </h1>{" "}

@@ -1,67 +1,66 @@
-import { Link } from "@tanstack/react-router";
-import { Button } from "../ui/button";
-import { MailIcon } from "lucide-react";
+import Logo from "@/assets/logos/logo.svg?react";
 import {
-  DiscordLogoIcon,
+  // DiscordLogoIcon,
   GitHubLogoIcon,
-  TwitterLogoIcon,
+  // NotionLogoIcon,
 } from "@radix-ui/react-icons";
-import { URLS } from "@/lib/const";
-import { buttonLinkClass } from "./Header";
+import XLogoIcon from "@/assets/companies/x.svg?react";
+import { Button } from "@/components/ui/button";
+import { MailIcon } from "lucide-react";
 
-const SOCIAL_LINKS = [
+const socialLinks = [
+  // {
+  //   icon: <NotionLogoIcon className="w-6 h-6" color="#000" />,
+  //   href: "#",
+  //   ariaLabel: "Notion",
+  // },
   {
-    href: URLS.GITHUB,
-    icon: <GitHubLogoIcon className="h-6 w-6" />,
-    label: "GitHub",
+    icon: <XLogoIcon className="w-6 h-6" />,
+    href: "https://x.com/nextnet_works?s=21&t=1xBtmNSuUOq-DmX0qkYNdA",
+    ariaLabel: "X (formerly Twitter)",
   },
   {
-    href: URLS.TWITTER,
-    icon: <TwitterLogoIcon className="h-6 w-6" />,
-    label: "Twitter",
+    icon: <GitHubLogoIcon className="w-6 h-6" color="#5c6bc0" />,
+    href: "https://github.com/NarutoPi/website",
+    ariaLabel: "GitHub",
   },
+  // {
+  //   icon: <DiscordLogoIcon className="w-6 h-6" color="#7289da" />,
+  //   href: "#",
+  //   ariaLabel: "Discord",
+  // },
   {
-    href: URLS.DISCORD,
-    icon: <DiscordLogoIcon className="h-6 w-6" />,
-    label: "Discord",
+    icon: <MailIcon className="w-6 h-6" />,
+    href: "https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=contact@nextnet.works",
+    ariaLabel: "Email",
   },
-  {
-    href: URLS.EMAIL,
-    icon: <MailIcon className="h-6 w-6" />,
-    label: "Email",
-  },
-] as const;
+];
 
 export const Footer = () => {
   return (
-    <footer className="flex gap-4 py-6 w-full shrink-0 items-center px-4 md:px-6 border-t justify-between">
-      <p className="text-xs text-gray-500 dark:text-gray-400">
-        &copy; 2024 NextNet Protocol. All rights reserved.
-      </p>
-      <div className="flex gap-4">
-        {SOCIAL_LINKS.map((link, index) => (
-          <Button key={index} size="icon" variant="ghost" asChild>
-            <a
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={link.label}
-            >
-              {link.icon}
-            </a>
-          </Button>
-        ))}
+    <footer className="flex md:flex-row flex-col justify-center items-center gap-8 md:gap-4 mx-auto p-4 max-w-7xl h-[64px] space-between">
+      <div className="flex flex-1 justify-start items-center">
+        <Logo className="w-auto h-6" />
       </div>
-      <nav className="flex gap-4 sm:gap-6">
-        <Button variant="link" asChild className={buttonLinkClass}>
-          <Link href={`${URLS.GITHUB}/tree/main#readme}`}>
-            Terms of Service
-          </Link>
-        </Button>
-        <Button variant="link" asChild className={buttonLinkClass}>
-          <Link href={`${URLS.GITHUB}/tree/main#readme}`}>Privacy</Link>
-        </Button>
+      <nav className="flex flex-1 justify-center items-center gap-4">
+        <div>
+          {socialLinks.map((link) => (
+            <Button size="icon" variant="ghost" key={link.ariaLabel} asChild>
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.ariaLabel}
+              >
+                {link.icon}
+              </a>
+            </Button>
+          ))}
+        </div>
       </nav>
+      <span className="flex flex-1 justify-end items-center">
+        © 2024 NextNet. All rights reserved.
+      </span>
     </footer>
   );
 };
