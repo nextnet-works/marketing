@@ -40,7 +40,7 @@ export const Footer = () => {
   return (
     <footer className="flex md:flex-row flex-col justify-center items-center gap-8 md:gap-4 mx-auto p-4 max-w-7xl h-[64px] space-between">
       <div className="flex flex-1 justify-start items-center">
-        <Logo className="w-auto h-6" />
+        <Logo className="w-[133px] max-w-[30%] h-6" />
       </div>
       <nav className="flex flex-1 justify-center items-center gap-4">
         <div>
