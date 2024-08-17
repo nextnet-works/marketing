@@ -1,5 +1,5 @@
 import SantaIcon from "@/assets/companies/santa.svg?react";
-import CosmosIcon from "@/assets/companies/cosmos.svg?react";
+import AkashIcon from "@/assets/companies/akash.svg?react";
 import BlocksIcon from "@/assets/icons/blocks.svg?react";
 import {
   Tooltip,
@@ -15,10 +15,10 @@ const projectData = [
     description: "Our flagship cloud computing platform",
   },
   {
-    icon: CosmosIcon,
-    title: "Cosmos Validator",
+    icon: AkashIcon,
+    title: "Akash Validator",
     description:
-      "Secure and reliable validation services for the Cosmos network",
+      "An Akash Network Validator plays a pivotal role in the decentralized cloud computing platform, Akash Network."  
   },
   {
     icon: BlocksIcon,
