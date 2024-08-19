@@ -15,6 +15,12 @@ export const Route = createRootRoute({
 
 function Root() {
   useEffect(() => {
+    const fullUrl = window.location.href;
+
+    if (!fullUrl.includes("website-git-dev-next-net-8d4aaaa8.vercel.app")) {
+      return;
+    }
+
     mountVercelToolbar({
       projectId: "next-net-8d4aaaa8",
       branch: "dev",
@@ -25,7 +31,7 @@ function Root() {
   return (
     <ThemeProvider storageKey="vite-ui-theme" defaultTheme="light">
       <Header />
-      <main className="flex flex-col items-center gap-4 p-4 min-h-[calc(100vh-56px)]">
+      <main className="flex flex-col items-center gap-4 mx-auto p-4 max-w-[1280px] min-h-[calc(100vh-56px)]">
         <Outlet />
         <Toaster />
         {import.meta.env.DEV && (
