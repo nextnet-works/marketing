@@ -19,7 +19,7 @@ function Home() {
   };
 
   return (
-    <div className="flex flex-col gap-64 mx-auto py-12 max-w-7xl">
+    <div className="flex flex-col gap-64">
       <Hero />
       <Cards scrollToContact={scrollToContact} />
       <Projects />
