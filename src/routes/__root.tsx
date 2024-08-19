@@ -15,6 +15,12 @@ export const Route = createRootRoute({
 
 function Root() {
   useEffect(() => {
+    const fullUrl = window.location.href;
+
+    if (!fullUrl.includes("website-git-dev-next-net-8d4aaaa8.vercel.app")) {
+      return;
+    }
+
     mountVercelToolbar({
       projectId: "next-net-8d4aaaa8",
       branch: "dev",
