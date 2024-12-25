@@ -7,6 +7,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
 
 const projectData = [
   {
@@ -39,15 +40,15 @@ export const Projects = () => {
       </div>
       <div className="flex flex-wrap justify-around gap-8">
         {projectData.map((project) => (
-          <TooltipProvider>
+          <TooltipProvider key={project.title}>
             <Tooltip>
               <TooltipTrigger asChild>
-                <div
-                  key={project.title}
-                  className="flex flex-col flex-1 justify-between items-center gap-4 min-w-[200px] max-w-[300px]"
-                >
+                <div className="flex flex-col flex-1 justify-between items-center gap-4 min-w-[200px] max-w-[300px]">
                   <project.icon
-                    className={`w-12 lg:w-24 h-auto ${project.title === "Santa Cloud" ? "ml-4" : undefined}`}
+                    className={cn(
+                      "w-12 lg:w-24 h-auto",
+                      project.title === "Santa Cloud" && "ml-4"
+                    )}
                   />
                   <h5>{project.title}</h5>
                 </div>
