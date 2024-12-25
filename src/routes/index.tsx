@@ -15,11 +15,11 @@ function Home() {
 
   const scrollToContact = () => {
     fullNameInputRef.current?.scrollIntoView({ behavior: "smooth" });
-    setTimeout(() => fullNameInputRef.current?.focus(), 1000); // Delay focus to ensure scroll is complete
+    setTimeout(() => fullNameInputRef.current?.focus(), 1000);
   };
 
   return (
-    <div className="flex flex-col gap-64">
+    <div className="flex flex-col gap-16 lg:gap-64 py-8">
       <Hero />
       <Cards scrollToContact={scrollToContact} />
       <Projects />

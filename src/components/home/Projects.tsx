@@ -31,10 +31,10 @@ const projectData = [
 
 export const Projects = () => {
   return (
-    <section className="flex flex-col gap-24 text-center">
+    <section className="flex flex-col gap-12 lg:gap-24 text-center px-4">
       <div>
         <h2 className="text-orange-500">Our Projects</h2>
-        <h4>
+        <h4 className="px-4">
           Constantly working on new projects to bring you the best technology
         </h4>
       </div>
@@ -43,11 +43,10 @@ export const Projects = () => {
           <TooltipProvider key={project.title}>
             <Tooltip>
               <TooltipTrigger asChild>
-                <div className="flex flex-col flex-1 justify-between items-center gap-4 min-w-[200px] max-w-[300px]">
+                <div className="flex flex-col flex-1 justify-between items-center gap-4 min-w-[150px] lg:min-w-[200px] max-w-[300px]">
                   <project.icon
                     className={cn(
-                      "w-12 lg:w-24 h-auto",
-                      project.title === "Santa Cloud" && "ml-4"
+                      "w-12 lg:w-24 h-auto"
                     )}
                   />
                   <h5>{project.title}</h5>

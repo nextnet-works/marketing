@@ -16,16 +16,16 @@ type CardProps = {
 
 export const Cards = ({ scrollToContact }: CardProps) => {
   return (
-    <p className="flex flex-wrap gap-4">
-      <Card className="flex gap-4 bg-blue-700 mx-auto p-4 max-w-xl">
-        <div className="flex items-center h-full">
-          <BoxIcon className="lg:block hidden w-24 h-24" />
+    <div className="flex flex-wrap gap-4 px-4">
+      <Card className="flex flex-col lg:flex-row gap-4 bg-blue-700 mx-auto p-4 w-full lg:max-w-xl">
+        <div className="flex justify-center lg:items-center">
+          <BoxIcon className="w-16 h-16 lg:w-24 lg:h-24" />
         </div>
         <div className="bg-blue-70 border-transparent">
           <CardHeader>
             <CardTitle className="text-orange-500">Mission & Vision</CardTitle>
           </CardHeader>
-          <CardContent className="h-full text-gray-200">
+          <CardContent className="text-gray-200">
             <p>
               NextNet. Works is a team of open-source developers focused on
               building orchestration tools for truly decentralized clouds.
@@ -38,7 +38,8 @@ export const Cards = ({ scrollToContact }: CardProps) => {
           </CardContent>
         </div>
       </Card>
-      <Card className="flex gap-4 bg-red-50 mx-auto p-4 max-w-xl">
+
+      <Card className="flex flex-col lg:flex-row gap-4 bg-red-50 mx-auto p-4 w-full lg:max-w-xl">
         <div className="bg-red-50 border-transparent">
           <CardHeader>
             <CardTitle className="text-red-500">Join Us</CardTitle>
@@ -59,17 +60,17 @@ export const Cards = ({ scrollToContact }: CardProps) => {
             <Button
               variant="destructive"
               size="lg"
-              className="ml-auto w-full lg:w-36"
+              className="w-full"
               onClick={scrollToContact}
             >
               Let's Go
             </Button>
           </CardFooter>
         </div>
-        <div className="flex items-center h-full">
-          <MountainIcon className="lg:block hidden w-24 h-24" />
+        <div className="flex justify-center lg:items-center order-first lg:order-last">
+          <MountainIcon className="w-16 h-16 lg:w-24 lg:h-24" />
         </div>
       </Card>
-    </p>
+    </div>
   );
 };
