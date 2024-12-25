@@ -1,4 +1,4 @@
-import SantaIcon from "@/assets/companies/santa.svg?react";
+import LogoIcon from "@/assets/companies/logo.svg?react";
 import AkashIcon from "@/assets/companies/akash.svg?react";
 import BlocksIcon from "@/assets/icons/blocks.svg?react";
 import {
@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 
 const projectData = [
   {
-    icon: SantaIcon,
+    icon: LogoIcon,
     title: "Santa Cloud",
     description: "Our flagship cloud computing platform",
   },
