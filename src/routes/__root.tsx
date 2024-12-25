@@ -36,7 +36,7 @@ function Root() {
         <Outlet />
         <Toaster />
         {import.meta.env.DEV && <TanStackRouterDevtools position="bottom-right" />}
-        {import.meta.env.PROD && <Analytics />}
+        <Analytics />
       </main>
       <Footer />
     </ThemeProvider>
